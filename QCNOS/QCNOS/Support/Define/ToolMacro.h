@@ -106,8 +106,7 @@ tmp;\
 
 
 /** 状态栏高度*/
-#define  StatusBarHeight 20.f
-
+#define  StatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
 /** 导航栏高度*/
 #define  NavigationBarHeight 44.f
 
@@ -115,7 +114,7 @@ tmp;\
 #define  TabbarHeight 49.f
 
 /** 状态栏高度 + 导航栏高度*/
-#define  StatusBarAndNavigationBarHeight (20.f + 44.f)
+#define  StatusBarAndNavigationBarHeight (StatusBarHeight + 44.f)
 
 // ===================== 字体相关 =====================
 /** 系统字体*/

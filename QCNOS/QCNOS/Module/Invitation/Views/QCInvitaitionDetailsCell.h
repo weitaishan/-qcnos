@@ -1,5 +1,5 @@
 //
-//  QCInvitaitionFiltrateCell.h
+//  QCInvitaitionDetailsCell.h
 //  QCNOS
 //
 //  Created by 魏太山 on 2018/9/20.
@@ -8,6 +8,6 @@
 
 #import "QCBaseTableViewCell.h"
 
-@interface QCInvitaitionFiltrateCell : QCBaseTableViewCell
+@interface QCInvitaitionDetailsCell : QCBaseTableViewCell
 
 @end
