@@ -71,6 +71,7 @@ static NSString * const QCInvitaitionDetailsCellId = @"QCInvitaitionDetailsCellI
     if (indexPath.row == 0) {
         
         QCInvitaitionBaseListCell * cell = [tableView dequeueReusableCellWithIdentifier:QCInvitaitionListCellId forIndexPath:indexPath];
+        [cell hiddenViewWithType:2];
         
         return cell;
         
@@ -89,7 +90,7 @@ static NSString * const QCInvitaitionDetailsCellId = @"QCInvitaitionDetailsCellI
     
     if (indexPath.row == 0) {
         
-        return 208;
+        return [QCInvitaitionBaseListCell heightWithType:2];
         
     }
     

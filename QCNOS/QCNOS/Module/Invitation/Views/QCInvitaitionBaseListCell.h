@@ -10,4 +10,12 @@
 
 @interface QCInvitaitionBaseListCell : QCBaseTableViewCell
 
+@property (weak, nonatomic) IBOutlet UIView *centerView;
+
+@property (weak, nonatomic) IBOutlet UIView *footerView;
+
+
+- (void)hiddenViewWithType:(NSInteger)type;
+
++ (CGFloat)heightWithType:(NSInteger)type;
 @end

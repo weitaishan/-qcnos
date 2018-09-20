@@ -256,6 +256,10 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="centerView" destination="jKv-yb-T1C" id="vpO-AE-Wny"/>
+                <outlet property="footerView" destination="g6p-ih-vbn" id="gu3-UH-6pS"/>
+            </connections>
             <point key="canvasLocation" x="39.5" y="161"/>
         </tableViewCell>
     </objects>
