@@ -20,6 +20,7 @@
 #import "YJProgressHUD.h"
 #import "QCImagePicker.h"
 
+#import "CALayer+XibConfiguration.h"
 
 //三方库相关
 #import "AFNetworking.h"
