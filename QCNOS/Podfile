@@ -15,6 +15,7 @@ target 'QCNOS' do
     pod 'MBProgressHUD'
     pod 'YYModel'
     pod 'Realm'
+    pod 'TZImagePickerController'
 
 end
 

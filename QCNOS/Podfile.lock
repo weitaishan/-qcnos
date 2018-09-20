@@ -30,6 +30,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - TZImagePickerController (3.0.7)
   - YYModel (1.0.4)
 
 DEPENDENCIES:
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - ReactiveCocoa (from `https://github.com/zhao0/ReactiveCocoa.git`, tag `2.5.2`)
   - Realm
   - SDWebImage (~> 3.8.2)
+  - TZImagePickerController
   - YYModel
 
 SPEC REPOS:
@@ -50,6 +52,7 @@ SPEC REPOS:
     - MJRefresh
     - Realm
     - SDWebImage
+    - TZImagePickerController
     - YYModel
 
 EXTERNAL SOURCES:
@@ -70,8 +73,9 @@ SPEC CHECKSUMS:
   ReactiveCocoa: 3ff25b1bd992ac79c5c79b26b6c0c1713b715bb2
   Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  TZImagePickerController: eec24e7c5628288a6657a942d8d296476e66251b
   YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
 
-PODFILE CHECKSUM: e293df1a6f6e7a57f4729b9d7385f86235e427d7
+PODFILE CHECKSUM: 7129c3322dc850c6ce55e9a542e90a0559b266ed
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.5.2

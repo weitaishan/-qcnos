@@ -3,10 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09A48EC6215345AF00131A6B /* QCInvitaitionFiltrateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48EC4215345AF00131A6B /* QCInvitaitionFiltrateCell.m */; };
+		09A48EC7215345AF00131A6B /* QCInvitaitionFiltrateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48EC5215345AF00131A6B /* QCInvitaitionFiltrateCell.xib */; };
+		09A48ECB2153498B00131A6B /* QCInvitaitionBaseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48EC92153498B00131A6B /* QCInvitaitionBaseListCell.m */; };
+		09A48ECC2153498B00131A6B /* QCInvitaitionBaseListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48ECA2153498B00131A6B /* QCInvitaitionBaseListCell.xib */; };
+		09A48ED02153591900131A6B /* QCInvitaitionChartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48ECE2153591900131A6B /* QCInvitaitionChartCell.m */; };
+		09A48ED12153591900131A6B /* QCInvitaitionChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48ECF2153591900131A6B /* QCInvitaitionChartCell.xib */; };
+		09A48ED921535A0B00131A6B /* QCInvitaitionListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48ED821535A0B00131A6B /* QCInvitaitionListModel.m */; };
+		09A48EDD21535AB800131A6B /* WTSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48EDC21535AB800131A6B /* WTSBaseViewController.m */; };
 		770B36CD214B4D0700DF868F /* QCHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 770B36CC214B4D0700DF868F /* QCHotViewController.m */; };
 		77264D80213E228200B57B15 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 77264D7F213E228200B57B15 /* NSDictionary+Log.m */; };
 		77264D86213E245200B57B15 /* YJProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 77264D83213E245200B57B15 /* YJProgressHUD.bundle */; };
@@ -89,6 +97,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09A48EC3215345AF00131A6B /* QCInvitaitionFiltrateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCInvitaitionFiltrateCell.h; sourceTree = "<group>"; };
+		09A48EC4215345AF00131A6B /* QCInvitaitionFiltrateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCInvitaitionFiltrateCell.m; sourceTree = "<group>"; };
+		09A48EC5215345AF00131A6B /* QCInvitaitionFiltrateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCInvitaitionFiltrateCell.xib; sourceTree = "<group>"; };
+		09A48EC82153498B00131A6B /* QCInvitaitionBaseListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCInvitaitionBaseListCell.h; sourceTree = "<group>"; };
+		09A48EC92153498B00131A6B /* QCInvitaitionBaseListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCInvitaitionBaseListCell.m; sourceTree = "<group>"; };
+		09A48ECA2153498B00131A6B /* QCInvitaitionBaseListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCInvitaitionBaseListCell.xib; sourceTree = "<group>"; };
+		09A48ECD2153591900131A6B /* QCInvitaitionChartCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCInvitaitionChartCell.h; sourceTree = "<group>"; };
+		09A48ECE2153591900131A6B /* QCInvitaitionChartCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCInvitaitionChartCell.m; sourceTree = "<group>"; };
+		09A48ECF2153591900131A6B /* QCInvitaitionChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCInvitaitionChartCell.xib; sourceTree = "<group>"; };
+		09A48ED721535A0B00131A6B /* QCInvitaitionListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCInvitaitionListModel.h; sourceTree = "<group>"; };
+		09A48ED821535A0B00131A6B /* QCInvitaitionListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCInvitaitionListModel.m; sourceTree = "<group>"; };
+		09A48EDB21535AB800131A6B /* WTSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTSBaseViewController.h; sourceTree = "<group>"; };
+		09A48EDC21535AB800131A6B /* WTSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTSBaseViewController.m; sourceTree = "<group>"; };
 		72AC4E361C9CE805E05CBA08 /* Pods-QCNOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QCNOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-QCNOS/Pods-QCNOS.release.xcconfig"; sourceTree = "<group>"; };
 		770B36CB214B4D0700DF868F /* QCHotViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCHotViewController.h; sourceTree = "<group>"; };
 		770B36CC214B4D0700DF868F /* QCHotViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCHotViewController.m; sourceTree = "<group>"; };
@@ -254,6 +275,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09A48EC1215341D900131A6B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				09A48ED721535A0B00131A6B /* QCInvitaitionListModel.h */,
+				09A48ED821535A0B00131A6B /* QCInvitaitionListModel.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		09A48EC2215341E100131A6B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09A48EC3215345AF00131A6B /* QCInvitaitionFiltrateCell.h */,
+				09A48EC4215345AF00131A6B /* QCInvitaitionFiltrateCell.m */,
+				09A48EC5215345AF00131A6B /* QCInvitaitionFiltrateCell.xib */,
+				09A48EC82153498B00131A6B /* QCInvitaitionBaseListCell.h */,
+				09A48EC92153498B00131A6B /* QCInvitaitionBaseListCell.m */,
+				09A48ECA2153498B00131A6B /* QCInvitaitionBaseListCell.xib */,
+				09A48ECD2153591900131A6B /* QCInvitaitionChartCell.h */,
+				09A48ECE2153591900131A6B /* QCInvitaitionChartCell.m */,
+				09A48ECF2153591900131A6B /* QCInvitaitionChartCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		09A48EDA21535A9000131A6B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				09A48EDB21535AB800131A6B /* WTSBaseViewController.h */,
+				09A48EDC21535AB800131A6B /* WTSBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		542F55EB44A459014F3A71ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -586,6 +641,7 @@
 		7785FD67213CDDE6009EA6F2 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				09A48EDA21535A9000131A6B /* Base */,
 				77D1EF1A212D632B003D892D /* QCPrefixHeader.pch */,
 				77D1EF1E212D6418003D892D /* Define */,
 				77D1EF22212D64CB003D892D /* Category */,
@@ -740,6 +796,8 @@
 		77D8519021509A0200D57215 /* Invitation */ = {
 			isa = PBXGroup;
 			children = (
+				09A48EC2215341E100131A6B /* Views */,
+				09A48EC1215341D900131A6B /* Models */,
 				77D8519121509A1A00D57215 /* QCInvitationViewController.h */,
 				77D8519221509A1A00D57215 /* QCInvitationViewController.m */,
 			);
@@ -789,11 +847,12 @@
 				TargetAttributes = {
 					77D1EEFE212D602C003D892D = {
 						CreatedOnToolsVersion = 9.4;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = 77D1EEFA212D602C003D892D /* Build configuration list for PBXProject "QCNOS" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -816,7 +875,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				777084EA21537975005CEF76 /* QCScoreCell.xib in Resources */,
+				09A48ED12153591900131A6B /* QCInvitaitionChartCell.xib in Resources */,
 				777FDB1E212EA1AE007D80B8 /* imageFile.xcassets in Resources */,
+				09A48ECC2153498B00131A6B /* QCInvitaitionBaseListCell.xib in Resources */,
+				09A48EC7215345AF00131A6B /* QCInvitaitionFiltrateCell.xib in Resources */,
 				777FDB26212EB3A7007D80B8 /* QCRegisteredSuccessVC.xib in Resources */,
 				773F4DAA21378F82003EFF06 /* QCResetViewController.xib in Resources */,
 				77264D86213E245200B57B15 /* YJProgressHUD.bundle in Resources */,
@@ -852,6 +914,7 @@
 				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/TZImagePickerController/TZImagePickerController.framework",
 				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -863,6 +926,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TZImagePickerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -914,6 +978,7 @@
 				770B36CD214B4D0700DF868F /* QCHotViewController.m in Sources */,
 				777FDB17212E9991007D80B8 /* QCRegisteredLoadView.m in Sources */,
 				77D1EF04212D602C003D892D /* AppDelegate.m in Sources */,
+				09A48ECB2153498B00131A6B /* QCInvitaitionBaseListCell.m in Sources */,
 				773F4DA921378F82003EFF06 /* QCResetViewController.m in Sources */,
 				77D1EF2D212D64E8003D892D /* NSDate+Util.m in Sources */,
 				77D1EF35212D65B6003D892D /* UIView+Extension.m in Sources */,
@@ -931,6 +996,7 @@
 				777FDB21212EB388007D80B8 /* QCRegisteredSetVC.m in Sources */,
 				7785FD6B213D0B68009EA6F2 /* QCLoginViewModel.m in Sources */,
 				77D1EF2B212D64E8003D892D /* NullSafe.m in Sources */,
+				09A48ED02153591900131A6B /* QCInvitaitionChartCell.m in Sources */,
 				7785FD77213D2F61009EA6F2 /* AFURLSessionManager+SessionManager.m in Sources */,
 				77FA737A213D34A200B7DADB /* QCUserManager.m in Sources */,
 				777084BF215334AC005CEF76 /* QCShoppingDetailVC.m in Sources */,
@@ -944,18 +1010,21 @@
 				77264D8B213E5E5D00B57B15 /* NSURLRequest+National.m in Sources */,
 				777084E521535E33005CEF76 /* QCBlockView.m in Sources */,
 				777084DC21535DBF005CEF76 /* QCRecommendView.m in Sources */,
+				09A48EC6215345AF00131A6B /* QCInvitaitionFiltrateCell.m in Sources */,
 				777084D12153392E005CEF76 /* QCShoppingAddrssCell.m in Sources */,
 				77D1EF3A212D699D003D892D /* QCShoppingViewController.m in Sources */,
 				7785FD5B213CD45A009EA6F2 /* NSURLRequest+User.m in Sources */,
 				777FDB25212EB3A7007D80B8 /* QCRegisteredSuccessVC.m in Sources */,
 				773B69EC212FA7490049E9B1 /* QCGenderView.m in Sources */,
 				7785FD60213CD791009EA6F2 /* NSURLRequest+Message.m in Sources */,
+				09A48EDD21535AB800131A6B /* WTSBaseViewController.m in Sources */,
 				77264D80213E228200B57B15 /* NSDictionary+Log.m in Sources */,
 				77D1EF60212D7343003D892D /* QCError.m in Sources */,
 				7785FD74213D2F19009EA6F2 /* NSMutableURLRequest+Extension.m in Sources */,
 				77D1EF3D212D69B0003D892D /* QCInteractiveViewController.m in Sources */,
 				77D1EF2C212D64E8003D892D /* UIScrollView+EmptyDataSet.m in Sources */,
 				777084D62153395F005CEF76 /* QCShoppingPriceCell.m in Sources */,
+				09A48ED921535A0B00131A6B /* QCInvitaitionListModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1013,7 +1082,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1065,7 +1134,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1082,11 +1151,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = QCNOS/Support/QCPrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/QCNOS/Resource/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qcnos.QCNOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1103,11 +1169,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				GCC_PREFIX_HEADER = QCNOS/Support/QCPrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/QCNOS/Resource/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qcnos.QCNOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
