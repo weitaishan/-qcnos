@@ -1,0 +1,35 @@
+//
+//  QCPrefixHeader.pch
+//  QCNOS
+//
+//  Created by 量芯集团有限公司 on 2018/8/22.
+//  Copyright © 2018年 量芯集团有限公司. All rights reserved.
+//
+
+#ifndef QCPrefixHeader_pch
+#define QCPrefixHeader_pch
+
+#import "ToolMacro.h"
+#import "Colors.h"
+#import "QCDefine.h"
+
+#import "QCCategroiesHeader.h"
+#import "QCNetworkHeader.h"
+#import "QCUtilHeader.h"
+
+#import "YJProgressHUD.h"
+#import "QCImagePicker.h"
+
+
+//三方库相关
+#import "AFNetworking.h"
+#import "ReactiveCocoa.h"
+#import "Masonry.h"
+#import "YYModel.h"
+#import "MBProgressHUD.h"
+#import <MJRefresh/MJRefresh.h>
+#import "UIImageView+WebCache.h"
+#import "Realm.h"
+
+
+#endif /* QCPrefixHeader_pch */
