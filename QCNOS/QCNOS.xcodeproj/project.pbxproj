@@ -25,6 +25,11 @@
 		09A48F0E2153848700131A6B /* QCRecommendView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48F072153848700131A6B /* QCRecommendView.m */; };
 		09A48F0F2153848700131A6B /* QCScoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48F092153848700131A6B /* QCScoreCell.m */; };
 		09A48F102153848700131A6B /* QCScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48F0A2153848700131A6B /* QCScoreCell.xib */; };
+		09A48F132153867A00131A6B /* CALayer+XibConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48F122153867A00131A6B /* CALayer+XibConfiguration.m */; };
+		09A48F1921538CD200131A6B /* QCPersonCenterListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48F1721538CD200131A6B /* QCPersonCenterListCell.m */; };
+		09A48F1A21538CD200131A6B /* QCPersonCenterListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48F1821538CD200131A6B /* QCPersonCenterListCell.xib */; };
+		09A48F1E21538D9300131A6B /* QCPersonCenterExitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48F1C21538D9300131A6B /* QCPersonCenterExitCell.m */; };
+		09A48F1F21538D9300131A6B /* QCPersonCenterExitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48F1D21538D9300131A6B /* QCPersonCenterExitCell.xib */; };
 		770B36CD214B4D0700DF868F /* QCHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 770B36CC214B4D0700DF868F /* QCHotViewController.m */; };
 		77264D80213E228200B57B15 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 77264D7F213E228200B57B15 /* NSDictionary+Log.m */; };
 		77264D86213E245200B57B15 /* YJProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 77264D83213E245200B57B15 /* YJProgressHUD.bundle */; };
@@ -132,6 +137,14 @@
 		09A48F082153848700131A6B /* QCScoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCScoreCell.h; sourceTree = "<group>"; };
 		09A48F092153848700131A6B /* QCScoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCScoreCell.m; sourceTree = "<group>"; };
 		09A48F0A2153848700131A6B /* QCScoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QCScoreCell.xib; sourceTree = "<group>"; };
+		09A48F112153867A00131A6B /* CALayer+XibConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+XibConfiguration.h"; sourceTree = "<group>"; };
+		09A48F122153867A00131A6B /* CALayer+XibConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+XibConfiguration.m"; sourceTree = "<group>"; };
+		09A48F1621538CD200131A6B /* QCPersonCenterListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCPersonCenterListCell.h; sourceTree = "<group>"; };
+		09A48F1721538CD200131A6B /* QCPersonCenterListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCPersonCenterListCell.m; sourceTree = "<group>"; };
+		09A48F1821538CD200131A6B /* QCPersonCenterListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCPersonCenterListCell.xib; sourceTree = "<group>"; };
+		09A48F1B21538D9300131A6B /* QCPersonCenterExitCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCPersonCenterExitCell.h; sourceTree = "<group>"; };
+		09A48F1C21538D9300131A6B /* QCPersonCenterExitCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCPersonCenterExitCell.m; sourceTree = "<group>"; };
+		09A48F1D21538D9300131A6B /* QCPersonCenterExitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCPersonCenterExitCell.xib; sourceTree = "<group>"; };
 		72AC4E361C9CE805E05CBA08 /* Pods-QCNOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QCNOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-QCNOS/Pods-QCNOS.release.xcconfig"; sourceTree = "<group>"; };
 		770B36CB214B4D0700DF868F /* QCHotViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCHotViewController.h; sourceTree = "<group>"; };
 		770B36CC214B4D0700DF868F /* QCHotViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCHotViewController.m; sourceTree = "<group>"; };
@@ -343,6 +356,26 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		09A48F1421538C0F00131A6B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		09A48F1521538C1400131A6B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				09A48F1621538CD200131A6B /* QCPersonCenterListCell.h */,
+				09A48F1721538CD200131A6B /* QCPersonCenterListCell.m */,
+				09A48F1821538CD200131A6B /* QCPersonCenterListCell.xib */,
+				09A48F1B21538D9300131A6B /* QCPersonCenterExitCell.h */,
+				09A48F1C21538D9300131A6B /* QCPersonCenterExitCell.m */,
+				09A48F1D21538D9300131A6B /* QCPersonCenterExitCell.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		542F55EB44A459014F3A71ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,6 +446,8 @@
 		773C1FB42140D0E3007E20B3 /* PersonalCenter */ = {
 			isa = PBXGroup;
 			children = (
+				09A48F1521538C1400131A6B /* Views */,
+				09A48F1421538C0F00131A6B /* Models */,
 				7742133E2136746C003E44F6 /* QCPersonalCenterViewController.h */,
 				7742133F2136746C003E44F6 /* QCPersonalCenterViewController.m */,
 			);
@@ -783,6 +818,8 @@
 				774213472136A113003E44F6 /* UITextField+Util.m */,
 				77264D7E213E228200B57B15 /* NSDictionary+Log.h */,
 				77264D7F213E228200B57B15 /* NSDictionary+Log.m */,
+				09A48F112153867A00131A6B /* CALayer+XibConfiguration.h */,
+				09A48F122153867A00131A6B /* CALayer+XibConfiguration.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -895,6 +932,7 @@
 				09A48ED12153591900131A6B /* QCInvitaitionChartCell.xib in Resources */,
 				777FDB1E212EA1AE007D80B8 /* imageFile.xcassets in Resources */,
 				09A48ECC2153498B00131A6B /* QCInvitaitionBaseListCell.xib in Resources */,
+				09A48F1A21538CD200131A6B /* QCPersonCenterListCell.xib in Resources */,
 				09A48EC7215345AF00131A6B /* QCInvitaitionFiltrateCell.xib in Resources */,
 				777FDB26212EB3A7007D80B8 /* QCRegisteredSuccessVC.xib in Resources */,
 				09A48EE2215371B800131A6B /* QCInvitaitionDetailsCell.xib in Resources */,
@@ -910,6 +948,7 @@
 				777FDB0A212E8B4A007D80B8 /* QCRegisteredPhoneVC.xib in Resources */,
 				777FDB2B212EBB24007D80B8 /* QCRegisteredSetCell.xib in Resources */,
 				773F4DA521378662003EFF06 /* QCLoginViewController.xib in Resources */,
+				09A48F1F21538D9300131A6B /* QCPersonCenterExitCell.xib in Resources */,
 				777FDB14212E9508007D80B8 /* QCRegisteredValidationVC.xib in Resources */,
 				777084CD2153390A005CEF76 /* QCShoppingContentCell.xib in Resources */,
 				09A48F102153848700131A6B /* QCScoreCell.xib in Resources */,
@@ -987,10 +1026,12 @@
 				774213482136A113003E44F6 /* UITextField+Util.m in Sources */,
 				7785FD63213CD8A1009EA6F2 /* QCServerSwitch.m in Sources */,
 				77D1EF40212D69F7003D892D /* AppDelegateMain.m in Sources */,
+				09A48F1E21538D9300131A6B /* QCPersonCenterExitCell.m in Sources */,
 				77D1EF61212D7343003D892D /* QCURLSessionManager.m in Sources */,
 				77421344213679C6003E44F6 /* QCRegisteredVC.m in Sources */,
 				774213402136746C003E44F6 /* QCPersonalCenterViewController.m in Sources */,
 				772BC3E3214217AD00CC4BDE /* QCRegisteredNameViewModel.m in Sources */,
+				09A48F1921538CD200131A6B /* QCPersonCenterListCell.m in Sources */,
 				777FDB09212E8B4A007D80B8 /* QCRegisteredPhoneVC.m in Sources */,
 				77264D87213E245200B57B15 /* YJProgressHUD.m in Sources */,
 				770B36CD214B4D0700DF868F /* QCHotViewController.m in Sources */,
@@ -1020,6 +1061,7 @@
 				09A48ED02153591900131A6B /* QCInvitaitionChartCell.m in Sources */,
 				7785FD77213D2F61009EA6F2 /* AFURLSessionManager+SessionManager.m in Sources */,
 				77FA737A213D34A200B7DADB /* QCUserManager.m in Sources */,
+				09A48F132153867A00131A6B /* CALayer+XibConfiguration.m in Sources */,
 				09A48F0D2153848700131A6B /* QCQuestionView.m in Sources */,
 				777084BF215334AC005CEF76 /* QCShoppingDetailVC.m in Sources */,
 				09A48EE5215376BE00131A6B /* QCInvitationDetailsViewController.m in Sources */,

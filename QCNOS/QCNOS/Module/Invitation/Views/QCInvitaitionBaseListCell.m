@@ -33,11 +33,14 @@
         self.centerView.hidden = NO;
         self.footerView.hidden = YES;
 
+    }else{
+        
+        self.centerView.hidden = NO;
+        self.footerView.hidden = NO;
+    }
     }
     
-    self.centerView.hidden = NO;
-    self.footerView.hidden = NO;
-}
+    
 
 + (CGFloat)heightWithType:(NSInteger)type{
     
@@ -47,7 +50,7 @@
         
     }else if (type == 1){
         
-        return 208.f;
+        return 228.f;
         
     }
     
