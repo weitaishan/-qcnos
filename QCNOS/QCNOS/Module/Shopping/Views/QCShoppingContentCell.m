@@ -12,7 +12,10 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.typeLabel.backgroundColor = RGBA(235, 84, 5, 0.1);
+    self.typeLabel.textColor = RGBA(235, 84, 5, 1);
+    self.typeLabel.layer.cornerRadius = 3.f;
+    self.typeLabel.layer.masksToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

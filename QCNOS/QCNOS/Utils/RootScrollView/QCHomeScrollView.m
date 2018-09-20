@@ -41,13 +41,14 @@
     return _buttons;
 }
 
-- (instancetype)initWithTitles:(NSArray<NSString *> *)titles
+- (instancetype)initWithFrame:(CGRect)frame
+                       titles:(NSArray<NSString *> *)titles
                scrviewSubviews:(NSArray<UIView *> *)scrviewSubviews
                     titleColor:(UIColor *)titleColor
                    sliderColor:(UIColor *)sliderColor
                           font:(UIFont *)font
                   sliderHeight:(NSInteger)sliderHeight {
-    self = [super init];
+    self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
         self.titles = titles;
@@ -127,8 +128,8 @@
     self.bottomScrview = [[UIScrollView alloc]initWithFrame:CGRectMake(0,
                                                                        CGRectGetMaxY(self.topScrview.frame),
                                                                        SCREEN_WIDTH,
-                                                                       SCREEN_HEIGHT -
-                                                                    CGRectGetMaxY(self.topScrview.frame))];
+                                                                       CGRectGetHeight(self.frame) -
+                                                                       CGRectGetMaxY(self.topScrview.frame))];
     [self addSubview:self.bottomScrview];
     
     self.bottomScrview.delegate = self;
@@ -156,6 +157,14 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     if (scrollView == self.bottomScrview) {
         int i = self.bottomScrview.contentOffset.x / SCREEN_WIDTH;
+        
+        if ([self.delegate respondsToSelector:
+             @selector(homeScrollViewOnCilckButton:index:selectButton:)]) {
+            [self.delegate homeScrollViewOnCilckButton:self.buttons[i]
+                                                 index:i
+                                          selectButton:self.selectButton];
+        }
+        
         UIButton *btn = self.buttons[i];
         [self.selectButton setTitleColor:self.titleColor
                                 forState:UIControlStateNormal];

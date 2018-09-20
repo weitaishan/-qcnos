@@ -82,11 +82,11 @@
             <connections>
                 <outlet property="headerImageView" destination="dzh-OA-UeO" id="yPk-G9-Ul4"/>
                 <outlet property="hotLabel" destination="BR9-Il-ilq" id="MDI-i8-hnT"/>
-                <outlet property="imageView" destination="dzh-OA-UeO" id="nah-K0-opy"/>
                 <outlet property="scoreLabel" destination="7Io-hk-TEi" id="9gQ-EW-QGb"/>
                 <outlet property="titleLabel" destination="vJV-EA-v5w" id="1sD-84-UNU"/>
                 <outlet property="typeBtn" destination="0EK-rE-D4C" id="LDc-ir-t6Z"/>
             </connections>
+            <point key="canvasLocation" x="124" y="55"/>
         </tableViewCell>
     </objects>
 </document>

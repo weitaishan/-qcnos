@@ -1,21 +1,71 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="QCShoppingAddrssCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="51.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="海南省 三亚市 海棠区" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CvT-mZ-hMT">
+                        <rect key="frame" x="20" y="10" width="210" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="NfG-IK-x3H"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="海棠湾海棠北路36号亚特兰蒂斯酒店" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2H-48-NAp">
+                        <rect key="frame" x="20" y="28" width="215" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="13" id="SNg-F4-qOV"/>
+                            <constraint firstAttribute="height" constant="13" id="vzF-Rr-QYW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="距我10.3km" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYE-YH-7a4">
+                        <rect key="frame" x="245" y="18" width="70" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="909-0G-s83"/>
+                            <constraint firstAttribute="width" constant="70" id="To9-Tw-gcK"/>
+                            <constraint firstAttribute="height" constant="14" id="XmH-9W-pSa"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.64313725489999995" green="0.64313725489999995" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="a2H-48-NAp" firstAttribute="top" secondItem="CvT-mZ-hMT" secondAttribute="bottom" constant="5" id="2RW-yR-DqO"/>
+                    <constraint firstAttribute="trailing" secondItem="JYE-YH-7a4" secondAttribute="trailing" constant="5" id="MLs-6r-GFC"/>
+                    <constraint firstItem="JYE-YH-7a4" firstAttribute="leading" secondItem="CvT-mZ-hMT" secondAttribute="trailing" constant="15" id="QCv-Re-nTR"/>
+                    <constraint firstItem="CvT-mZ-hMT" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="TQD-HS-IJy"/>
+                    <constraint firstItem="JYE-YH-7a4" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VNW-D4-cez"/>
+                    <constraint firstItem="a2H-48-NAp" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="bFW-QM-VLN"/>
+                    <constraint firstItem="CvT-mZ-hMT" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="g4n-iK-mRY"/>
+                    <constraint firstItem="JYE-YH-7a4" firstAttribute="leading" secondItem="a2H-48-NAp" secondAttribute="trailing" constant="10" id="lpF-Ti-3vA"/>
+                </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="contentLabel" destination="a2H-48-NAp" id="Adj-fQ-wdh"/>
+                <outlet property="kmLabel" destination="JYE-YH-7a4" id="ghI-UT-nSg"/>
+                <outlet property="titleLabel" destination="CvT-mZ-hMT" id="r6e-SM-ABP"/>
+            </connections>
+            <point key="canvasLocation" x="-75" y="30"/>
         </tableViewCell>
     </objects>
 </document>

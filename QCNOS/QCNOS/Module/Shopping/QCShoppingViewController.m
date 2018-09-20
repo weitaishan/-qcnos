@@ -11,6 +11,7 @@
 #import "QCShoppingContentCell.h"
 #import "QCShoppingAddrssCell.h"
 #import "QCShoppingPriceCell.h"
+#import "QCShoppingDetailVC.h"
 
 @interface QCShoppingViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -111,12 +112,31 @@
     [self.tableView registerNib:[UINib nibWithNibName:@"QCShoppingTitleCell"
                                                bundle:nil]
          forCellReuseIdentifier:@"QCShoppingTitleCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"QCShoppingContentCell"
+                                               bundle:nil]
+         forCellReuseIdentifier:@"QCShoppingContentCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"QCShoppingAddrssCell"
+                                               bundle:nil]
+         forCellReuseIdentifier:@"QCShoppingAddrssCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"QCShoppingPriceCell"
+                                               bundle:nil]
+         forCellReuseIdentifier:@"QCShoppingPriceCell"];
 }
 
 #pragma mark UITableViewDelegate, UITableViewDataSource的回调方法
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 380;
+    switch (indexPath.row) {
+        case 0:
+            return 70;
+        case 1:
+            return 218;
+        case 2:
+            return 52;
+        case 3:
+            return 38;
+    }
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -130,34 +150,60 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.row) {
         case 0:
-            
-            break;
+        {
+            QCShoppingTitleCell *cell =
+            [tableView dequeueReusableCellWithIdentifier:@"QCShoppingTitleCell"
+                                            forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.headerImageView.backgroundColor = [UIColor redColor];
+            return cell;
+        }
         case 1:
-            
-            break;
+        {
+            QCShoppingContentCell *cell =
+            [tableView dequeueReusableCellWithIdentifier:@"QCShoppingContentCell"
+                                            forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.iconImgView.backgroundColor = [UIColor redColor];
+            cell.leftImageView.backgroundColor = [UIColor redColor];
+            cell.centerImageView.backgroundColor = [UIColor redColor];
+            cell.rightImageView.backgroundColor = [UIColor redColor];
+            return cell;
+        }
         case 2:
-            
-            break;
+        {
+            QCShoppingAddrssCell *cell =
+            [tableView dequeueReusableCellWithIdentifier:@"QCShoppingAddrssCell"
+                                            forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            return cell;
+        }
         case 3:
-            
-            break;
+        {
+            QCShoppingPriceCell *cell =
+            [tableView dequeueReusableCellWithIdentifier:@"QCShoppingPriceCell"
+                                            forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            return cell;
+        }
     }
-    NSString *identifier = @"SHPersonalViewController";
+    NSString *identifier = @"defaultIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
                                       reuseIdentifier:identifier];
     }
-    [cell.contentView removeAllSubviews];
-    cell.textLabel.font = Font(17);
-    cell.textLabel.textColor = RGBA(31, 32, 34, 1);
     cell.accessoryType = UITableViewCellAccessoryNone;
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    QCShoppingDetailVC *detailVC = [[QCShoppingDetailVC alloc] init];
+    detailVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 
 #pragma mark headerAndFooter

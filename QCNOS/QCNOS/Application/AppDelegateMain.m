@@ -78,7 +78,7 @@
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     [UITabBar appearance].translucent = NO;
     
-    [UINavigationBar appearance].tintColor = RGBA(52, 52, 52, 1);
+    [UINavigationBar appearance].tintColor = [UIColor whiteColor];
     CGSize imageSize = CGSizeMake(10, 10);
     UIGraphicsBeginImageContextWithOptions(imageSize, 0, [UIScreen mainScreen].scale);
     
@@ -88,7 +88,7 @@
     UIGraphicsEndImageContext();
     [[UINavigationBar appearance] setBackgroundImage:img forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
-    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-100, 0)
                                                          forBarMetrics:UIBarMetricsDefault];
 
     NSMutableDictionary * textDic = [NSMutableDictionary dictionary];

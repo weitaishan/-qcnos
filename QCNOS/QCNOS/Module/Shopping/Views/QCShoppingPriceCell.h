@@ -10,4 +10,10 @@
 
 @interface QCShoppingPriceCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIButton *numberBtn;
+
+@property (weak, nonatomic) IBOutlet UIButton *moneBtn;
+
+@property (weak, nonatomic) IBOutlet UILabel *label;
+
 @end

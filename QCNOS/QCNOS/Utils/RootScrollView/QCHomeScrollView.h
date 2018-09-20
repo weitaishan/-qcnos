@@ -27,11 +27,12 @@
 
 @property (nonatomic, weak) id<QCHomeScrollViewDelegate> delegate;
 
-- (instancetype)initWithTitles:(NSArray<NSString *> *)titles
-               scrviewSubviews:(NSArray<UIView *> *)scrviewSubviews
-                    titleColor:(UIColor *)titleColor
-                   sliderColor:(UIColor *)sliderColor
-                          font:(UIFont *)font
-                  sliderHeight:(NSInteger)sliderHeight;
+- (instancetype)initWithFrame:(CGRect)frame
+                       titles:(NSArray<NSString *> *)titles
+              scrviewSubviews:(NSArray<UIView *> *)scrviewSubviews
+                   titleColor:(UIColor *)titleColor
+                  sliderColor:(UIColor *)sliderColor
+                         font:(UIFont *)font
+                 sliderHeight:(NSInteger)sliderHeight;
 
 @end

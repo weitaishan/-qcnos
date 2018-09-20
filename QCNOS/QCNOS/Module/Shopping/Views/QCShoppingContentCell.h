@@ -10,4 +10,22 @@
 
 @interface QCShoppingContentCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *iconImgView;
+
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *leftImageView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *centerImageView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *rightImageView;
+
 @end

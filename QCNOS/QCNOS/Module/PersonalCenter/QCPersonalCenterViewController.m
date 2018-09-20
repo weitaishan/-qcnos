@@ -18,14 +18,14 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self loadNavigationWithColor:k_Color_Main_Navigation];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self loadNavigationWithColor:[UIColor whiteColor]];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
 }
+
 
 - (void)loadNavigationWithColor:(UIColor *)color {
     CGSize imageSize = CGSizeMake(10, 10);
