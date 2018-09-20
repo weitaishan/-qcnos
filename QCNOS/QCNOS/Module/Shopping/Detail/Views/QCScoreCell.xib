@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="QCScoreCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="35"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="34.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QE0-ao-2ZL">
+                        <rect key="frame" x="20" y="10" width="18.5" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="jGx-ub-4tk"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="1" green="0.3411764705882353" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NqH-1Y-Se6">
+                        <rect key="frame" x="240" y="4" width="60" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="Puw-9e-MuY"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="12评论">
+                            <color key="titleColor" red="0.64313725490196072" green="0.64313725490196072" blue="0.64313725490196072" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ye2-E8-8ri">
+                        <rect key="frame" x="170" y="5" width="60" height="26"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="60" id="EQ5-f2-5z1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="2转发">
+                            <color key="titleColor" red="0.64313725489999995" green="0.64313725489999995" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PYI-6j-SKV">
+                        <rect key="frame" x="48.5" y="9.5" width="75" height="16"/>
+                        <color key="backgroundColor" red="0.86274509799999999" green="0.078431372550000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="75" id="GcX-hl-IsZ"/>
+                            <constraint firstAttribute="height" constant="16" id="dJO-l4-Zjr"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="QE0-ao-2ZL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8Zc-12-LRY"/>
+                    <constraint firstItem="ye2-E8-8ri" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="CYa-gd-cMg"/>
+                    <constraint firstItem="NqH-1Y-Se6" firstAttribute="leading" secondItem="ye2-E8-8ri" secondAttribute="trailing" constant="10" id="NIm-73-bIA"/>
+                    <constraint firstItem="QE0-ao-2ZL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="O6c-I9-M25"/>
+                    <constraint firstAttribute="trailing" secondItem="NqH-1Y-Se6" secondAttribute="trailing" constant="20" id="XZv-d5-pxA"/>
+                    <constraint firstItem="PYI-6j-SKV" firstAttribute="leading" secondItem="QE0-ao-2ZL" secondAttribute="trailing" constant="10" id="Yqi-MG-vpU"/>
+                    <constraint firstItem="NqH-1Y-Se6" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eQb-pa-1HW"/>
+                    <constraint firstItem="PYI-6j-SKV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="kl5-Ni-V4L"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="commentBtn" destination="NqH-1Y-Se6" id="wBK-7a-Agi"/>
+                <outlet property="forwardingBtn" destination="ye2-E8-8ri" id="JdU-Ii-sf7"/>
+                <outlet property="scoreLabel" destination="QE0-ao-2ZL" id="lr8-7B-lMW"/>
+                <outlet property="scoreView" destination="PYI-6j-SKV" id="bIx-fU-RLv"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="51.5"/>
+        </tableViewCell>
+    </objects>
+</document>
