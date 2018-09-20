@@ -15,6 +15,10 @@
 		09A48ED12153591900131A6B /* QCInvitaitionChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48ECF2153591900131A6B /* QCInvitaitionChartCell.xib */; };
 		09A48ED921535A0B00131A6B /* QCInvitaitionListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48ED821535A0B00131A6B /* QCInvitaitionListModel.m */; };
 		09A48EDD21535AB800131A6B /* WTSBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48EDC21535AB800131A6B /* WTSBaseViewController.m */; };
+		09A48EE1215371B800131A6B /* QCInvitaitionDetailsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48EDF215371B800131A6B /* QCInvitaitionDetailsCell.m */; };
+		09A48EE2215371B800131A6B /* QCInvitaitionDetailsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48EE0215371B800131A6B /* QCInvitaitionDetailsCell.xib */; };
+		09A48EE5215376BE00131A6B /* QCInvitationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48EE4215376BE00131A6B /* QCInvitationDetailsViewController.m */; };
+		09A48EE82153794600131A6B /* QCBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48EE72153794600131A6B /* QCBaseTableViewCell.m */; };
 		770B36CD214B4D0700DF868F /* QCHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 770B36CC214B4D0700DF868F /* QCHotViewController.m */; };
 		77264D80213E228200B57B15 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 77264D7F213E228200B57B15 /* NSDictionary+Log.m */; };
 		77264D86213E245200B57B15 /* YJProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 77264D83213E245200B57B15 /* YJProgressHUD.bundle */; };
@@ -110,6 +114,13 @@
 		09A48ED821535A0B00131A6B /* QCInvitaitionListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCInvitaitionListModel.m; sourceTree = "<group>"; };
 		09A48EDB21535AB800131A6B /* WTSBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTSBaseViewController.h; sourceTree = "<group>"; };
 		09A48EDC21535AB800131A6B /* WTSBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTSBaseViewController.m; sourceTree = "<group>"; };
+		09A48EDE215371B800131A6B /* QCInvitaitionDetailsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCInvitaitionDetailsCell.h; sourceTree = "<group>"; };
+		09A48EDF215371B800131A6B /* QCInvitaitionDetailsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCInvitaitionDetailsCell.m; sourceTree = "<group>"; };
+		09A48EE0215371B800131A6B /* QCInvitaitionDetailsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCInvitaitionDetailsCell.xib; sourceTree = "<group>"; };
+		09A48EE3215376BE00131A6B /* QCInvitationDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCInvitationDetailsViewController.h; sourceTree = "<group>"; };
+		09A48EE4215376BE00131A6B /* QCInvitationDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCInvitationDetailsViewController.m; sourceTree = "<group>"; };
+		09A48EE62153794600131A6B /* QCBaseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCBaseTableViewCell.h; sourceTree = "<group>"; };
+		09A48EE72153794600131A6B /* QCBaseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCBaseTableViewCell.m; sourceTree = "<group>"; };
 		72AC4E361C9CE805E05CBA08 /* Pods-QCNOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QCNOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-QCNOS/Pods-QCNOS.release.xcconfig"; sourceTree = "<group>"; };
 		770B36CB214B4D0700DF868F /* QCHotViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCHotViewController.h; sourceTree = "<group>"; };
 		770B36CC214B4D0700DF868F /* QCHotViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCHotViewController.m; sourceTree = "<group>"; };
@@ -296,6 +307,9 @@
 				09A48ECD2153591900131A6B /* QCInvitaitionChartCell.h */,
 				09A48ECE2153591900131A6B /* QCInvitaitionChartCell.m */,
 				09A48ECF2153591900131A6B /* QCInvitaitionChartCell.xib */,
+				09A48EDE215371B800131A6B /* QCInvitaitionDetailsCell.h */,
+				09A48EDF215371B800131A6B /* QCInvitaitionDetailsCell.m */,
+				09A48EE0215371B800131A6B /* QCInvitaitionDetailsCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -305,6 +319,8 @@
 			children = (
 				09A48EDB21535AB800131A6B /* WTSBaseViewController.h */,
 				09A48EDC21535AB800131A6B /* WTSBaseViewController.m */,
+				09A48EE62153794600131A6B /* QCBaseTableViewCell.h */,
+				09A48EE72153794600131A6B /* QCBaseTableViewCell.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -800,6 +816,8 @@
 				09A48EC1215341D900131A6B /* Models */,
 				77D8519121509A1A00D57215 /* QCInvitationViewController.h */,
 				77D8519221509A1A00D57215 /* QCInvitationViewController.m */,
+				09A48EE3215376BE00131A6B /* QCInvitationDetailsViewController.h */,
+				09A48EE4215376BE00131A6B /* QCInvitationDetailsViewController.m */,
 			);
 			path = Invitation;
 			sourceTree = "<group>";
@@ -880,6 +898,7 @@
 				09A48ECC2153498B00131A6B /* QCInvitaitionBaseListCell.xib in Resources */,
 				09A48EC7215345AF00131A6B /* QCInvitaitionFiltrateCell.xib in Resources */,
 				777FDB26212EB3A7007D80B8 /* QCRegisteredSuccessVC.xib in Resources */,
+				09A48EE2215371B800131A6B /* QCInvitaitionDetailsCell.xib in Resources */,
 				773F4DAA21378F82003EFF06 /* QCResetViewController.xib in Resources */,
 				77264D86213E245200B57B15 /* YJProgressHUD.bundle in Resources */,
 				777084D22153392E005CEF76 /* QCShoppingAddrssCell.xib in Resources */,
@@ -961,6 +980,7 @@
 			files = (
 				773F4DA421378662003EFF06 /* QCLoginViewController.m in Sources */,
 				7765D0FB2137C3500049B4BA /* QCRegisteredModel.m in Sources */,
+				09A48EE82153794600131A6B /* QCBaseTableViewCell.m in Sources */,
 				77D1EF12212D602E003D892D /* main.m in Sources */,
 				77EFAAED213E6CBF00D2C565 /* QCNationTableViewCell.m in Sources */,
 				777FDB0E212E8B59007D80B8 /* QCRegisteredNameVC.m in Sources */,
@@ -996,10 +1016,12 @@
 				777FDB21212EB388007D80B8 /* QCRegisteredSetVC.m in Sources */,
 				7785FD6B213D0B68009EA6F2 /* QCLoginViewModel.m in Sources */,
 				77D1EF2B212D64E8003D892D /* NullSafe.m in Sources */,
+				09A48EE1215371B800131A6B /* QCInvitaitionDetailsCell.m in Sources */,
 				09A48ED02153591900131A6B /* QCInvitaitionChartCell.m in Sources */,
 				7785FD77213D2F61009EA6F2 /* AFURLSessionManager+SessionManager.m in Sources */,
 				77FA737A213D34A200B7DADB /* QCUserManager.m in Sources */,
 				777084BF215334AC005CEF76 /* QCShoppingDetailVC.m in Sources */,
+				09A48EE5215376BE00131A6B /* QCInvitationDetailsViewController.m in Sources */,
 				777FDB2A212EBB24007D80B8 /* QCRegisteredSetCell.m in Sources */,
 				773C1FC02141051D007E20B3 /* QCImagePicker.m in Sources */,
 				77EFAAF4213E84B900D2C565 /* QCResetModel.m in Sources */,

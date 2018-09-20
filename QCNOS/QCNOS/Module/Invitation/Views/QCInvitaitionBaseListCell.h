@@ -6,8 +6,8 @@
 //  Copyright © 2018年 量芯集团有限公司. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "QCBaseTableViewCell.h"
 
-@interface QCInvitaitionBaseListCell : UITableViewCell
+@interface QCInvitaitionBaseListCell : QCBaseTableViewCell
 
 @end
