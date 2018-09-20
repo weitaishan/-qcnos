@@ -66,6 +66,16 @@
 		777084D22153392E005CEF76 /* QCShoppingAddrssCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 777084D02153392E005CEF76 /* QCShoppingAddrssCell.xib */; };
 		777084D62153395F005CEF76 /* QCShoppingPriceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 777084D42153395F005CEF76 /* QCShoppingPriceCell.m */; };
 		777084D72153395F005CEF76 /* QCShoppingPriceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 777084D52153395F005CEF76 /* QCShoppingPriceCell.xib */; };
+		7772718D2153879B00269058 /* QCShoppingDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7772718B2153879B00269058 /* QCShoppingDetailCell.m */; };
+		7772718E2153879B00269058 /* QCShoppingDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7772718C2153879B00269058 /* QCShoppingDetailCell.xib */; };
+		7772719221538C5A00269058 /* QCCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7772719021538C5A00269058 /* QCCommentCell.m */; };
+		7772719321538C5A00269058 /* QCCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7772719121538C5A00269058 /* QCCommentCell.xib */; };
+		7772719A21538C9900269058 /* QCCommentContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7772719821538C9900269058 /* QCCommentContentCell.m */; };
+		7772719B21538C9900269058 /* QCCommentContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7772719921538C9900269058 /* QCCommentContentCell.xib */; };
+		7772719F2153959600269058 /* QCSelectBlockCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7772719D2153959600269058 /* QCSelectBlockCell.m */; };
+		777271A02153959600269058 /* QCSelectBlockCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7772719E2153959600269058 /* QCSelectBlockCell.xib */; };
+		777271A3215395B400269058 /* QCSelectBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 777271A2215395B400269058 /* QCSelectBlockViewController.m */; };
+		777271A621539EDC00269058 /* QCShopReleaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 777271A521539EDC00269058 /* QCShopReleaseViewController.m */; };
 		777FDB09212E8B4A007D80B8 /* QCRegisteredPhoneVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 777FDB07212E8B4A007D80B8 /* QCRegisteredPhoneVC.m */; };
 		777FDB0A212E8B4A007D80B8 /* QCRegisteredPhoneVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 777FDB08212E8B4A007D80B8 /* QCRegisteredPhoneVC.xib */; };
 		777FDB0E212E8B59007D80B8 /* QCRegisteredNameVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 777FDB0C212E8B59007D80B8 /* QCRegisteredNameVC.m */; };
@@ -215,6 +225,22 @@
 		777084D32153395F005CEF76 /* QCShoppingPriceCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCShoppingPriceCell.h; sourceTree = "<group>"; };
 		777084D42153395F005CEF76 /* QCShoppingPriceCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCShoppingPriceCell.m; sourceTree = "<group>"; };
 		777084D52153395F005CEF76 /* QCShoppingPriceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCShoppingPriceCell.xib; sourceTree = "<group>"; };
+		7772718A2153879B00269058 /* QCShoppingDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCShoppingDetailCell.h; sourceTree = "<group>"; };
+		7772718B2153879B00269058 /* QCShoppingDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCShoppingDetailCell.m; sourceTree = "<group>"; };
+		7772718C2153879B00269058 /* QCShoppingDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCShoppingDetailCell.xib; sourceTree = "<group>"; };
+		7772718F21538C5A00269058 /* QCCommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCCommentCell.h; sourceTree = "<group>"; };
+		7772719021538C5A00269058 /* QCCommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCCommentCell.m; sourceTree = "<group>"; };
+		7772719121538C5A00269058 /* QCCommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCCommentCell.xib; sourceTree = "<group>"; };
+		7772719721538C9900269058 /* QCCommentContentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCCommentContentCell.h; sourceTree = "<group>"; };
+		7772719821538C9900269058 /* QCCommentContentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCCommentContentCell.m; sourceTree = "<group>"; };
+		7772719921538C9900269058 /* QCCommentContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCCommentContentCell.xib; sourceTree = "<group>"; };
+		7772719C2153959600269058 /* QCSelectBlockCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCSelectBlockCell.h; sourceTree = "<group>"; };
+		7772719D2153959600269058 /* QCSelectBlockCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCSelectBlockCell.m; sourceTree = "<group>"; };
+		7772719E2153959600269058 /* QCSelectBlockCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCSelectBlockCell.xib; sourceTree = "<group>"; };
+		777271A1215395B400269058 /* QCSelectBlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCSelectBlockViewController.h; sourceTree = "<group>"; };
+		777271A2215395B400269058 /* QCSelectBlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCSelectBlockViewController.m; sourceTree = "<group>"; };
+		777271A421539EDC00269058 /* QCShopReleaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCShopReleaseViewController.h; sourceTree = "<group>"; };
+		777271A521539EDC00269058 /* QCShopReleaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCShopReleaseViewController.m; sourceTree = "<group>"; };
 		777FDB06212E8B4A007D80B8 /* QCRegisteredPhoneVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCRegisteredPhoneVC.h; sourceTree = "<group>"; };
 		777FDB07212E8B4A007D80B8 /* QCRegisteredPhoneVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCRegisteredPhoneVC.m; sourceTree = "<group>"; };
 		777FDB08212E8B4A007D80B8 /* QCRegisteredPhoneVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCRegisteredPhoneVC.xib; sourceTree = "<group>"; };
@@ -361,17 +387,26 @@
 		09A48EFF2153848700131A6B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				09A48F062153848700131A6B /* QCRecommendView.h */,
+				09A48F072153848700131A6B /* QCRecommendView.m */,
 				09A48F002153848700131A6B /* QCBlockView.h */,
 				09A48F012153848700131A6B /* QCBlockView.m */,
 				09A48F022153848700131A6B /* QCCustomerFlowView.h */,
 				09A48F032153848700131A6B /* QCCustomerFlowView.m */,
 				09A48F042153848700131A6B /* QCQuestionView.h */,
 				09A48F052153848700131A6B /* QCQuestionView.m */,
-				09A48F062153848700131A6B /* QCRecommendView.h */,
-				09A48F072153848700131A6B /* QCRecommendView.m */,
 				09A48F082153848700131A6B /* QCScoreCell.h */,
 				09A48F092153848700131A6B /* QCScoreCell.m */,
 				09A48F0A2153848700131A6B /* QCScoreCell.xib */,
+				7772718A2153879B00269058 /* QCShoppingDetailCell.h */,
+				7772718B2153879B00269058 /* QCShoppingDetailCell.m */,
+				7772718C2153879B00269058 /* QCShoppingDetailCell.xib */,
+				7772718F21538C5A00269058 /* QCCommentCell.h */,
+				7772719021538C5A00269058 /* QCCommentCell.m */,
+				7772719121538C5A00269058 /* QCCommentCell.xib */,
+				7772719721538C9900269058 /* QCCommentContentCell.h */,
+				7772719821538C9900269058 /* QCCommentContentCell.m */,
+				7772719921538C9900269058 /* QCCommentContentCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -423,6 +458,10 @@
 				777084C0215338BE005CEF76 /* Views */,
 				77D1EF38212D699D003D892D /* QCShoppingViewController.h */,
 				77D1EF39212D699D003D892D /* QCShoppingViewController.m */,
+				777271A1215395B400269058 /* QCSelectBlockViewController.h */,
+				777271A2215395B400269058 /* QCSelectBlockViewController.m */,
+				777271A421539EDC00269058 /* QCShopReleaseViewController.h */,
+				777271A521539EDC00269058 /* QCShopReleaseViewController.m */,
 			);
 			path = Shopping;
 			sourceTree = "<group>";
@@ -552,6 +591,9 @@
 		777084C0215338BE005CEF76 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7772719C2153959600269058 /* QCSelectBlockCell.h */,
+				7772719D2153959600269058 /* QCSelectBlockCell.m */,
+				7772719E2153959600269058 /* QCSelectBlockCell.xib */,
 				777084C4215338F8005CEF76 /* QCShoppingTitleCell.h */,
 				777084C5215338F8005CEF76 /* QCShoppingTitleCell.m */,
 				777084C6215338F8005CEF76 /* QCShoppingTitleCell.xib */,
@@ -963,17 +1005,20 @@
 			files = (
 				09A48ED12153591900131A6B /* QCInvitaitionChartCell.xib in Resources */,
 				777FDB1E212EA1AE007D80B8 /* imageFile.xcassets in Resources */,
+				777271A02153959600269058 /* QCSelectBlockCell.xib in Resources */,
 				09A48ECC2153498B00131A6B /* QCInvitaitionBaseListCell.xib in Resources */,
 				09A48F1A21538CD200131A6B /* QCPersonCenterListCell.xib in Resources */,
 				09A48EC7215345AF00131A6B /* QCInvitaitionFiltrateCell.xib in Resources */,
 				09A48F2421539D0200131A6B /* QCPersonNodeHeaderCell.xib in Resources */,
 				777FDB26212EB3A7007D80B8 /* QCRegisteredSuccessVC.xib in Resources */,
+				7772719321538C5A00269058 /* QCCommentCell.xib in Resources */,
 				09A48EE2215371B800131A6B /* QCInvitaitionDetailsCell.xib in Resources */,
 				773F4DAA21378F82003EFF06 /* QCResetViewController.xib in Resources */,
 				09A48F2921539D1600131A6B /* QCPersonNodeListCell.xib in Resources */,
 				77264D86213E245200B57B15 /* YJProgressHUD.bundle in Resources */,
 				777084D22153392E005CEF76 /* QCShoppingAddrssCell.xib in Resources */,
 				77D1EF0C212D602D003D892D /* Assets.xcassets in Resources */,
+				7772719B21538C9900269058 /* QCCommentContentCell.xib in Resources */,
 				777084C8215338F8005CEF76 /* QCShoppingTitleCell.xib in Resources */,
 				777084D72153395F005CEF76 /* QCShoppingPriceCell.xib in Resources */,
 				777FDB0F212E8B59007D80B8 /* QCRegisteredNameVC.xib in Resources */,
@@ -983,6 +1028,7 @@
 				777FDB0A212E8B4A007D80B8 /* QCRegisteredPhoneVC.xib in Resources */,
 				777FDB2B212EBB24007D80B8 /* QCRegisteredSetCell.xib in Resources */,
 				773F4DA521378662003EFF06 /* QCLoginViewController.xib in Resources */,
+				7772718E2153879B00269058 /* QCShoppingDetailCell.xib in Resources */,
 				09A48F1F21538D9300131A6B /* QCPersonCenterExitCell.xib in Resources */,
 				09A48F3321539D4F00131A6B /* QCPersonSelectNodeListCell.xib in Resources */,
 				777FDB14212E9508007D80B8 /* QCRegisteredValidationVC.xib in Resources */,
@@ -1057,9 +1103,11 @@
 				7765D0FB2137C3500049B4BA /* QCRegisteredModel.m in Sources */,
 				09A48EE82153794600131A6B /* QCBaseTableViewCell.m in Sources */,
 				77D1EF12212D602E003D892D /* main.m in Sources */,
+				777271A3215395B400269058 /* QCSelectBlockViewController.m in Sources */,
 				77EFAAED213E6CBF00D2C565 /* QCNationTableViewCell.m in Sources */,
 				777FDB0E212E8B59007D80B8 /* QCRegisteredNameVC.m in Sources */,
 				774213482136A113003E44F6 /* UITextField+Util.m in Sources */,
+				7772719221538C5A00269058 /* QCCommentCell.m in Sources */,
 				7785FD63213CD8A1009EA6F2 /* QCServerSwitch.m in Sources */,
 				77D1EF40212D69F7003D892D /* AppDelegateMain.m in Sources */,
 				09A48F1E21538D9300131A6B /* QCPersonCenterExitCell.m in Sources */,
@@ -1076,6 +1124,7 @@
 				09A48ECB2153498B00131A6B /* QCInvitaitionBaseListCell.m in Sources */,
 				09A48F0F2153848700131A6B /* QCScoreCell.m in Sources */,
 				773F4DA921378F82003EFF06 /* QCResetViewController.m in Sources */,
+				777271A621539EDC00269058 /* QCShopReleaseViewController.m in Sources */,
 				77D1EF2D212D64E8003D892D /* NSDate+Util.m in Sources */,
 				77D1EF35212D65B6003D892D /* UIView+Extension.m in Sources */,
 				773C1FB82140D1D6007E20B3 /* QCHomeScrollView.m in Sources */,
@@ -1087,9 +1136,11 @@
 				773C1FBC21410422007E20B3 /* NSURLRequest+Upload.m in Sources */,
 				77D1EF43212D6CDF003D892D /* Colours.m in Sources */,
 				777FDB1C212E9CB4007D80B8 /* LQPasswordView.m in Sources */,
+				7772719F2153959600269058 /* QCSelectBlockCell.m in Sources */,
 				77D8519321509A1A00D57215 /* QCInvitationViewController.m in Sources */,
 				09A48F0B2153848700131A6B /* QCBlockView.m in Sources */,
 				777084CC2153390A005CEF76 /* QCShoppingContentCell.m in Sources */,
+				7772718D2153879B00269058 /* QCShoppingDetailCell.m in Sources */,
 				777FDB13212E9508007D80B8 /* QCRegisteredValidationVC.m in Sources */,
 				777FDB21212EB388007D80B8 /* QCRegisteredSetVC.m in Sources */,
 				7785FD6B213D0B68009EA6F2 /* QCLoginViewModel.m in Sources */,
@@ -1097,6 +1148,7 @@
 				09A48EE1215371B800131A6B /* QCInvitaitionDetailsCell.m in Sources */,
 				09A48ED02153591900131A6B /* QCInvitaitionChartCell.m in Sources */,
 				7785FD77213D2F61009EA6F2 /* AFURLSessionManager+SessionManager.m in Sources */,
+				7772719A21538C9900269058 /* QCCommentContentCell.m in Sources */,
 				77FA737A213D34A200B7DADB /* QCUserManager.m in Sources */,
 				09A48F132153867A00131A6B /* CALayer+XibConfiguration.m in Sources */,
 				09A48F0D2153848700131A6B /* QCQuestionView.m in Sources */,

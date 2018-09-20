@@ -7,8 +7,13 @@
 //
 
 #import "QCRecommendView.h"
+#import "QCShoppingAddrssCell.h"
+#import "QCScoreCell.h"
+#import "QCShoppingDetailCell.h"
+#import "QCCommentCell.h"
+#import "QCCommentContentCell.h"
 
-@interface QCRecommendView ()<UITableViewDelegate, UITableViewDataSource>
+@interface QCRecommendView () <UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic, strong) UITableView *tableView;
 
@@ -73,25 +78,115 @@
         make.bottom.left.right.mas_equalTo(self);
         make.height.mas_equalTo(100);
     }];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"QCShoppingAddrssCell"
+                                               bundle:nil]
+         forCellReuseIdentifier:@"QCShoppingAddrssCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"QCScoreCell"
+                                               bundle:nil]
+         forCellReuseIdentifier:@"QCScoreCell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"QCShoppingDetailCell"
+                                               bundle:nil]
+         forCellReuseIdentifier:@"QCShoppingDetailCell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"QCCommentCell"
+                                               bundle:nil]
+         forCellReuseIdentifier:@"QCCommentCell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"QCCommentContentCell"
+                                               bundle:nil]
+         forCellReuseIdentifier:@"QCCommentContentCell"];
+    
 }
 
 #pragma mark UITableViewDelegate, UITableViewDataSource的回调方法
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == 0) {
-        return 80;
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:
+                return 500;
+            case 1:
+                return 52;
+            case 2:
+                return 35;
+        }
     }
-    return 50;
+    else {
+        if (indexPath.row == 0) {
+            return 75;
+        }
+        else {
+            return 180;
+        }
+    }
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        return 3;
+    }
+    else {
+        return 10;
+    }
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *identifier = @"SHPersonalViewController";
+    if (indexPath.section == 0) {
+        switch (indexPath.row) {
+            case 0:
+            {
+                QCShoppingDetailCell *cell =
+                [tableView dequeueReusableCellWithIdentifier:@"QCShoppingDetailCell"
+                                                forIndexPath:indexPath];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                return cell;
+            }
+            case 1:
+            {
+                QCShoppingAddrssCell *cell =
+                [tableView dequeueReusableCellWithIdentifier:@"QCShoppingAddrssCell"
+                                                forIndexPath:indexPath];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+                return cell;
+            }
+            case 2:
+            {
+                QCScoreCell *cell =
+                [tableView dequeueReusableCellWithIdentifier:@"QCScoreCell"
+                                                forIndexPath:indexPath];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
+                return cell;
+            }
+        }
+    }
+    else {
+        if (indexPath.row == 0) {
+            QCCommentCell *cell =
+            [tableView dequeueReusableCellWithIdentifier:@"QCCommentCell"
+                                            forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            return cell;
+        }
+        else {
+            QCCommentContentCell *cell =
+            [tableView dequeueReusableCellWithIdentifier:@"QCCommentContentCell"
+                                            forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.headerImgView.backgroundColor = [UIColor redColor];
+            return cell;
+        }
+    }
+   
+    NSString *identifier = @"defaultIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-    
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
                                       reuseIdentifier:identifier];
@@ -119,7 +214,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return 0.01;
+    return 5;
 }
 
 

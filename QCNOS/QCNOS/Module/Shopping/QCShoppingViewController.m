@@ -12,10 +12,13 @@
 #import "QCShoppingAddrssCell.h"
 #import "QCShoppingPriceCell.h"
 #import "QCShoppingDetailVC.h"
+#import "QCSelectBlockViewController.h"
 
 @interface QCShoppingViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property(nonatomic, strong) UITableView *tableView;
+
+@property(nonatomic, strong) UIButton *releaseBtn;
 
 @end
 
@@ -31,6 +34,26 @@
         _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     }
     return _tableView;
+}
+
+- (UIButton *)releaseBtn {
+    if (!_releaseBtn) {
+        _releaseBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _releaseBtn.backgroundColor = RGBA(252, 175, 65, 1);
+        _releaseBtn.titleLabel.font = Font(12.f);
+        _releaseBtn.titleLabel.numberOfLines = 0;
+        [_releaseBtn setTitle:@"选择\n区块" forState:0];
+        [_releaseBtn setTitleColor:[UIColor whiteColor] forState:0];
+        _releaseBtn.layer.masksToBounds = YES;
+        _releaseBtn.layer.cornerRadius = 45 / 2;
+        @weakify(self);
+        [[_releaseBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+            @strongify(self);
+            QCSelectBlockViewController *VC = [[QCSelectBlockViewController alloc] init];
+            [self.navigationController pushViewController:VC animated:YES];
+        }];
+    }
+    return _releaseBtn;
 }
 
 - (void)viewDidLoad {
@@ -107,6 +130,13 @@
     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.bottom.mas_equalTo(self.view);
+    }];
+    
+    [self.view addSubview:self.releaseBtn];
+    [self.releaseBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.mas_equalTo(self.view).offset(-25);
+        make.right.mas_equalTo(self.view).offset(-45);
+        make.width.height.mas_equalTo(45);
     }];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"QCShoppingTitleCell"
@@ -247,6 +277,25 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 0.01;
+}
+
+#pragma mark--实时监听滚动
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if (self.releaseBtn.superview) {
+        [self.releaseBtn removeFromSuperview];
+    }
+}
+
+#pragma mark--停止滚动
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    if (!self.releaseBtn.superview) {
+        [self.view addSubview:self.releaseBtn];
+        [self.releaseBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.mas_equalTo(self.view).offset(-25);
+            make.right.mas_equalTo(self.view).offset(-45);
+            make.width.height.mas_equalTo(45);
+        }];
+    }
 }
 
 #pragma mark -- 点击定位
