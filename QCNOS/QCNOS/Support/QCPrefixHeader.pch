@@ -12,6 +12,8 @@
 #import "ToolMacro.h"
 #import "Colors.h"
 #import "QCDefine.h"
+#import "AppDelegate.h"
+#import "QCSubmitButton.h"
 
 #import "QCCategroiesHeader.h"
 #import "QCNetworkHeader.h"
@@ -31,6 +33,6 @@
 #import <MJRefresh/MJRefresh.h>
 #import "UIImageView+WebCache.h"
 #import "Realm.h"
-
+#import <TZImagePickerController/TZImagePickerController.h>
 
 #endif /* QCPrefixHeader_pch */

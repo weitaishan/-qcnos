@@ -59,6 +59,7 @@
 //#define LOG_METHOD ;
 #endif
 
+#define APP_DELEGATE() ((AppDelegate*)[[UIApplication sharedApplication] delegate])
 
 
 #define WEAKSELF typeof(self) __weak weakSelf = self;
