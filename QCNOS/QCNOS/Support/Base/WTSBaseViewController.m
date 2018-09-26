@@ -181,6 +181,11 @@
     [self.view addSubview:_tableView];
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    return nil;
+}
+
 -(void)addTableViewWithFrame:(CGRect)frame{
     
     [self addBaseTableViewWithFrame:frame style:UITableViewStylePlain];
