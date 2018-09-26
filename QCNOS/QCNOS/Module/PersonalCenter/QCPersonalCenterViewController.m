@@ -11,6 +11,7 @@
 #import "QCPersonCenterListCell.h"
 #import "QCPersonCenterExitCell.h"
 #import "QCRegisteredSetCell.h"
+#import "QCUploadImageViewController.h"
 
 @interface QCPersonalCenterViewController ()
 
@@ -30,12 +31,12 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self loadNavigationWithColor:k_Color_Main_Navigation];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    [self loadNavigationWithColor:[UIColor whiteColor]];
+//    [self loadNavigationWithColor:[UIColor whiteColor]];
 }
 
 
@@ -108,24 +109,24 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
     [dic setValue:@"headPhoto" forKey:@"type"];
     
     //配置AF
-    AFHTTPSessionManager *manage = [AFHTTPSessionManager manager];
-    [manage.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-    manage.requestSerializer = [AFHTTPRequestSerializer serializer];
-    manage.responseSerializer = [AFHTTPResponseSerializer serializer];
-    
-    [manage POST:@"http://43.254.45.72:8888/file/upload/uploadImg" parameters:dic constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        formatter.dateFormat = @"yyyyMMddHHmmss";
-        NSString *fileName = [NSString stringWithFormat:@"%@.png",
-                              [formatter stringFromDate:[NSDate date]]];
-        [formData appendPartWithFileData:data_s name:@"fileData" fileName:fileName mimeType:@"image/jpeg"];
-    } progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
-        NSLog(@"%@", responseDic);
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-    }];
+//    AFHTTPSessionManager *manage = [AFHTTPSessionManager manager];
+//    [manage.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+//    manage.requestSerializer = [AFHTTPRequestSerializer serializer];
+//    manage.responseSerializer = [AFHTTPResponseSerializer serializer];
+//
+//    [manage POST:@"http://43.254.45.72:8888/file/upload/uploadImg" parameters:dic constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+//        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//        formatter.dateFormat = @"yyyyMMddHHmmss";
+//        NSString *fileName = [NSString stringWithFormat:@"%@.png",
+//                              [formatter stringFromDate:[NSDate date]]];
+//        [formData appendPartWithFileData:data_s name:@"fileData" fileName:fileName mimeType:@"image/jpeg"];
+//    } progress:^(NSProgress * _Nonnull uploadProgress) {
+//
+//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+//        NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
+//        NSLog(@"%@", responseDic);
+//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+//    }];
 }
 
 
@@ -230,6 +231,11 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    QCUploadImageViewController* vc = [[QCUploadImageViewController alloc] init];
+    
+    vc.hidesBottomBarWhenPushed = YES;
+    
+    [self.navigationController pushViewController:vc animated:YES];
    
 }
 #pragma mark - 懒加载

@@ -30,6 +30,21 @@
 		09A48F1A21538CD200131A6B /* QCPersonCenterListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48F1821538CD200131A6B /* QCPersonCenterListCell.xib */; };
 		09A48F1E21538D9300131A6B /* QCPersonCenterExitCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48F1C21538D9300131A6B /* QCPersonCenterExitCell.m */; };
 		09A48F1F21538D9300131A6B /* QCPersonCenterExitCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48F1D21538D9300131A6B /* QCPersonCenterExitCell.xib */; };
+		09A48F2321539D0200131A6B /* QCPersonNodeHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48F2121539D0200131A6B /* QCPersonNodeHeaderCell.m */; };
+		09A48F2421539D0200131A6B /* QCPersonNodeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48F2221539D0200131A6B /* QCPersonNodeHeaderCell.xib */; };
+		09A48F2821539D1600131A6B /* QCPersonNodeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48F2621539D1600131A6B /* QCPersonNodeListCell.m */; };
+		09A48F2921539D1600131A6B /* QCPersonNodeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48F2721539D1600131A6B /* QCPersonNodeListCell.xib */; };
+		09A48F2D21539D3A00131A6B /* QCPersonSelectNodeHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48F2B21539D3A00131A6B /* QCPersonSelectNodeHeaderCell.m */; };
+		09A48F2E21539D3A00131A6B /* QCPersonSelectNodeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48F2C21539D3A00131A6B /* QCPersonSelectNodeHeaderCell.xib */; };
+		09A48F3221539D4F00131A6B /* QCPersonSelectNodeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48F3021539D4F00131A6B /* QCPersonSelectNodeListCell.m */; };
+		09A48F3321539D4F00131A6B /* QCPersonSelectNodeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48F3121539D4F00131A6B /* QCPersonSelectNodeListCell.xib */; };
+		09A48F3621549C4800131A6B /* QCUploadImgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48F3421549C4800131A6B /* QCUploadImgView.m */; };
+		09A48F3A21549CAC00131A6B /* QCUploadImgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48F3821549CAB00131A6B /* QCUploadImgCell.m */; };
+		09A48F3B21549CAC00131A6B /* QCUploadImgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48F3921549CAB00131A6B /* QCUploadImgCell.xib */; };
+		09A48F3E2154CAB700131A6B /* QCUploadImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48F3D2154CAB700131A6B /* QCUploadImageViewController.m */; };
+		09A48F412154CCA900131A6B /* QCSubmitButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48F402154CCA900131A6B /* QCSubmitButton.m */; };
+		09A48F4A2154D08B00131A6B /* QCUploadDefalutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48F482154D08B00131A6B /* QCUploadDefalutCell.m */; };
+		09A48F4B2154D08B00131A6B /* QCUploadDefalutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48F492154D08B00131A6B /* QCUploadDefalutCell.xib */; };
 		770B36CD214B4D0700DF868F /* QCHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 770B36CC214B4D0700DF868F /* QCHotViewController.m */; };
 		77264D80213E228200B57B15 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 77264D7F213E228200B57B15 /* NSDictionary+Log.m */; };
 		77264D86213E245200B57B15 /* YJProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 77264D83213E245200B57B15 /* YJProgressHUD.bundle */; };
@@ -164,6 +179,30 @@
 		09A48F1B21538D9300131A6B /* QCPersonCenterExitCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCPersonCenterExitCell.h; sourceTree = "<group>"; };
 		09A48F1C21538D9300131A6B /* QCPersonCenterExitCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCPersonCenterExitCell.m; sourceTree = "<group>"; };
 		09A48F1D21538D9300131A6B /* QCPersonCenterExitCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCPersonCenterExitCell.xib; sourceTree = "<group>"; };
+		09A48F2021539D0200131A6B /* QCPersonNodeHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCPersonNodeHeaderCell.h; sourceTree = "<group>"; };
+		09A48F2121539D0200131A6B /* QCPersonNodeHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCPersonNodeHeaderCell.m; sourceTree = "<group>"; };
+		09A48F2221539D0200131A6B /* QCPersonNodeHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCPersonNodeHeaderCell.xib; sourceTree = "<group>"; };
+		09A48F2521539D1600131A6B /* QCPersonNodeListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCPersonNodeListCell.h; sourceTree = "<group>"; };
+		09A48F2621539D1600131A6B /* QCPersonNodeListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCPersonNodeListCell.m; sourceTree = "<group>"; };
+		09A48F2721539D1600131A6B /* QCPersonNodeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCPersonNodeListCell.xib; sourceTree = "<group>"; };
+		09A48F2A21539D3A00131A6B /* QCPersonSelectNodeHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCPersonSelectNodeHeaderCell.h; sourceTree = "<group>"; };
+		09A48F2B21539D3A00131A6B /* QCPersonSelectNodeHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCPersonSelectNodeHeaderCell.m; sourceTree = "<group>"; };
+		09A48F2C21539D3A00131A6B /* QCPersonSelectNodeHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCPersonSelectNodeHeaderCell.xib; sourceTree = "<group>"; };
+		09A48F2F21539D4F00131A6B /* QCPersonSelectNodeListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCPersonSelectNodeListCell.h; sourceTree = "<group>"; };
+		09A48F3021539D4F00131A6B /* QCPersonSelectNodeListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCPersonSelectNodeListCell.m; sourceTree = "<group>"; };
+		09A48F3121539D4F00131A6B /* QCPersonSelectNodeListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCPersonSelectNodeListCell.xib; sourceTree = "<group>"; };
+		09A48F3421549C4800131A6B /* QCUploadImgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCUploadImgView.m; sourceTree = "<group>"; };
+		09A48F3521549C4800131A6B /* QCUploadImgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCUploadImgView.h; sourceTree = "<group>"; };
+		09A48F3721549CAB00131A6B /* QCUploadImgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCUploadImgCell.h; sourceTree = "<group>"; };
+		09A48F3821549CAB00131A6B /* QCUploadImgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCUploadImgCell.m; sourceTree = "<group>"; };
+		09A48F3921549CAB00131A6B /* QCUploadImgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QCUploadImgCell.xib; sourceTree = "<group>"; };
+		09A48F3C2154CAB700131A6B /* QCUploadImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCUploadImageViewController.h; sourceTree = "<group>"; };
+		09A48F3D2154CAB700131A6B /* QCUploadImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCUploadImageViewController.m; sourceTree = "<group>"; };
+		09A48F3F2154CCA900131A6B /* QCSubmitButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCSubmitButton.h; sourceTree = "<group>"; };
+		09A48F402154CCA900131A6B /* QCSubmitButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCSubmitButton.m; sourceTree = "<group>"; };
+		09A48F472154D08B00131A6B /* QCUploadDefalutCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCUploadDefalutCell.h; sourceTree = "<group>"; };
+		09A48F482154D08B00131A6B /* QCUploadDefalutCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCUploadDefalutCell.m; sourceTree = "<group>"; };
+		09A48F492154D08B00131A6B /* QCUploadDefalutCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCUploadDefalutCell.xib; sourceTree = "<group>"; };
 		72AC4E361C9CE805E05CBA08 /* Pods-QCNOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QCNOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-QCNOS/Pods-QCNOS.release.xcconfig"; sourceTree = "<group>"; };
 		770B36CB214B4D0700DF868F /* QCHotViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCHotViewController.h; sourceTree = "<group>"; };
 		770B36CC214B4D0700DF868F /* QCHotViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCHotViewController.m; sourceTree = "<group>"; };
@@ -383,6 +422,8 @@
 				09A48EDC21535AB800131A6B /* WTSBaseViewController.m */,
 				09A48EE62153794600131A6B /* QCBaseTableViewCell.h */,
 				09A48EE72153794600131A6B /* QCBaseTableViewCell.m */,
+				09A48F3F2154CCA900131A6B /* QCSubmitButton.h */,
+				09A48F402154CCA900131A6B /* QCSubmitButton.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -433,12 +474,32 @@
 		09A48F1521538C1400131A6B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				09A48F3721549CAB00131A6B /* QCUploadImgCell.h */,
+				09A48F3821549CAB00131A6B /* QCUploadImgCell.m */,
+				09A48F3921549CAB00131A6B /* QCUploadImgCell.xib */,
+				09A48F3521549C4800131A6B /* QCUploadImgView.h */,
+				09A48F3421549C4800131A6B /* QCUploadImgView.m */,
 				09A48F1621538CD200131A6B /* QCPersonCenterListCell.h */,
 				09A48F1721538CD200131A6B /* QCPersonCenterListCell.m */,
 				09A48F1821538CD200131A6B /* QCPersonCenterListCell.xib */,
 				09A48F1B21538D9300131A6B /* QCPersonCenterExitCell.h */,
 				09A48F1C21538D9300131A6B /* QCPersonCenterExitCell.m */,
 				09A48F1D21538D9300131A6B /* QCPersonCenterExitCell.xib */,
+				09A48F2021539D0200131A6B /* QCPersonNodeHeaderCell.h */,
+				09A48F2121539D0200131A6B /* QCPersonNodeHeaderCell.m */,
+				09A48F2221539D0200131A6B /* QCPersonNodeHeaderCell.xib */,
+				09A48F2521539D1600131A6B /* QCPersonNodeListCell.h */,
+				09A48F2621539D1600131A6B /* QCPersonNodeListCell.m */,
+				09A48F2721539D1600131A6B /* QCPersonNodeListCell.xib */,
+				09A48F2A21539D3A00131A6B /* QCPersonSelectNodeHeaderCell.h */,
+				09A48F2B21539D3A00131A6B /* QCPersonSelectNodeHeaderCell.m */,
+				09A48F2C21539D3A00131A6B /* QCPersonSelectNodeHeaderCell.xib */,
+				09A48F2F21539D4F00131A6B /* QCPersonSelectNodeListCell.h */,
+				09A48F3021539D4F00131A6B /* QCPersonSelectNodeListCell.m */,
+				09A48F3121539D4F00131A6B /* QCPersonSelectNodeListCell.xib */,
+				09A48F472154D08B00131A6B /* QCUploadDefalutCell.h */,
+				09A48F482154D08B00131A6B /* QCUploadDefalutCell.m */,
+				09A48F492154D08B00131A6B /* QCUploadDefalutCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -521,6 +582,8 @@
 				09A48F1421538C0F00131A6B /* Models */,
 				7742133E2136746C003E44F6 /* QCPersonalCenterViewController.h */,
 				7742133F2136746C003E44F6 /* QCPersonalCenterViewController.m */,
+				09A48F3C2154CAB700131A6B /* QCUploadImageViewController.h */,
+				09A48F3D2154CAB700131A6B /* QCUploadImageViewController.m */,
 			);
 			path = PersonalCenter;
 			sourceTree = "<group>";
@@ -1015,11 +1078,14 @@
 				09A48F1A21538CD200131A6B /* QCPersonCenterListCell.xib in Resources */,
 				09A48EC7215345AF00131A6B /* QCInvitaitionFiltrateCell.xib in Resources */,
 				7751DEB5215496BD003EF205 /* QCBlockTitleCell.xib in Resources */,
+				09A48F2421539D0200131A6B /* QCPersonNodeHeaderCell.xib in Resources */,
 				777FDB26212EB3A7007D80B8 /* QCRegisteredSuccessVC.xib in Resources */,
 				7772719321538C5A00269058 /* QCCommentCell.xib in Resources */,
+				09A48F4B2154D08B00131A6B /* QCUploadDefalutCell.xib in Resources */,
 				09A48EE2215371B800131A6B /* QCInvitaitionDetailsCell.xib in Resources */,
 				773F4DAA21378F82003EFF06 /* QCResetViewController.xib in Resources */,
 				7751DEC52154D84D003EF205 /* QCUserScoreCell.xib in Resources */,
+				09A48F2921539D1600131A6B /* QCPersonNodeListCell.xib in Resources */,
 				77264D86213E245200B57B15 /* YJProgressHUD.bundle in Resources */,
 				777084D22153392E005CEF76 /* QCShoppingAddrssCell.xib in Resources */,
 				7751DEBA2154CEBA003EF205 /* QCShopReleaseCell.xib in Resources */,
@@ -1030,12 +1096,15 @@
 				777FDB0F212E8B59007D80B8 /* QCRegisteredNameVC.xib in Resources */,
 				77EFAAEE213E6CBF00D2C565 /* QCNationTableViewCell.xib in Resources */,
 				77421345213679C6003E44F6 /* QCRegisteredVC.xib in Resources */,
+				09A48F2E21539D3A00131A6B /* QCPersonSelectNodeHeaderCell.xib in Resources */,
+				09A48F3B21549CAC00131A6B /* QCUploadImgCell.xib in Resources */,
 				777FDB0A212E8B4A007D80B8 /* QCRegisteredPhoneVC.xib in Resources */,
 				777FDB2B212EBB24007D80B8 /* QCRegisteredSetCell.xib in Resources */,
 				773F4DA521378662003EFF06 /* QCLoginViewController.xib in Resources */,
 				7772718E2153879B00269058 /* QCShoppingDetailCell.xib in Resources */,
 				09A48F1F21538D9300131A6B /* QCPersonCenterExitCell.xib in Resources */,
 				7751DECA2154D867003EF205 /* QCUserScoreInputCell.xib in Resources */,
+				09A48F3321539D4F00131A6B /* QCPersonSelectNodeListCell.xib in Resources */,
 				777FDB14212E9508007D80B8 /* QCRegisteredValidationVC.xib in Resources */,
 				777084CD2153390A005CEF76 /* QCShoppingContentCell.xib in Resources */,
 				09A48F102153848700131A6B /* QCScoreCell.xib in Resources */,
@@ -1105,6 +1174,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				773F4DA421378662003EFF06 /* QCLoginViewController.m in Sources */,
+				09A48F4A2154D08B00131A6B /* QCUploadDefalutCell.m in Sources */,
 				7765D0FB2137C3500049B4BA /* QCRegisteredModel.m in Sources */,
 				7751DEC92154D867003EF205 /* QCUserScoreInputCell.m in Sources */,
 				09A48EE82153794600131A6B /* QCBaseTableViewCell.m in Sources */,
@@ -1116,6 +1186,7 @@
 				7772719221538C5A00269058 /* QCCommentCell.m in Sources */,
 				7785FD63213CD8A1009EA6F2 /* QCServerSwitch.m in Sources */,
 				77D1EF40212D69F7003D892D /* AppDelegateMain.m in Sources */,
+				09A48F3E2154CAB700131A6B /* QCUploadImageViewController.m in Sources */,
 				09A48F1E21538D9300131A6B /* QCPersonCenterExitCell.m in Sources */,
 				77D1EF61212D7343003D892D /* QCURLSessionManager.m in Sources */,
 				77421344213679C6003E44F6 /* QCRegisteredVC.m in Sources */,
@@ -1137,6 +1208,7 @@
 				7751DEB92154CEBA003EF205 /* QCShopReleaseCell.m in Sources */,
 				77EFAAE9213E6C9D00D2C565 /* QCNationVC.m in Sources */,
 				77D1EF36212D65B6003D892D /* NSDate+Extension.m in Sources */,
+				09A48F2821539D1600131A6B /* QCPersonNodeListCell.m in Sources */,
 				77EFAAF1213E6FAC00D2C565 /* QCNationModel.m in Sources */,
 				77D1EF2A212D64E8003D892D /* NSNull+WTSNatural.m in Sources */,
 				7751DEB4215496BD003EF205 /* QCBlockTitleCell.m in Sources */,
@@ -1146,6 +1218,7 @@
 				7772719F2153959600269058 /* QCSelectBlockCell.m in Sources */,
 				77D8519321509A1A00D57215 /* QCInvitationViewController.m in Sources */,
 				09A48F0B2153848700131A6B /* QCBlockView.m in Sources */,
+				09A48F3621549C4800131A6B /* QCUploadImgView.m in Sources */,
 				777084CC2153390A005CEF76 /* QCShoppingContentCell.m in Sources */,
 				7772718D2153879B00269058 /* QCShoppingDetailCell.m in Sources */,
 				777FDB13212E9508007D80B8 /* QCRegisteredValidationVC.m in Sources */,
@@ -1166,14 +1239,18 @@
 				77EFAAF4213E84B900D2C565 /* QCResetModel.m in Sources */,
 				7785FD71213D2BD9009EA6F2 /* AFHTTPRequestSerializer+Extension.m in Sources */,
 				777084C7215338F8005CEF76 /* QCShoppingTitleCell.m in Sources */,
+				09A48F2D21539D3A00131A6B /* QCPersonSelectNodeHeaderCell.m in Sources */,
 				77FA7381213D441100B7DADB /* QCUserInformation.m in Sources */,
 				77264D8B213E5E5D00B57B15 /* NSURLRequest+National.m in Sources */,
 				7751DEBD2154D360003EF205 /* QCUserScoreViewController.m in Sources */,
+				09A48F2321539D0200131A6B /* QCPersonNodeHeaderCell.m in Sources */,
 				09A48EC6215345AF00131A6B /* QCInvitaitionFiltrateCell.m in Sources */,
 				7751DEC42154D84D003EF205 /* QCUserScoreCell.m in Sources */,
 				777084D12153392E005CEF76 /* QCShoppingAddrssCell.m in Sources */,
+				09A48F3221539D4F00131A6B /* QCPersonSelectNodeListCell.m in Sources */,
 				77D1EF3A212D699D003D892D /* QCShoppingViewController.m in Sources */,
 				7785FD5B213CD45A009EA6F2 /* NSURLRequest+User.m in Sources */,
+				09A48F3A21549CAC00131A6B /* QCUploadImgCell.m in Sources */,
 				777FDB25212EB3A7007D80B8 /* QCRegisteredSuccessVC.m in Sources */,
 				773B69EC212FA7490049E9B1 /* QCGenderView.m in Sources */,
 				09A48F0E2153848700131A6B /* QCRecommendView.m in Sources */,
@@ -1183,6 +1260,7 @@
 				77D1EF60212D7343003D892D /* QCError.m in Sources */,
 				7785FD74213D2F19009EA6F2 /* NSMutableURLRequest+Extension.m in Sources */,
 				77D1EF3D212D69B0003D892D /* QCInteractiveViewController.m in Sources */,
+				09A48F412154CCA900131A6B /* QCSubmitButton.m in Sources */,
 				77D1EF2C212D64E8003D892D /* UIScrollView+EmptyDataSet.m in Sources */,
 				777084D62153395F005CEF76 /* QCShoppingPriceCell.m in Sources */,
 				09A48F0C2153848700131A6B /* QCCustomerFlowView.m in Sources */,
@@ -1311,6 +1389,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = QCNOS/Support/QCPrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/QCNOS/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1329,6 +1408,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = QCNOS/Support/QCPrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/QCNOS/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
