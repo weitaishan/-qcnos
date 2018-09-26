@@ -100,7 +100,7 @@
     UIImage *backImage = [UIImage imageNamed:@"navigation_back"];
     [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:backImage];
     
-    [[UITableView appearance] setSeparatorInset:UIEdgeInsetsMake(0, 15, 0, 15)];
+    [[UITableView appearance] setSeparatorInset:UIEdgeInsetsMake(0, 20, 0, 20)];
     [[UITableView appearance] setSeparatorColor:Color_Cell_Separator];
     if (IOS11_OR_LATER) {
         [UITableView appearance].estimatedRowHeight = 0;

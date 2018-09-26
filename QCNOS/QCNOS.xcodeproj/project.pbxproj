@@ -63,6 +63,15 @@
 		77421344213679C6003E44F6 /* QCRegisteredVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77421342213679C6003E44F6 /* QCRegisteredVC.m */; };
 		77421345213679C6003E44F6 /* QCRegisteredVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77421343213679C6003E44F6 /* QCRegisteredVC.xib */; };
 		774213482136A113003E44F6 /* UITextField+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 774213472136A113003E44F6 /* UITextField+Util.m */; };
+		7751DEB4215496BD003EF205 /* QCBlockTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7751DEB2215496BD003EF205 /* QCBlockTitleCell.m */; };
+		7751DEB5215496BD003EF205 /* QCBlockTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7751DEB3215496BD003EF205 /* QCBlockTitleCell.xib */; };
+		7751DEB92154CEBA003EF205 /* QCShopReleaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7751DEB72154CEBA003EF205 /* QCShopReleaseCell.m */; };
+		7751DEBA2154CEBA003EF205 /* QCShopReleaseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7751DEB82154CEBA003EF205 /* QCShopReleaseCell.xib */; };
+		7751DEBD2154D360003EF205 /* QCUserScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7751DEBC2154D360003EF205 /* QCUserScoreViewController.m */; };
+		7751DEC42154D84D003EF205 /* QCUserScoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7751DEC22154D84D003EF205 /* QCUserScoreCell.m */; };
+		7751DEC52154D84D003EF205 /* QCUserScoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7751DEC32154D84D003EF205 /* QCUserScoreCell.xib */; };
+		7751DEC92154D867003EF205 /* QCUserScoreInputCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7751DEC72154D867003EF205 /* QCUserScoreInputCell.m */; };
+		7751DECA2154D867003EF205 /* QCUserScoreInputCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7751DEC82154D867003EF205 /* QCUserScoreInputCell.xib */; };
 		7765D0FB2137C3500049B4BA /* QCRegisteredModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7765D0FA2137C3500049B4BA /* QCRegisteredModel.m */; };
 		777084BF215334AC005CEF76 /* QCShoppingDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 777084BE215334AC005CEF76 /* QCShoppingDetailVC.m */; };
 		777084C7215338F8005CEF76 /* QCShoppingTitleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 777084C5215338F8005CEF76 /* QCShoppingTitleCell.m */; };
@@ -228,6 +237,20 @@
 		77421343213679C6003E44F6 /* QCRegisteredVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCRegisteredVC.xib; sourceTree = "<group>"; };
 		774213462136A113003E44F6 /* UITextField+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+Util.h"; sourceTree = "<group>"; };
 		774213472136A113003E44F6 /* UITextField+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+Util.m"; sourceTree = "<group>"; };
+		7751DEB1215496BD003EF205 /* QCBlockTitleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCBlockTitleCell.h; sourceTree = "<group>"; };
+		7751DEB2215496BD003EF205 /* QCBlockTitleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCBlockTitleCell.m; sourceTree = "<group>"; };
+		7751DEB3215496BD003EF205 /* QCBlockTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCBlockTitleCell.xib; sourceTree = "<group>"; };
+		7751DEB62154CEBA003EF205 /* QCShopReleaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCShopReleaseCell.h; sourceTree = "<group>"; };
+		7751DEB72154CEBA003EF205 /* QCShopReleaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCShopReleaseCell.m; sourceTree = "<group>"; };
+		7751DEB82154CEBA003EF205 /* QCShopReleaseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCShopReleaseCell.xib; sourceTree = "<group>"; };
+		7751DEBB2154D360003EF205 /* QCUserScoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCUserScoreViewController.h; sourceTree = "<group>"; };
+		7751DEBC2154D360003EF205 /* QCUserScoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCUserScoreViewController.m; sourceTree = "<group>"; };
+		7751DEC12154D84D003EF205 /* QCUserScoreCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCUserScoreCell.h; sourceTree = "<group>"; };
+		7751DEC22154D84D003EF205 /* QCUserScoreCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCUserScoreCell.m; sourceTree = "<group>"; };
+		7751DEC32154D84D003EF205 /* QCUserScoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCUserScoreCell.xib; sourceTree = "<group>"; };
+		7751DEC62154D867003EF205 /* QCUserScoreInputCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCUserScoreInputCell.h; sourceTree = "<group>"; };
+		7751DEC72154D867003EF205 /* QCUserScoreInputCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCUserScoreInputCell.m; sourceTree = "<group>"; };
+		7751DEC82154D867003EF205 /* QCUserScoreInputCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCUserScoreInputCell.xib; sourceTree = "<group>"; };
 		7765D0F92137C3500049B4BA /* QCRegisteredModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCRegisteredModel.h; sourceTree = "<group>"; };
 		7765D0FA2137C3500049B4BA /* QCRegisteredModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCRegisteredModel.m; sourceTree = "<group>"; };
 		777084BD215334AC005CEF76 /* QCShoppingDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCShoppingDetailVC.h; sourceTree = "<group>"; };
@@ -410,12 +433,12 @@
 			children = (
 				09A48F062153848700131A6B /* QCRecommendView.h */,
 				09A48F072153848700131A6B /* QCRecommendView.m */,
-				09A48F002153848700131A6B /* QCBlockView.h */,
-				09A48F012153848700131A6B /* QCBlockView.m */,
-				09A48F022153848700131A6B /* QCCustomerFlowView.h */,
-				09A48F032153848700131A6B /* QCCustomerFlowView.m */,
 				09A48F042153848700131A6B /* QCQuestionView.h */,
 				09A48F052153848700131A6B /* QCQuestionView.m */,
+				09A48F022153848700131A6B /* QCCustomerFlowView.h */,
+				09A48F032153848700131A6B /* QCCustomerFlowView.m */,
+				09A48F002153848700131A6B /* QCBlockView.h */,
+				09A48F012153848700131A6B /* QCBlockView.m */,
 				09A48F082153848700131A6B /* QCScoreCell.h */,
 				09A48F092153848700131A6B /* QCScoreCell.m */,
 				09A48F0A2153848700131A6B /* QCScoreCell.xib */,
@@ -428,6 +451,15 @@
 				7772719721538C9900269058 /* QCCommentContentCell.h */,
 				7772719821538C9900269058 /* QCCommentContentCell.m */,
 				7772719921538C9900269058 /* QCCommentContentCell.xib */,
+				7751DEB1215496BD003EF205 /* QCBlockTitleCell.h */,
+				7751DEB2215496BD003EF205 /* QCBlockTitleCell.m */,
+				7751DEB3215496BD003EF205 /* QCBlockTitleCell.xib */,
+				7751DEC12154D84D003EF205 /* QCUserScoreCell.h */,
+				7751DEC22154D84D003EF205 /* QCUserScoreCell.m */,
+				7751DEC32154D84D003EF205 /* QCUserScoreCell.xib */,
+				7751DEC62154D867003EF205 /* QCUserScoreInputCell.h */,
+				7751DEC72154D867003EF205 /* QCUserScoreInputCell.m */,
+				7751DEC82154D867003EF205 /* QCUserScoreInputCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -637,6 +669,9 @@
 				777084D32153395F005CEF76 /* QCShoppingPriceCell.h */,
 				777084D42153395F005CEF76 /* QCShoppingPriceCell.m */,
 				777084D52153395F005CEF76 /* QCShoppingPriceCell.xib */,
+				7751DEB62154CEBA003EF205 /* QCShopReleaseCell.h */,
+				7751DEB72154CEBA003EF205 /* QCShopReleaseCell.m */,
+				7751DEB82154CEBA003EF205 /* QCShopReleaseCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -647,6 +682,8 @@
 				09A48EFF2153848700131A6B /* Views */,
 				777084BD215334AC005CEF76 /* QCShoppingDetailVC.h */,
 				777084BE215334AC005CEF76 /* QCShoppingDetailVC.m */,
+				7751DEBB2154D360003EF205 /* QCUserScoreViewController.h */,
+				7751DEBC2154D360003EF205 /* QCUserScoreViewController.m */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -1040,15 +1077,18 @@
 				09A48ECC2153498B00131A6B /* QCInvitaitionBaseListCell.xib in Resources */,
 				09A48F1A21538CD200131A6B /* QCPersonCenterListCell.xib in Resources */,
 				09A48EC7215345AF00131A6B /* QCInvitaitionFiltrateCell.xib in Resources */,
+				7751DEB5215496BD003EF205 /* QCBlockTitleCell.xib in Resources */,
 				09A48F2421539D0200131A6B /* QCPersonNodeHeaderCell.xib in Resources */,
 				777FDB26212EB3A7007D80B8 /* QCRegisteredSuccessVC.xib in Resources */,
 				7772719321538C5A00269058 /* QCCommentCell.xib in Resources */,
 				09A48F4B2154D08B00131A6B /* QCUploadDefalutCell.xib in Resources */,
 				09A48EE2215371B800131A6B /* QCInvitaitionDetailsCell.xib in Resources */,
 				773F4DAA21378F82003EFF06 /* QCResetViewController.xib in Resources */,
+				7751DEC52154D84D003EF205 /* QCUserScoreCell.xib in Resources */,
 				09A48F2921539D1600131A6B /* QCPersonNodeListCell.xib in Resources */,
 				77264D86213E245200B57B15 /* YJProgressHUD.bundle in Resources */,
 				777084D22153392E005CEF76 /* QCShoppingAddrssCell.xib in Resources */,
+				7751DEBA2154CEBA003EF205 /* QCShopReleaseCell.xib in Resources */,
 				77D1EF0C212D602D003D892D /* Assets.xcassets in Resources */,
 				7772719B21538C9900269058 /* QCCommentContentCell.xib in Resources */,
 				777084C8215338F8005CEF76 /* QCShoppingTitleCell.xib in Resources */,
@@ -1063,6 +1103,7 @@
 				773F4DA521378662003EFF06 /* QCLoginViewController.xib in Resources */,
 				7772718E2153879B00269058 /* QCShoppingDetailCell.xib in Resources */,
 				09A48F1F21538D9300131A6B /* QCPersonCenterExitCell.xib in Resources */,
+				7751DECA2154D867003EF205 /* QCUserScoreInputCell.xib in Resources */,
 				09A48F3321539D4F00131A6B /* QCPersonSelectNodeListCell.xib in Resources */,
 				777FDB14212E9508007D80B8 /* QCRegisteredValidationVC.xib in Resources */,
 				777084CD2153390A005CEF76 /* QCShoppingContentCell.xib in Resources */,
@@ -1135,6 +1176,7 @@
 				773F4DA421378662003EFF06 /* QCLoginViewController.m in Sources */,
 				09A48F4A2154D08B00131A6B /* QCUploadDefalutCell.m in Sources */,
 				7765D0FB2137C3500049B4BA /* QCRegisteredModel.m in Sources */,
+				7751DEC92154D867003EF205 /* QCUserScoreInputCell.m in Sources */,
 				09A48EE82153794600131A6B /* QCBaseTableViewCell.m in Sources */,
 				77D1EF12212D602E003D892D /* main.m in Sources */,
 				777271A3215395B400269058 /* QCSelectBlockViewController.m in Sources */,
@@ -1163,11 +1205,13 @@
 				77D1EF2D212D64E8003D892D /* NSDate+Util.m in Sources */,
 				77D1EF35212D65B6003D892D /* UIView+Extension.m in Sources */,
 				773C1FB82140D1D6007E20B3 /* QCHomeScrollView.m in Sources */,
+				7751DEB92154CEBA003EF205 /* QCShopReleaseCell.m in Sources */,
 				77EFAAE9213E6C9D00D2C565 /* QCNationVC.m in Sources */,
 				77D1EF36212D65B6003D892D /* NSDate+Extension.m in Sources */,
 				09A48F2821539D1600131A6B /* QCPersonNodeListCell.m in Sources */,
 				77EFAAF1213E6FAC00D2C565 /* QCNationModel.m in Sources */,
 				77D1EF2A212D64E8003D892D /* NSNull+WTSNatural.m in Sources */,
+				7751DEB4215496BD003EF205 /* QCBlockTitleCell.m in Sources */,
 				773C1FBC21410422007E20B3 /* NSURLRequest+Upload.m in Sources */,
 				77D1EF43212D6CDF003D892D /* Colours.m in Sources */,
 				777FDB1C212E9CB4007D80B8 /* LQPasswordView.m in Sources */,
@@ -1198,8 +1242,10 @@
 				09A48F2D21539D3A00131A6B /* QCPersonSelectNodeHeaderCell.m in Sources */,
 				77FA7381213D441100B7DADB /* QCUserInformation.m in Sources */,
 				77264D8B213E5E5D00B57B15 /* NSURLRequest+National.m in Sources */,
+				7751DEBD2154D360003EF205 /* QCUserScoreViewController.m in Sources */,
 				09A48F2321539D0200131A6B /* QCPersonNodeHeaderCell.m in Sources */,
 				09A48EC6215345AF00131A6B /* QCInvitaitionFiltrateCell.m in Sources */,
+				7751DEC42154D84D003EF205 /* QCUserScoreCell.m in Sources */,
 				777084D12153392E005CEF76 /* QCShoppingAddrssCell.m in Sources */,
 				09A48F3221539D4F00131A6B /* QCPersonSelectNodeListCell.m in Sources */,
 				77D1EF3A212D699D003D892D /* QCShoppingViewController.m in Sources */,
@@ -1343,6 +1389,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = QCNOS/Support/QCPrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/QCNOS/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1361,6 +1408,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = QCNOS/Support/QCPrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/QCNOS/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

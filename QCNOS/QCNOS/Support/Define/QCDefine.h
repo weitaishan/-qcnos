@@ -14,8 +14,9 @@
 
 #define k_Color_Text_Main    RGBA(76, 129, 239, 1)         //主调色
 
-#define k_Color_title    RGBA(52, 52, 52, 1)         //titleColor
+#define k_Color_Title    RGBA(52, 52, 52, 1)         //titleColor
 
+#define k_Color_Sub_Title    RGBA(164, 164, 164, 1)      //
 
 #define SERVER_SCHEME_AND_HOST_AND_PORT [QCServerSwitch serverSwith]
 

@@ -12,6 +12,7 @@
 #import "QCShoppingDetailCell.h"
 #import "QCCommentCell.h"
 #import "QCCommentContentCell.h"
+#import "QCUserScoreViewController.h"
 
 @interface QCRecommendView () <UITableViewDelegate, UITableViewDataSource>
 
@@ -300,6 +301,13 @@
     btn.backgroundColor = RGBA(254, 101, 53, 1);
     [btn setTitle:@"马上预约" forState:0];
     [btn setTitleColor:[UIColor whiteColor] forState:0];
+    
+    @weakify(self);
+    [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        @strongify(self);
+        QCUserScoreViewController *VC = [[QCUserScoreViewController alloc] init];
+        [self.viewController.navigationController pushViewController:VC animated:YES];
+    }];
     
     [bottomView addSubviews:@[label, contentLabel, btn]];
     

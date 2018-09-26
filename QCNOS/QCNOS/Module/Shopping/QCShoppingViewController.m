@@ -50,6 +50,7 @@
         [[_releaseBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
             @strongify(self);
             QCSelectBlockViewController *VC = [[QCSelectBlockViewController alloc] init];
+            VC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:VC animated:YES];
         }];
     }
@@ -252,7 +253,7 @@
         btn.frame = CGRectMake(width * idx, 0, width, 35);
         btn.titleLabel.font = Font(12.f);
         [btn setTitle:obj forState:0];
-        [btn setTitleColor:k_Color_title forState:0];
+        [btn setTitleColor:k_Color_Title forState:0];
         @weakify(self);
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
             @strongify(self);
