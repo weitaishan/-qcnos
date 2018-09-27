@@ -38,6 +38,7 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
     [super viewWillAppear:animated];
     [self loadNavigationWithColor:k_Color_Main_Navigation];
 //    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self getAllInfoRequest];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
