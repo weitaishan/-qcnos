@@ -98,6 +98,7 @@
         //登录成功保存用户的相关信息
         [QCUserManager userManagerSaveUserDataWithDictionary:data];
         [YJProgressHUD showSuccess:@"登录成功"];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     } failBlock:^(QCError *error) {
         [YJProgressHUD showError:error.localizedDescription];
     }];
