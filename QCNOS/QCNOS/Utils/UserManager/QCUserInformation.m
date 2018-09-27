@@ -8,6 +8,14 @@
 
 #import "QCUserInformation.h"
 
+@implementation QCUserInformationBankList
+
++ (NSDictionary<NSString *,id> *)modelCustomPropertyMapper {
+    return @{@"Id":@"id"};
+}
+
+@end
+
 @implementation QCUserInformation
 
 + (NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass{
@@ -15,11 +23,5 @@
              @"bankList" : [QCUserInformationBankList class]
              };
 }
-@end
 
-@implementation QCUserInformationBankList
-
-+ (NSDictionary<NSString *,id> *)modelCustomPropertyMapper{
-    return @{@"Id":@"id"};
-}
 @end

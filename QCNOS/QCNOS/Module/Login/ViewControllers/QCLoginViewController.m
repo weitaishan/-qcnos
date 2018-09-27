@@ -93,7 +93,8 @@
     params[@"mobileCode"] = @"86";
     NSURLRequest *request = [NSURLRequest userLoginWithParameters:params];
     [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
-        NSDictionary *data = responseObject[@"data"];
+        NSMutableDictionary *data = [responseObject[@"data"] mutableCopy];
+        data[@"bankList"] = @{};
         //登录成功保存用户的相关信息
         [QCUserManager userManagerSaveUserDataWithDictionary:data];
         [YJProgressHUD showSuccess:@"登录成功"];
