@@ -14,6 +14,7 @@
     QCUserManager *manager = [QCUserManager standardUserManager];
     NSString *token = manager.user.accessToken;
     if (token.length > 0) {
+        NSLog(@"accessToken = %@",token);
         [self addValue:token forHTTPHeaderField:@"accessToken"];
     }
     return self;

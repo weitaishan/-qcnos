@@ -11,6 +11,8 @@
 		09751BCA215CBD14002630AA /* QCDeployApplicationBlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BC9215CBD14002630AA /* QCDeployApplicationBlockViewController.m */; };
 		09751BCD215CC461002630AA /* QCPersonSelectNodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BCC215CC461002630AA /* QCPersonSelectNodeView.m */; };
 		09751BCF215CC46F002630AA /* QCPersonSelectNodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09751BCE215CC46F002630AA /* QCPersonSelectNodeView.xib */; };
+		09751BD2215CD9F4002630AA /* QCGetBlockType.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BD0215CD9F3002630AA /* QCGetBlockType.m */; };
+		09751BD5215CDA64002630AA /* QCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BD4215CDA64002630AA /* QCBaseModel.m */; };
 		09A48EC6215345AF00131A6B /* QCInvitaitionFiltrateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48EC4215345AF00131A6B /* QCInvitaitionFiltrateCell.m */; };
 		09A48EC7215345AF00131A6B /* QCInvitaitionFiltrateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48EC5215345AF00131A6B /* QCInvitaitionFiltrateCell.xib */; };
 		09A48ECB2153498B00131A6B /* QCInvitaitionBaseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48EC92153498B00131A6B /* QCInvitaitionBaseListCell.m */; };
@@ -153,6 +155,10 @@
 		09751BCB215CC461002630AA /* QCPersonSelectNodeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCPersonSelectNodeView.h; sourceTree = "<group>"; };
 		09751BCC215CC461002630AA /* QCPersonSelectNodeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCPersonSelectNodeView.m; sourceTree = "<group>"; };
 		09751BCE215CC46F002630AA /* QCPersonSelectNodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCPersonSelectNodeView.xib; sourceTree = "<group>"; };
+		09751BD0215CD9F3002630AA /* QCGetBlockType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCGetBlockType.m; sourceTree = "<group>"; };
+		09751BD1215CD9F3002630AA /* QCGetBlockType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCGetBlockType.h; sourceTree = "<group>"; };
+		09751BD3215CDA64002630AA /* QCBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCBaseModel.h; sourceTree = "<group>"; };
+		09751BD4215CDA64002630AA /* QCBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCBaseModel.m; sourceTree = "<group>"; };
 		09A48EC3215345AF00131A6B /* QCInvitaitionFiltrateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCInvitaitionFiltrateCell.h; sourceTree = "<group>"; };
 		09A48EC4215345AF00131A6B /* QCInvitaitionFiltrateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCInvitaitionFiltrateCell.m; sourceTree = "<group>"; };
 		09A48EC5215345AF00131A6B /* QCInvitaitionFiltrateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCInvitaitionFiltrateCell.xib; sourceTree = "<group>"; };
@@ -441,6 +447,8 @@
 				09A48EE72153794600131A6B /* QCBaseTableViewCell.m */,
 				09A48F3F2154CCA900131A6B /* QCSubmitButton.h */,
 				09A48F402154CCA900131A6B /* QCSubmitButton.m */,
+				09751BD3215CDA64002630AA /* QCBaseModel.h */,
+				09751BD4215CDA64002630AA /* QCBaseModel.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -484,6 +492,8 @@
 		09A48F1421538C0F00131A6B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				09751BD1215CD9F3002630AA /* QCGetBlockType.h */,
+				09751BD0215CD9F3002630AA /* QCGetBlockType.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1230,6 +1240,7 @@
 				774213402136746C003E44F6 /* QCPersonalCenterViewController.m in Sources */,
 				772BC3E3214217AD00CC4BDE /* QCRegisteredNameViewModel.m in Sources */,
 				09A48F1921538CD200131A6B /* QCPersonCenterListCell.m in Sources */,
+				09751BD5215CDA64002630AA /* QCBaseModel.m in Sources */,
 				777FDB09212E8B4A007D80B8 /* QCRegisteredPhoneVC.m in Sources */,
 				77264D87213E245200B57B15 /* YJProgressHUD.m in Sources */,
 				770B36CD214B4D0700DF868F /* QCHotViewController.m in Sources */,
@@ -1282,6 +1293,7 @@
 				777084C7215338F8005CEF76 /* QCShoppingTitleCell.m in Sources */,
 				09A48F2D21539D3A00131A6B /* QCPersonSelectNodeHeaderCell.m in Sources */,
 				77FA7381213D441100B7DADB /* QCUserInformation.m in Sources */,
+				09751BD2215CD9F4002630AA /* QCGetBlockType.m in Sources */,
 				77264D8B213E5E5D00B57B15 /* NSURLRequest+National.m in Sources */,
 				7751DEBD2154D360003EF205 /* QCUserScoreViewController.m in Sources */,
 				09A48F2321539D0200131A6B /* QCPersonNodeHeaderCell.m in Sources */,
