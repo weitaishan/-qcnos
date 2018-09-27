@@ -13,6 +13,9 @@
 #import "QCRegisteredSetCell.h"
 #import "QCUploadImageViewController.h"
 #import "QCUserInformation.h"
+#import "QCRegisteredSetVC.h"
+#import "QCCompanyModel.h"
+
 @interface QCPersonalCenterViewController ()
 
 @property (nonatomic, strong) NSMutableArray* listArray;
@@ -46,12 +49,17 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
  获取个人所有信息
  */
 - (void)getAllInfoRequest {
+    self.userInfo = [QCUserManager standardUserManager].user;
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     NSURLRequest *request = [NSURLRequest userGetAllInfoWithParameters:params];
     [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
         QCUserInformation *userInfo = [QCUserInformation yy_modelWithJSON:responseObject[@"data"]];
         
-        self.userInfo = userInfo;
+        if (userInfo) {
+            
+            self.userInfo = userInfo;
+
+        }
         
     } failBlock:^(QCError *error) {
         [YJProgressHUD showError:error.localizedDescription];
@@ -248,7 +256,16 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    if (indexPath.section == 3) {
+        QCRegisteredSetVC *VC = [[QCRegisteredSetVC alloc] init];
+        VC.companyModel = [[QCCompanyModel alloc] init];
+        VC.source = QCRegisteredSourceCompany;
+        VC.companyModel.mobile = self.userInfo.mobile;
+        VC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:VC
+                                             animated:YES];
+        return;
+    }
     QCUploadImageViewController* vc = [[QCUploadImageViewController alloc] init];
     
     vc.hidesBottomBarWhenPushed = YES;

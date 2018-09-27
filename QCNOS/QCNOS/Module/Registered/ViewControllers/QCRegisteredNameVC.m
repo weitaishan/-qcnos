@@ -12,6 +12,7 @@
 #import "QCRegisteredModel.h"
 #import "QCResetModel.h"
 #import "QCRegisteredNameViewModel.h"
+#import "QCCompanyModel.h"
 
 @interface QCRegisteredNameVC () <UITextFieldDelegate>
 
@@ -38,6 +39,10 @@
         if (self.type == QCRegisteredTypeInformation &&
             self.source == QCRegisteredSourceNone) { //注册的时候需要验证身份证号码是否存在
             [self validationIdNumberRequest];
+        }
+        else if (self.type == QCRegisteredTypeInformation &&
+                 self.source == QCRegisteredSourceCompany) {
+            [self validationIdCompanyRequest];
         }
         else {
             [self todealPushViewController];
@@ -407,7 +412,7 @@
                 self.resetModel.realName = string;
                 break;
             case QCRegisteredSourceCompany:
-                
+                self.companyModel.name = string;
                 break;
         }
     }
@@ -426,7 +431,7 @@
                 self.resetModel.idNumber = string;
                 break;
             case QCRegisteredSourceCompany:
-                
+                self.companyModel.creditCode = string;
                 break;
         }
     }
@@ -495,6 +500,16 @@
                 return NO;
             }
         }
+        if (self.source == QCRegisteredSourceCompany) {
+            if (self.companyModel.name.length == 0) {
+                [YJProgressHUD showMessage:@"法人实体不能为空"];
+                return NO;
+            }
+            if (self.companyModel.creditCode.length == 0) {
+                [YJProgressHUD showMessage:@"社会信用代码不能为空"];
+                return NO;
+            }
+        }
         else {
             if (self.model.realName.length == 0) {
                 [YJProgressHUD showMessage:@"真实姓名不能为空"];
@@ -551,13 +566,13 @@
                 QCRegisteredNameVC *VC = [[QCRegisteredNameVC alloc] init];
                 VC.type = QCRegisteredTypeNickname;
                 VC.source = self.source;
-                VC.model = self.model;
+                VC.companyModel = self.companyModel;
                 [self.navigationController pushViewController:VC animated:YES];
             }
             else if (self.type == QCRegisteredTypeNickname) {
                 QCRegisteredSuccessVC *VC = [[QCRegisteredSuccessVC alloc] init];
                 VC.source = self.source;
-                VC.resetModel = self.resetModel;
+                VC.companyModel = self.companyModel;
                 [self.navigationController pushViewController:VC animated:YES];
                 return;
             }
@@ -577,6 +592,21 @@
     } failBlock:^(QCError *error) {
         [YJProgressHUD showError:error.localizedDescription];
     }];
+}
+
+- (void)validationIdCompanyRequest {
+//    [YJProgressHUD showLoading:@"验证中..."];
+//    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+//    params[@"idNumber"] = self.companyModel.creditCode;
+//    NSURLRequest *request = [NSURLRequest userIsExistIdNumberWithParameters:params];
+//    [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
+//        [YJProgressHUD hideHUD];
+//    } failBlock:^(QCError *error) {
+//        [YJProgressHUD showError:error.localizedDescription];
+//    }];
+    
+    [self todealPushViewController];
+
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

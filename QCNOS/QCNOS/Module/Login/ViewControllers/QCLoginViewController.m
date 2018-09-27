@@ -12,6 +12,7 @@
 #import "QCLoginViewModel.h"
 #import "QCResetModel.h"
 #import "QCRegisteredModel.h"
+#import "QCNationVC.h"
 
 @interface QCLoginViewController () <UITextFieldDelegate>
 
@@ -99,6 +100,21 @@
     } failBlock:^(QCError *error) {
         [YJProgressHUD showError:error.localizedDescription];
     }];
+}
+
+//选择地区码默认+86
+- (IBAction)onCilckRegionButton:(UIButton *)sender {
+    QCNationVC *nationVC = [[QCNationVC alloc] init];
+    @weakify(self);
+    nationVC.block = ^(NSString *mobileCode,
+                       NSString *code,
+                       NSString *chineseName,
+                       NSString *chineseLanguage,
+                       NSString *languageDescription) {
+        @strongify(self);
+        
+    };
+    [self.navigationController pushViewController:nationVC animated:YES];
 }
 
 #pragma mark -- textFieldDelegate

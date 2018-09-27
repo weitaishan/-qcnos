@@ -49,6 +49,7 @@
 - (IBAction)onCilckRegistered:(UIButton *)sender {
     QCRegisteredSetVC *VC = [[QCRegisteredSetVC alloc] init];
     VC.model = [[QCRegisteredModel alloc] init];
+    VC.source = QCRegisteredSourceNone;
     [self.navigationController pushViewController:VC
                                          animated:YES];
 }

@@ -10,6 +10,8 @@
 #import "QCRegisteredSetCell.h"
 #import "QCRegisteredPhoneVC.h"
 #import "QCRegisteredModel.h"
+#import "QCRegisteredValidationVC.h"
+#import "QCCompanyModel.h"
 
 @interface QCRegisteredSetVC () <UITableViewDelegate, UITableViewDataSource>
 
@@ -69,14 +71,24 @@
     switch (indexPath.row) {
         case 0:
         {
-            [cell.cellSwitch setOn:self.model.pushStatus];
+            if (self.source == QCRegisteredSourceNone) {
+                [cell.cellSwitch setOn:self.model.pushStatus];
+            }
+            else {
+                [cell.cellSwitch setOn:self.companyModel.pushStatus];
+            }
             cell.titleLabel.text = @"广告推送";
             cell.contentLabel.text = @"开启后，你的个人节点将允许接受广告推送，有机会赚取广告令牌，也可发布个人广告业务";
             @weakify(self);
             [[[cell.cellSwitch rac_signalForControlEvents:UIControlEventValueChanged]
              takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id x) {
                 @strongify(self);
-                self.model.pushStatus = !self.model.pushStatus;
+                if (self.source == QCRegisteredSourceNone) {
+                    self.model.pushStatus = !self.model.pushStatus;
+                }
+                else {
+                    self.companyModel.pushStatus = !self.companyModel.pushStatus;
+                }
                 [self.tableView reloadRowsAtIndexPaths:@[indexPath]
                                       withRowAnimation:UITableViewRowAnimationAutomatic];
             }];
@@ -84,14 +96,24 @@
             break;
         case 1:
         {
-            [cell.cellSwitch setOn:self.model.gpsStatus];
+            if (self.source == QCRegisteredSourceNone) {
+                [cell.cellSwitch setOn:self.model.gpsStatus];
+            }
+            else {
+                [cell.cellSwitch setOn:self.companyModel.gpsStatus];
+            }
             cell.titleLabel.text = @"地理位置";
             cell.contentLabel.text = @"开启后，系统将自动定位你的当前位置，为你推送共识订单";
             @weakify(self);
             [[[cell.cellSwitch rac_signalForControlEvents:UIControlEventValueChanged]
               takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id x) {
                 @strongify(self);
-                self.model.gpsStatus = !self.model.gpsStatus;
+                if (self.source == QCRegisteredSourceNone) {
+                    self.model.gpsStatus = !self.model.gpsStatus;
+                }
+                else {
+                    self.companyModel.gpsStatus = !self.companyModel.gpsStatus;
+                }
                 [self.tableView reloadRowsAtIndexPaths:@[indexPath]
                                       withRowAnimation:UITableViewRowAnimationAutomatic];
             }];
@@ -99,7 +121,12 @@
             break;
         case 2:
         {
-            [cell.cellSwitch setOn:self.model.bankStatus];
+            if (self.source == QCRegisteredSourceNone) {
+                [cell.cellSwitch setOn:self.model.bankStatus];
+            }
+            else {
+                [cell.cellSwitch setOn:self.companyModel.bankStatus];
+            }
             cell.titleLabel.text = @"银行账号";
             cell.contentLabel.text = @"开启后，你的投资收益将自动汇入你的银行账号，你的消费结算将由第三方自动扣付";
             @weakify(self);
@@ -107,7 +134,12 @@
               takeUntil:cell.rac_prepareForReuseSignal]
              subscribeNext:^(id x) {
                 @strongify(self);
-                self.model.bankStatus = !self.model.bankStatus;
+                 if (self.source == QCRegisteredSourceNone) {
+                     self.model.bankStatus = !self.model.bankStatus;
+                 }
+                 else {
+                     self.companyModel.bankStatus = !self.companyModel.bankStatus;
+                 }
                 [self.tableView reloadRowsAtIndexPaths:@[indexPath]
                                       withRowAnimation:UITableViewRowAnimationAutomatic];
             }];
@@ -115,7 +147,12 @@
             break;
         case 3:
         {
-            [cell.cellSwitch setOn:self.model.aiStatus];
+            if (self.source == QCRegisteredSourceNone) {
+                [cell.cellSwitch setOn:self.model.aiStatus];
+            }
+            else {
+                [cell.cellSwitch setOn:self.companyModel.aiStatus];
+            }
             cell.titleLabel.text = @"量芯AI助手";
             cell.contentLabel.text = @"开启后，量芯AI助手将为你提供便捷服务，你可以抢先体验量芯服务，并优先抢单记账";
             @weakify(self);
@@ -123,7 +160,12 @@
               takeUntil:cell.rac_prepareForReuseSignal]
              subscribeNext:^(id x) {
                 @strongify(self);
-                self.model.aiStatus = !self.model.aiStatus;
+                 if (self.source == QCRegisteredSourceNone) {
+                     self.model.aiStatus = !self.model.aiStatus;
+                 }
+                 else {
+                     self.companyModel.aiStatus = !self.companyModel.aiStatus;
+                 }
                 [self.tableView reloadRowsAtIndexPaths:@[indexPath]
                                       withRowAnimation:UITableViewRowAnimationAutomatic];
             }];
@@ -191,9 +233,15 @@
     @weakify(self);
     [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self);
-        QCRegisteredPhoneVC *VC = [[QCRegisteredPhoneVC alloc] init];
-        VC.model = self.model;
-        [self.navigationController pushViewController:VC animated:YES];
+        if (self.source == QCRegisteredSourceNone) {
+            QCRegisteredPhoneVC *VC = [[QCRegisteredPhoneVC alloc] init];
+            VC.model = self.model;
+            [self.navigationController pushViewController:VC animated:YES];
+        }
+        else {
+            [self sendCodeRequest];
+        }
+        
     }];
     
     UILabel *subLabel = [[UILabel alloc] init];
@@ -231,6 +279,23 @@
     return 160;
 }
 
+- (void)sendCodeRequest {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    params[@"mobile"] = self.companyModel.mobile;
+    params[@"codeType"] = @"ADD_COMPANY"; //新增企业
+    params[@"mobileCode"] = self.companyModel.mobileCode;
+    NSURLRequest *request = [NSURLRequest messageSendCodeWithParameters:params];
+    [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
+        [YJProgressHUD showSuccess:@"短信发送成功"];
+        QCRegisteredValidationVC *validationVC = [[QCRegisteredValidationVC alloc] init];
+        validationVC.companyModel = self.companyModel;
+        validationVC.source = QCRegisteredSourceCompany;
+        validationVC.codeType = QCMessageCodeTypeAddCompany;
+        [self.navigationController pushViewController:validationVC animated:YES];
+    } failBlock:^(QCError *error) {
+        [YJProgressHUD showError:error.localizedDescription];
+    }];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
