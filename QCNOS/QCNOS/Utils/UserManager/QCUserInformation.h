@@ -7,8 +7,10 @@
 //
 
 #import <Realm/Realm.h>
-
 @class QCUserInformationBankList;
+
+RLM_ARRAY_TYPE(QCUserInformationBankList)
+
 @interface QCUserInformation : RLMObject
 
 @property (nonatomic) NSString *id;
@@ -61,9 +63,10 @@
 
 @property (nonatomic) BOOL aiStatus;    //AI助手
 
-@property (nonatomic, strong) RLMArray<QCUserInformationBankList *>* bankList;    //银行列表
+@property (nonatomic, strong) RLMArray<QCUserInformationBankList *><QCUserInformationBankList>* bankList;    //银行列表
 
 @end
+
 
 @interface QCUserInformationBankList : RLMObject
 
@@ -113,3 +116,4 @@
 @property (nonatomic, assign) NSInteger userId;
 
 @end
+
