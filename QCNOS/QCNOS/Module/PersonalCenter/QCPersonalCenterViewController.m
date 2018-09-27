@@ -15,6 +15,7 @@
 #import "QCUserInformation.h"
 #import "QCRegisteredSetVC.h"
 #import "QCCompanyModel.h"
+#import "QCDeployApplicationBlockViewController.h"
 
 @interface QCPersonalCenterViewController ()
 
@@ -256,21 +257,74 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 3) {
-        QCRegisteredSetVC *VC = [[QCRegisteredSetVC alloc] init];
-        VC.companyModel = [[QCCompanyModel alloc] init];
-        VC.source = QCRegisteredSourceCompany;
-        VC.companyModel.mobile = self.userInfo.mobile;
-        VC.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:VC
-                                             animated:YES];
-        return;
+    
+    switch (indexPath.section) {
+        case 0:{
+            
+            QCUploadImageViewController* vc = [[QCUploadImageViewController alloc] init];
+            
+            vc.hidesBottomBarWhenPushed = YES;
+            
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+            
+            break;
+            
+        case 1:{
+            
+            if (indexPath.row == 0) {
+                
+                
+            }else{
+                QCDeployApplicationBlockViewController* vc = [[QCDeployApplicationBlockViewController alloc] init];
+                
+                vc.hidesBottomBarWhenPushed = YES;
+                
+                [self.navigationController pushViewController:vc animated:YES];
+                
+            }
+        }
+            
+            break;
+            
+        case 2:{
+            
+            
+        }
+            
+            break;
+            
+        case 3:{
+            
+            QCRegisteredSetVC *VC = [[QCRegisteredSetVC alloc] init];
+            VC.companyModel = [[QCCompanyModel alloc] init];
+            VC.source = QCRegisteredSourceCompany;
+            VC.companyModel.mobile = self.userInfo.mobile;
+            VC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:VC
+                                                 animated:YES];
+        }
+            
+            break;
+            
+        case 4:{
+            
+            
+        }
+            
+            break;
+            
+        case 5:{
+            
+            
+        }
+            
+            break;
+            
+        default:
+            break;
     }
-    QCUploadImageViewController* vc = [[QCUploadImageViewController alloc] init];
     
-    vc.hidesBottomBarWhenPushed = YES;
-    
-    [self.navigationController pushViewController:vc animated:YES];
    
 }
 #pragma mark - 懒加载
