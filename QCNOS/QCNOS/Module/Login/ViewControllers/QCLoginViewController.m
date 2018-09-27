@@ -89,6 +89,7 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"mobile"] = self.userNameTextField.text;
     params[@"password"] = self.passwordTextField.text;
+    params[@"mobileCode"] = @"86";
     NSURLRequest *request = [NSURLRequest userLoginWithParameters:params];
     [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
         NSDictionary *data = responseObject[@"data"];

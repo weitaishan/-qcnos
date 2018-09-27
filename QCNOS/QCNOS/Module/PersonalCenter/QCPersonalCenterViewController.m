@@ -12,12 +12,14 @@
 #import "QCPersonCenterExitCell.h"
 #import "QCRegisteredSetCell.h"
 #import "QCUploadImageViewController.h"
-
+#import "QCUserInformation.h"
 @interface QCPersonalCenterViewController ()
 
 @property (nonatomic, strong) NSMutableArray* listArray;
 
 @property (nonatomic, strong) NSMutableArray* titleArray;
+
+@property (nonatomic, strong) QCUserInformation* userInfo;
 
 @end
 
@@ -39,6 +41,22 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
 //    [self loadNavigationWithColor:[UIColor whiteColor]];
 }
 
+
+/**
+ 获取个人所有信息
+ */
+- (void)getAllInfoRequest {
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    NSURLRequest *request = [NSURLRequest userGetAllInfoWithParameters:params];
+    [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
+        QCUserInformation *userInfo = [QCUserInformation yy_modelWithJSON:responseObject[@"data"]];
+        
+        self.userInfo = userInfo;
+        
+    } failBlock:^(QCError *error) {
+        [YJProgressHUD showError:error.localizedDescription];
+    }];
+}
 
 - (void)loadNavigationWithColor:(UIColor *)color {
     CGSize imageSize = CGSizeMake(10, 10);

@@ -28,11 +28,10 @@
 #import "AFNetworking.h"
 #import "ReactiveCocoa.h"
 #import "Masonry.h"
-#import "YYModel.h"
 #import "MBProgressHUD.h"
 #import <MJRefresh/MJRefresh.h>
 #import "UIImageView+WebCache.h"
 #import "Realm.h"
 #import <TZImagePickerController/TZImagePickerController.h>
-
+#import <YYModel/YYModel.h>
 #endif /* QCPrefixHeader_pch */

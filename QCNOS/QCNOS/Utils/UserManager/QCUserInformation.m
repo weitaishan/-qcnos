@@ -10,4 +10,16 @@
 
 @implementation QCUserInformation
 
++ (NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass{
+    return @{
+             @"bankList" : [QCUserInformationBankList class]
+             };
+}
+@end
+
+@implementation QCUserInformationBankList
+
++ (NSDictionary<NSString *,id> *)modelCustomPropertyMapper{
+    return @{@"Id":@"id"};
+}
 @end

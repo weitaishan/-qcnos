@@ -8,6 +8,7 @@
 
 #import <Realm/Realm.h>
 
+@class QCUserInformationBankList;
 @interface QCUserInformation : RLMObject
 
 @property (nonatomic) NSString *id;
@@ -59,5 +60,56 @@
 @property (nonatomic) BOOL pushStatus;  //广告推送
 
 @property (nonatomic) BOOL aiStatus;    //AI助手
+
+@property (nonatomic, strong) RLMArray<QCUserInformationBankList *>* bankList;    //银行列表
+
+@end
+
+@interface QCUserInformationBankList : RLMObject
+
+
+@property (nonatomic, copy) NSString *cardMobile;
+
+@property (nonatomic, copy) NSString *status;
+
+@property (nonatomic, copy) NSString *bankBranchName;
+
+@property (nonatomic, copy) NSString *avow;
+
+@property (nonatomic, assign) long long updateTime;
+
+@property (nonatomic, copy) NSString *bankCityName;
+
+@property (nonatomic, copy) NSString *cardEndTime;
+
+@property (nonatomic, copy) NSString *isDefault;
+
+@property (nonatomic, copy) NSString *bankProvinceName;
+
+@property (nonatomic, copy) NSString *cardType;
+
+@property (nonatomic, assign) NSInteger Id;
+
+@property (nonatomic, copy) NSString *createId;
+
+@property (nonatomic, copy) NSString *updateId;
+
+@property (nonatomic, copy) NSString *bankName;
+
+@property (nonatomic, copy) NSString *cardMobileCode;
+
+@property (nonatomic, copy) NSString *bankProvinceCode;
+
+@property (nonatomic, copy) NSString *bankCityCode;
+
+@property (nonatomic, assign) long long createTime;
+
+@property (nonatomic, copy) NSString *cardNo;
+
+@property (nonatomic, copy) NSString *cardStartTime;
+
+@property (nonatomic, copy) NSString *cardName;
+
+@property (nonatomic, assign) NSInteger userId;
 
 @end

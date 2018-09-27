@@ -28,4 +28,6 @@
 /** 退出登录接口 */
 + (NSURLRequest *)userLogoutWithParameters:(id)parameters;
 
+/** 获取个人所有信息 */
++ (NSURLRequest *)userGetAllInfoWithParameters:(id)parameters;
 @end

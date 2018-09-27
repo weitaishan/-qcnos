@@ -11,5 +11,4 @@
 
 #import "QCUserManager.h"
 
-
 #endif /* QCUtilHeader_h */

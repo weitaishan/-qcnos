@@ -82,7 +82,19 @@
     return request;
 }
 
-
+/** 获取个人所有信息 */
++ (NSURLRequest *)userGetAllInfoWithParameters:(id)parameters{
+    
+    AFHTTPRequestSerializer *serializer = [AFHTTPRequestSerializer defaultSerializer];
+    NSString *urlString = QCStringFormat(@"%@/getAllInfo", [self userServerUrlPathString]);
+    NSMutableURLRequest *request = [serializer requestWithMethod:@"POST"
+                                                       URLString:urlString
+                                                      parameters:parameters
+                                                           error:nil];
+    [request authorizedURLRequest];
+    return request;
+    
+}
 
 //user模块的服务器路径
 + (NSString *)userServerUrlPathString {
