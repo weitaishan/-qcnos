@@ -14,7 +14,7 @@
     QCUserManager *manger = [[QCUserManager alloc] init];
     RLMResults<QCUserInformation *> *results = [QCUserInformation allObjects];
     if (results.count > 0) {
-        manger.user = results.firstObject;
+        manger.user = results.lastObject;
     }
     return manger;
 }

@@ -15,6 +15,7 @@
                              successBlock:(DataTaskSuccessBlock)successBlock
                                 failBlock:(DataTaskFailBlock)failBlock {
     NSURLSessionDataTask *dataTask = [[AFURLSessionManager defaultAFURLSessionManager] dataTaskWithRequest:request completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        NSLog(@"responseObject == %@, error == %@", responseObject, error);
         if (error) {
             if (!response) {
                 QCError *networkError = [QCError standardError];

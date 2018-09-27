@@ -18,7 +18,13 @@
 
 @property (nonatomic, copy) NSString *name;
 
+@property (nonatomic, copy) NSString *shortName;
+
 @property (nonatomic, copy) NSString *logoPhoto;
+
+@property (nonatomic, copy) NSString *nodeType;
+
+@property (nonatomic, copy) NSString *nodeName;
 
 @property (nonatomic, copy) NSString *code;
 
