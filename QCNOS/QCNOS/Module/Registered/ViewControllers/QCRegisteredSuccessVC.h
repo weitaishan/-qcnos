@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "QCRegisteredHeader.h"
 
-@class QCRegisteredModel, QCResetModel;
+@class QCRegisteredModel, QCResetModel, QCCompanyModel;
 
 @interface QCRegisteredSuccessVC : UIViewController
 
@@ -18,5 +18,7 @@
 @property (nonatomic, strong) QCRegisteredModel *model;
 
 @property (nonatomic, strong) QCResetModel *resetModel;
+
+@property (nonatomic, strong) QCCompanyModel *companyModel;
 
 @end

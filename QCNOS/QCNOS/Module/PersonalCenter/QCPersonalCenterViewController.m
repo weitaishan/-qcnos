@@ -12,6 +12,8 @@
 #import "QCPersonCenterExitCell.h"
 #import "QCRegisteredSetCell.h"
 #import "QCUploadImageViewController.h"
+#import "QCRegisteredSetVC.h"
+#import "QCCompanyModel.h"
 
 @interface QCPersonalCenterViewController ()
 
@@ -230,7 +232,16 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    if (indexPath.section == 3) {
+        QCRegisteredSetVC *VC = [[QCRegisteredSetVC alloc] init];
+        VC.companyModel = [[QCCompanyModel alloc] init];
+        VC.source = QCRegisteredSourceCompany;
+        VC.companyModel.mobile = @"15528798998";
+        VC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:VC
+                                             animated:YES];
+        return;
+    }
     QCUploadImageViewController* vc = [[QCUploadImageViewController alloc] init];
     
     vc.hidesBottomBarWhenPushed = YES;

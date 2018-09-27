@@ -11,6 +11,7 @@
 #import "QCLoginViewController.h"
 #import "QCRegisteredModel.h"
 #import "QCResetModel.h"
+#import "QCCompanyModel.h"
 
 @interface QCRegisteredSuccessVC ()
 
@@ -77,6 +78,13 @@
 
 - (void)companyRegisteredRequest {
 #warning company registered
+    NSURLRequest *request = [NSURLRequest companyAddWithParameters:[self.companyModel yy_modelToJSONObject]];
+    [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
+        [self.rootView removeFromSuperview];
+    } failBlock:^(QCError *error) {
+        [self.navigationController popViewControllerAnimated:YES];
+        [YJProgressHUD showError:error.localizedDescription];
+    }];
 }
 
 - (IBAction)backMainViewController:(UIButton *)sender {

@@ -19,5 +19,6 @@
 #import "NSURLRequest+Message.h" //短信相关接口
 #import "NSURLRequest+National.h" //获取国家地区相关
 #import "NSURLRequest+Upload.h"   //上传图片
+#import "NSURLRequest+Company.h"
 
 #endif /* QCNetworkHeader_h */

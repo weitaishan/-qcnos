@@ -11,6 +11,7 @@
 #import "QCRegisteredNameVC.h"
 #import "QCRegisteredModel.h"
 #import "QCResetModel.h"
+#import "QCCompanyModel.h"
 
 @interface QCRegisteredValidationVC ()
 
@@ -31,7 +32,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.phoneLabel.text = self.model.mobile;
+    if (self.source == QCRegisteredSourceCompany) {
+        self.phoneLabel.text = self.companyModel.mobile;
+    }
+    else {
+        self.phoneLabel.text = self.model.mobile;
+    }
     
     [self loadValidationView];
 
@@ -121,11 +127,16 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     if (self.source == QCRegisteredSourceReset) {
         params[@"mobile"] = self.resetModel.mobile;
+        params[@"mobileCode"] = self.resetModel.mobileCode;
+    }
+    else if (self.source == QCRegisteredSourceCompany) {
+        params[@"mobile"] = self.companyModel.mobile;
+        params[@"mobileCode"] = self.companyModel.mobileCode;
     }
     else {
         params[@"mobile"] = self.model.mobile;
+        params[@"mobileCode"] = self.model.mobileCode;
     }
-    params[@"mobileCode"] = self.model.mobileCode;
     switch (self.codeType) {
         case QCMessageCodeTypeRegistered:
             params[@"codeType"] = @"REGISTER"; //注册
@@ -150,6 +161,11 @@
             VC.type = QCRegisteredTypePassword;
             self.model.code = code;
             VC.model = self.model;
+        }
+        if (self.source == QCRegisteredSourceCompany) {
+            VC.type = QCRegisteredTypeInformation;
+            self.model.code = code;
+            VC.companyModel = self.companyModel;
         }
         else {
             VC.type = QCRegisteredTypeInformation;

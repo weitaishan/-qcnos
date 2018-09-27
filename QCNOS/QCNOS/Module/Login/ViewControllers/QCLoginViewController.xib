@@ -63,7 +63,7 @@
                     </connections>
                 </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dxy-7L-s3r">
-                    <rect key="frame" x="15" y="206" width="345" height="30"/>
+                    <rect key="frame" x="100" y="206" width="260" height="30"/>
                     <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="VTq-Ca-MAm"/>
@@ -135,6 +135,21 @@
                         <action selector="onCilckLoginButton:" destination="-1" eventType="touchUpInside" id="A9E-A9-JGd"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXn-Iz-hAO">
+                    <rect key="frame" x="15" y="206" width="85" height="30"/>
+                    <color key="backgroundColor" red="0.92549019610000005" green="0.94901960780000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="85" id="d7X-QL-Dpw"/>
+                        <constraint firstAttribute="height" constant="30" id="neZ-59-K1B"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <state key="normal" title="+86">
+                        <color key="titleColor" red="0.56862745100000001" green="0.56862745100000001" blue="0.56862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="onCilckRegionButton:" destination="-1" eventType="touchUpInside" id="YVk-k5-arq"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -152,16 +167,18 @@
                 <constraint firstAttribute="trailing" secondItem="eb4-D6-sEf" secondAttribute="trailing" constant="15" id="VtE-23-VKg"/>
                 <constraint firstAttribute="trailing" secondItem="9RR-K1-AxX" secondAttribute="trailing" constant="15" id="aMl-wN-vNd"/>
                 <constraint firstItem="9RR-K1-AxX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="b1H-sK-DfX"/>
-                <constraint firstItem="dxy-7L-s3r" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="dAc-Uj-gNQ"/>
+                <constraint firstItem="dxy-7L-s3r" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="100" id="dAc-Uj-gNQ"/>
                 <constraint firstAttribute="trailing" secondItem="61r-3U-KUc" secondAttribute="trailing" constant="15" id="emW-a8-3k0"/>
                 <constraint firstItem="Oqh-LX-RWX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="enu-3p-dJJ"/>
                 <constraint firstItem="0fb-x6-Gun" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="fMF-yM-ngL"/>
                 <constraint firstAttribute="bottom" secondItem="F8d-w1-UVT" secondAttribute="bottom" constant="170" id="gJU-8g-on3"/>
                 <constraint firstItem="oFD-z8-87W" firstAttribute="top" secondItem="eb4-D6-sEf" secondAttribute="bottom" constant="5" id="gjY-KE-FY9"/>
+                <constraint firstItem="yXn-Iz-hAO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="gt1-7Y-jEj"/>
                 <constraint firstItem="UPd-tV-Vta" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="iWf-am-4oe"/>
                 <constraint firstItem="Oqh-LX-RWX" firstAttribute="top" secondItem="UPd-tV-Vta" secondAttribute="bottom" constant="15" id="iqx-jP-w8j"/>
                 <constraint firstItem="eb4-D6-sEf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="ish-UD-0eR"/>
                 <constraint firstItem="oFD-z8-87W" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="jKC-sW-nCf"/>
+                <constraint firstItem="yXn-Iz-hAO" firstAttribute="top" secondItem="0fb-x6-Gun" secondAttribute="bottom" constant="5" id="l1A-ih-Hfn"/>
                 <constraint firstItem="F8d-w1-UVT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="110" id="luh-yv-6Xb"/>
                 <constraint firstItem="eb4-D6-sEf" firstAttribute="top" secondItem="jHq-dX-c1m" secondAttribute="bottom" constant="5" id="pCj-7V-oLz"/>
                 <constraint firstAttribute="trailing" secondItem="oFD-z8-87W" secondAttribute="trailing" constant="15" id="qCF-UU-Bws"/>

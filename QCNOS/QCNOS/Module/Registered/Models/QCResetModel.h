@@ -21,4 +21,6 @@
 
 @property (nonatomic, copy) NSString *idNumber;
 
+@property (nonatomic, copy) NSString *mobileCode;
+
 @end

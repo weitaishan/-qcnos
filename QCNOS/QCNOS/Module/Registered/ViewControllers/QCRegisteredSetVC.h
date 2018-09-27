@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QCRegisteredHeader.h"
 
-@class QCRegisteredModel;
+@class QCRegisteredModel, QCCompanyModel;
 
 @interface QCRegisteredSetVC : UIViewController
 
 @property (nonatomic, strong) QCRegisteredModel *model;
+
+@property (nonatomic, strong) QCCompanyModel *companyModel;
+//目前只有企业和个人注册
+@property (nonatomic, assign) QCRegisteredSource source;
 
 @end

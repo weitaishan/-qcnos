@@ -46,6 +46,8 @@
 		09A48F4A2154D08B00131A6B /* QCUploadDefalutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48F482154D08B00131A6B /* QCUploadDefalutCell.m */; };
 		09A48F4B2154D08B00131A6B /* QCUploadDefalutCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48F492154D08B00131A6B /* QCUploadDefalutCell.xib */; };
 		770B36CD214B4D0700DF868F /* QCHotViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 770B36CC214B4D0700DF868F /* QCHotViewController.m */; };
+		77174107215C769700F2F059 /* QCCompanyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 77174106215C769700F2F059 /* QCCompanyModel.m */; };
+		7717410B215C876800F2F059 /* NSURLRequest+Company.m in Sources */ = {isa = PBXBuildFile; fileRef = 7717410A215C876800F2F059 /* NSURLRequest+Company.m */; };
 		77264D80213E228200B57B15 /* NSDictionary+Log.m in Sources */ = {isa = PBXBuildFile; fileRef = 77264D7F213E228200B57B15 /* NSDictionary+Log.m */; };
 		77264D86213E245200B57B15 /* YJProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 77264D83213E245200B57B15 /* YJProgressHUD.bundle */; };
 		77264D87213E245200B57B15 /* YJProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 77264D85213E245200B57B15 /* YJProgressHUD.m */; };
@@ -206,6 +208,10 @@
 		72AC4E361C9CE805E05CBA08 /* Pods-QCNOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QCNOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-QCNOS/Pods-QCNOS.release.xcconfig"; sourceTree = "<group>"; };
 		770B36CB214B4D0700DF868F /* QCHotViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCHotViewController.h; sourceTree = "<group>"; };
 		770B36CC214B4D0700DF868F /* QCHotViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCHotViewController.m; sourceTree = "<group>"; };
+		77174105215C769700F2F059 /* QCCompanyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCCompanyModel.h; sourceTree = "<group>"; };
+		77174106215C769700F2F059 /* QCCompanyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCCompanyModel.m; sourceTree = "<group>"; };
+		77174109215C876800F2F059 /* NSURLRequest+Company.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+Company.h"; sourceTree = "<group>"; };
+		7717410A215C876800F2F059 /* NSURLRequest+Company.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+Company.m"; sourceTree = "<group>"; };
 		77264D7E213E228200B57B15 /* NSDictionary+Log.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Log.h"; sourceTree = "<group>"; };
 		77264D7F213E228200B57B15 /* NSDictionary+Log.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Log.m"; sourceTree = "<group>"; };
 		77264D83213E245200B57B15 /* YJProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YJProgressHUD.bundle; sourceTree = "<group>"; };
@@ -545,6 +551,15 @@
 			path = Hot;
 			sourceTree = "<group>";
 		};
+		77174108215C873B00F2F059 /* sso.company */ = {
+			isa = PBXGroup;
+			children = (
+				77174109215C876800F2F059 /* NSURLRequest+Company.h */,
+				7717410A215C876800F2F059 /* NSURLRequest+Company.m */,
+			);
+			path = sso.company;
+			sourceTree = "<group>";
+		};
 		77264D7D213E1C2100B57B15 /* UserManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -714,6 +729,8 @@
 				77EFAAF0213E6FAC00D2C565 /* QCNationModel.m */,
 				77EFAAF2213E84B900D2C565 /* QCResetModel.h */,
 				77EFAAF3213E84B900D2C565 /* QCResetModel.m */,
+				77174105215C769700F2F059 /* QCCompanyModel.h */,
+				77174106215C769700F2F059 /* QCCompanyModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -803,6 +820,7 @@
 		7785FD5C213CD744009EA6F2 /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				77174108215C873B00F2F059 /* sso.company */,
 				773C1FB92141038F007E20B3 /* file.upload */,
 				77264D88213E5E2F00B57B15 /* sso.national */,
 				7785FD5D213CD75C009EA6F2 /* oss.message */,
@@ -1219,6 +1237,7 @@
 				77D8519321509A1A00D57215 /* QCInvitationViewController.m in Sources */,
 				09A48F0B2153848700131A6B /* QCBlockView.m in Sources */,
 				09A48F3621549C4800131A6B /* QCUploadImgView.m in Sources */,
+				7717410B215C876800F2F059 /* NSURLRequest+Company.m in Sources */,
 				777084CC2153390A005CEF76 /* QCShoppingContentCell.m in Sources */,
 				7772718D2153879B00269058 /* QCShoppingDetailCell.m in Sources */,
 				777FDB13212E9508007D80B8 /* QCRegisteredValidationVC.m in Sources */,
@@ -1250,6 +1269,7 @@
 				09A48F3221539D4F00131A6B /* QCPersonSelectNodeListCell.m in Sources */,
 				77D1EF3A212D699D003D892D /* QCShoppingViewController.m in Sources */,
 				7785FD5B213CD45A009EA6F2 /* NSURLRequest+User.m in Sources */,
+				77174107215C769700F2F059 /* QCCompanyModel.m in Sources */,
 				09A48F3A21549CAC00131A6B /* QCUploadImgCell.m in Sources */,
 				777FDB25212EB3A7007D80B8 /* QCRegisteredSuccessVC.m in Sources */,
 				773B69EC212FA7490049E9B1 /* QCGenderView.m in Sources */,
