@@ -59,6 +59,7 @@
 - (void)userRegisterRequest {
     NSURLRequest *request = [NSURLRequest userRegisterWithParameters:[self.model yy_modelToJSONObject]];
     [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
+        self.codeLabel.text = responseObject[@"data"][@"codeType"];
         [self.rootView removeFromSuperview];
     } failBlock:^(QCError *error) {
         [self.navigationController popViewControllerAnimated:YES];
@@ -69,6 +70,7 @@
 - (void)userResetPasswordRequest {
     NSURLRequest *request = [NSURLRequest userResetPasswordWithParameters:[self.resetModel yy_modelToJSONObject]];
     [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
+        self.codeLabel.text = responseObject[@"data"][@"codeType"];
         [self.rootView removeFromSuperview];
     } failBlock:^(QCError *error) {
         [self.navigationController popViewControllerAnimated:YES];
@@ -80,6 +82,7 @@
 #warning company registered
     NSURLRequest *request = [NSURLRequest companyAddWithParameters:[self.companyModel yy_modelToJSONObject]];
     [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
+        self.codeLabel.text = responseObject[@"data"][@"codeType"];
         [self.rootView removeFromSuperview];
     } failBlock:^(QCError *error) {
         [self.navigationController popViewControllerAnimated:YES];
