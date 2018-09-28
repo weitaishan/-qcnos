@@ -15,6 +15,7 @@
 #import "AppDelegate.h"
 #import "QCSubmitButton.h"
 #import "QCBaseModel.h"
+#import "NSDate+Util.h"
 
 #import "QCCategroiesHeader.h"
 #import "QCNetworkHeader.h"

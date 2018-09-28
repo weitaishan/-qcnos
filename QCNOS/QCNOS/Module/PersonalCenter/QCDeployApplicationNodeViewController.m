@@ -98,7 +98,7 @@ static NSString * const QCPersonNodeListCellId = @"QCPersonNodeListCellId";
     [cell.headerImageView sd_setImageWithURL:[NSURL URLWithString:model.logoPhoto]];
     cell.titleLabel.text = model.name;
     cell.nodeLabel.text = model.nodeName;
-//    cell.time1Label.text =
+    cell.time1Label.text = [[NSDate dateStrFromCstampTime:model.createTime withDateFormat:@"YYYY.MM.dd HH:mm:ss"] stringByAppendingString:@"-创建"];
     cell.code.text = model.creditCode;
     return cell;
     

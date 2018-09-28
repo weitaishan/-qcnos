@@ -330,7 +330,7 @@
 + (NSString *)dateStrFromCstampTime:(NSInteger)timeStamp
                      withDateFormat:(NSString *)format
 {
-    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeStamp];
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:timeStamp / 1000];
     return [NSDate datestrFromDate:date withDateFormat:format];
 }
 
