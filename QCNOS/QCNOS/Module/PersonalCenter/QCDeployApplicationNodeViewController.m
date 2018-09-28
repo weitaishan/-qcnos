@@ -161,9 +161,8 @@ static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHea
     cell.nodeLabel.text = model.nodeName;
     cell.time1Label.text = [[NSDate dateStrFromCstampTime:model.createTime withDateFormat:@"YYYY.MM.dd HH:mm:ss"] stringByAppendingString:@"-创建"];
     cell.code.text = model.creditCode;
-<<<<<<< HEAD
     cell.nodeWidth.constant = [QCDeployApplicationNodeViewController getWidthWithText:model.nodeName font:10.f];
-=======
+    
     if (self.type == 3 && indexPath.section == 1) {
 
         cell.nameLabel.text = @"公民身份证号码";
@@ -172,7 +171,6 @@ static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHea
         cell.nameLabel.text = @"统一社会信用代码";
 
     }
->>>>>>> e40ba6612cdb982ffed7cf3751854b864b2c6dd7
     
     return cell;
     
