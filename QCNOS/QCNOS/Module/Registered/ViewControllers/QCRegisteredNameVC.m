@@ -30,6 +30,8 @@
 
 @property (nonatomic, strong) QCRegisteredNameViewModel *viewModel;
 
+@property (nonatomic, strong) UIImageView *imgView;
+
 @end
 
 @implementation QCRegisteredNameVC
@@ -346,35 +348,53 @@
     @weakify(self);
     [[textField rac_textSignal] subscribeNext:^(id x) {
         @strongify(self);
-        self.model.nickName = x;
-        if (self.model.nickName.length == 0) {
-            [self.doneBtn setTitle:@"跳过" forState:0];
+        if (self.source == QCRegisteredSourceNone) {
+            self.model.nickName = x;
+            if (self.model.nickName.length == 0) {
+                [self.doneBtn setTitle:@"跳过" forState:0];
+            }
+            else {
+                [self.doneBtn setTitle:@"继续" forState:0];
+            }
         }
         else {
-            [self.doneBtn setTitle:@"继续" forState:0];
+            self.companyModel.shortName = x;
+            if (self.companyModel.shortName.length == 0) {
+                [self.doneBtn setTitle:@"跳过" forState:0];
+            }
+            else {
+                [self.doneBtn setTitle:@"继续" forState:0];
+            }
         }
+       
     }];
     
     UILabel *line = [[UILabel alloc] init];
     line.backgroundColor = RGBA(210, 210, 210, 1);
     
-    textField.placeholder = @"设置节点昵称，最多12个汉字";
+    if (self.source == QCRegisteredSourceNone) {
+        textField.placeholder = @"设置节点昵称，最多12个汉字";
+    }
+    else {
+        textField.placeholder = @"设置法人简称或品牌名称，最多12个汉字";
+    }
+    
     [textField placeholderTextAlignmentCenter];
     
-    UIImageView *imgView = [[UIImageView alloc] init];
-    imgView.image = [UIImage imageNamed:@"registered_nickname"];
-    imgView.userInteractionEnabled = YES;
+    self.imgView = [[UIImageView alloc] init];
+    self.imgView.image = [UIImage imageNamed:@"registered_nickname"];
+    self.imgView.userInteractionEnabled = YES;
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
-    [imgView addGestureRecognizer:tap];
+    [self.imgView addGestureRecognizer:tap];
     
     [[tap rac_gestureSignal] subscribeNext:^(id x) {
         @strongify(self);
         [self selectAndUploadHeaderImageView];
     }];
     
-    [self.contentView addSubview:imgView];
-    [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.contentView addSubview:self.imgView];
+    [self.imgView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.contentView).offset(5);
         make.height.width.mas_equalTo(72);
         make.centerX.mas_equalTo(self.contentView);
@@ -453,21 +473,28 @@
 
 - (void)uploadHeaderImageViewRequestWithImage:(UIImage *)image {
     [YJProgressHUD showLoading:@"上传中..."];
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"fileData"] = image;
+    QCUploadImageServerType type;
     if (self.source == QCRegisteredSourceCompany) { //商业注册的时候就是上传logo
-        params[@"type"] = @"logoPhoto";
+        type = QCUploadImageServerTypeLogoPhoto;
     }
     else {
-        params[@"type"] = @"headPhoto";
+        type = QCUploadImageServerTypeHeadPhoto;
     }
-    NSURLRequest *request = [NSURLRequest uploadHeaderImageWithParameters:params fileName:@"fileData"];
-    [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
-        NSLog(@"%@", responseObject);
-        [YJProgressHUD showMessage:@"上传成功"];
-    } failBlock:^(QCError *error) {
-        [YJProgressHUD showError:error.localizedDescription];
-    }];
+    [QCURLSessionManager uploadImageWithImage:image
+                                    imageType:type
+                                     progress:nil
+                                      success:^(NSURLSessionDataTask *task, id responseObject) {
+                                          self.imgView.image = image;
+                                          if (self.source == QCRegisteredSourceCompany) { //商业注册的时候就是上传logo
+                                              self.companyModel.logoPhoto = responseObject[@"data"];
+                                          }
+                                          else {
+                                              self.model.headPhoto = responseObject[@"data"];
+                                          }
+                                          [YJProgressHUD showMessage:@"上传成功"];
+                                      } failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                          [YJProgressHUD showError:error.localizedDescription];
+                                      }];
 }
 
 #pragma mark -- 验证数据

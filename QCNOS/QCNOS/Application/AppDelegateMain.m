@@ -88,7 +88,7 @@
     UIGraphicsEndImageContext();
     [[UINavigationBar appearance] setBackgroundImage:img forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
-    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-100, 0)
+    [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(-SCREEN_WIDTH, 0)
                                                          forBarMetrics:UIBarMetricsDefault];
 
     NSMutableDictionary * textDic = [NSMutableDictionary dictionary];

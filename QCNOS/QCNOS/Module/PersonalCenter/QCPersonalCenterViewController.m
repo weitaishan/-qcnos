@@ -115,21 +115,9 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
 }
 
 - (void)onCilckRegisered {
-    [self uploadHeaderImageViewRequestWithImage:[UIImage imageNamed:@"logo"]];
     QCRegisteredVC *registered = [[QCRegisteredVC alloc] init];
     registered.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:registered animated:YES];
-}
-
-- (void)uploadHeaderImageViewRequestWithImage:(UIImage *)image {
-    [QCURLSessionManager uploadImageWithImage:image
-                                    imageType:QCUploadImageServerTypeHeadPhoto
-                                     progress:nil
-                                      success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"%@", responseObject);
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        
-    }];
 }
 
 - (void)didReceiveMemoryWarning {
