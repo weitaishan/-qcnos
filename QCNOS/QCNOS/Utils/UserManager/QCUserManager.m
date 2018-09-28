@@ -27,4 +27,12 @@
     }];
 }
 
++ (void)clearUserDatas {
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    RLMResults<QCUserInformation *> *users = [QCUserInformation allObjects];
+    [realm transactionWithBlock:^{
+        [realm deleteObjects:users];
+    }];
+}
+
 @end

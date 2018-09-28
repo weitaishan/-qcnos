@@ -17,6 +17,7 @@
 #import "QCCompanyModel.h"
 #import "QCDeployApplicationBlockViewController.h"
 #import "QCDeployApplicationNodeViewController.h"
+#import "QCRegisteredVC.h"
 
 @interface QCPersonalCenterViewController ()
 
@@ -37,16 +38,34 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self loadNavigationWithColor:k_Color_Main_Navigation];
-//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    [self getAllInfoRequest];
+    if ([QCUserManager standardUserManager].user) {
+        [self loadNavigationWithColor:k_Color_Main_Navigation];
+        [self getAllInfoRequest];
+        
+        for (UIViewController *VC in self.childViewControllers) {
+            [VC willMoveToParentViewController:nil];
+            
+            [VC.view removeFromSuperview];
+            
+            [VC removeFromParentViewController];
+        }
+    }
+    else {
+        [self loadNavigationWithColor:[UIColor whiteColor]];
+        QCRegisteredVC *vc = [[QCRegisteredVC alloc] init];
+        [self addChildViewController:vc];
+        vc.view.frame = self.view.bounds;
+        [self.view addSubview:vc.view];
+        [vc didMoveToParentViewController:self];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-//    [self loadNavigationWithColor:[UIColor whiteColor]];
+    if (![QCUserManager standardUserManager].user) {
+        [self loadNavigationWithColor:k_Color_Main_Navigation];
+    }
 }
-
 
 /**
  获取个人所有信息
@@ -85,19 +104,6 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
     [super viewDidLoad];
     self.title = @"承载";
     self.view.backgroundColor = [UIColor whiteColor];
-    UIButton *leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    leftBtn.frame = CGRectMake(0, 0, 30, 30);
-    leftBtn.titleLabel.font = Font(15);
-    [leftBtn setTitle:@"注册" forState:0];
-    [leftBtn setTitleColor:[UIColor whiteColor] forState:0];
-    [leftBtn addTarget:self
-                action:@selector(onCilckRegisered)
-      forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
-    
-    self.navigationItem.rightBarButtonItem = leftItem;
-    
     
     [self addTableViewWithFrame:CGRectMake(0,0, SCREEN_WIDTH,SCREEN_HEIGHT - StatusBarAndNavigationBarHeight - TabbarHeight)];
     
@@ -106,7 +112,6 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([QCPersonCenterExitCell class]) bundle:nil] forCellReuseIdentifier:QCPersonCenterExitCellId];
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([QCRegisteredSetCell class]) bundle:nil] forCellReuseIdentifier:QCRegisteredSetCellId];
-    
 }
 
 - (void)onCilckRegisered {
@@ -151,7 +156,16 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
     if (indexPath.section == 5 ) {
         
         QCPersonCenterExitCell * cell = [tableView dequeueReusableCellWithIdentifier:QCPersonCenterExitCellId forIndexPath:indexPath];
-
+        @weakify(self);
+        [[[cell.exitBtn rac_signalForControlEvents:UIControlEventTouchUpInside] takeUntil:cell.rac_prepareForReuseSignal]
+         subscribeNext:^(id x) {
+             @strongify(self);
+            [QCAlertController alertControllerWithShowViewController:self
+                                                             message:@"确定要退出登录？"
+                                                           doneBlock:^{
+                                                               [self logout];
+                                                           }];
+        }];
         return cell;
         
         
@@ -285,21 +299,34 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
             
             break;
             
-        case 5:{
-            
-            
-        }
-            
+        case 5:
             break;
-            
         default:
             break;
     }
     
    
 }
+
+- (void)logout {
+    [YJProgressHUD showLoading:@"退出登录中"];
+    NSURLRequest *request = [NSURLRequest userLogoutWithParameters:nil];
+    [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
+        [QCUserManager clearUserDatas];
+        [YJProgressHUD showSuccess:@"退出登录成功"];
+        QCRegisteredVC *vc = [[QCRegisteredVC alloc] init];
+        [self addChildViewController:vc];
+        vc.view.frame = self.view.bounds;
+        [self.view addSubview:vc.view];
+        [vc didMoveToParentViewController:self];
+        [self loadNavigationWithColor:[UIColor whiteColor]];
+    } failBlock:^(QCError *error) {
+        [YJProgressHUD showError:error.localizedDescription];
+    }];
+}
+
 #pragma mark - 懒加载
--(NSMutableArray *)listArray{
+- (NSMutableArray *)listArray{
     
     if (!_listArray) {
         

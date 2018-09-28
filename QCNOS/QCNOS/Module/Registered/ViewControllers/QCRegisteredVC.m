@@ -23,12 +23,12 @@
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent animated:NO];
     self.navigationController.navigationBar.tintColor = RGBA(52, 52, 52, 1);
 }
 
@@ -48,6 +48,7 @@
 
 - (IBAction)onCilckRegistered:(UIButton *)sender {
     QCRegisteredSetVC *VC = [[QCRegisteredSetVC alloc] init];
+    VC.hidesBottomBarWhenPushed = YES;
     VC.model = [[QCRegisteredModel alloc] init];
     VC.source = QCRegisteredSourceNone;
     [self.navigationController pushViewController:VC
@@ -56,6 +57,7 @@
 
 - (IBAction)onCilckLogin:(UIButton *)sender {
     QCLoginViewController *VC = [[QCLoginViewController alloc] init];
+    VC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:VC
                                          animated:YES];
 }

@@ -10,5 +10,6 @@
 #define QCUtilHeader_h
 
 #import "QCUserManager.h"
+#import "QCAlertController.h"
 
 #endif /* QCUtilHeader_h */

@@ -17,4 +17,6 @@
 
 + (void)userManagerSaveUserDataWithDictionary:(NSDictionary *)dictionary;
 
++ (void)clearUserDatas;
+
 @end

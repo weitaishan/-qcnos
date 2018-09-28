@@ -137,6 +137,7 @@
 		77D1EF60212D7343003D892D /* QCError.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D1EF57212D7343003D892D /* QCError.m */; };
 		77D1EF61212D7343003D892D /* QCURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D1EF59212D7343003D892D /* QCURLSessionManager.m */; };
 		77D8519321509A1A00D57215 /* QCInvitationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D8519221509A1A00D57215 /* QCInvitationViewController.m */; };
+		77E523FA215DD372009DB645 /* QCAlertController.m in Sources */ = {isa = PBXBuildFile; fileRef = 77E523F8215DD371009DB645 /* QCAlertController.m */; };
 		77EFAAE9213E6C9D00D2C565 /* QCNationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EFAAE8213E6C9D00D2C565 /* QCNationVC.m */; };
 		77EFAAED213E6CBF00D2C565 /* QCNationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 77EFAAEB213E6CBF00D2C565 /* QCNationTableViewCell.m */; };
 		77EFAAEE213E6CBF00D2C565 /* QCNationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77EFAAEC213E6CBF00D2C565 /* QCNationTableViewCell.xib */; };
@@ -380,6 +381,8 @@
 		77D1EF59212D7343003D892D /* QCURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCURLSessionManager.m; sourceTree = "<group>"; };
 		77D8519121509A1A00D57215 /* QCInvitationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCInvitationViewController.h; sourceTree = "<group>"; };
 		77D8519221509A1A00D57215 /* QCInvitationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCInvitationViewController.m; sourceTree = "<group>"; };
+		77E523F8215DD371009DB645 /* QCAlertController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCAlertController.m; sourceTree = "<group>"; };
+		77E523F9215DD371009DB645 /* QCAlertController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCAlertController.h; sourceTree = "<group>"; };
 		77EFAAE7213E6C9D00D2C565 /* QCNationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCNationVC.h; sourceTree = "<group>"; };
 		77EFAAE8213E6C9D00D2C565 /* QCNationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCNationVC.m; sourceTree = "<group>"; };
 		77EFAAEA213E6CBF00D2C565 /* QCNationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCNationTableViewCell.h; sourceTree = "<group>"; };
@@ -899,6 +902,8 @@
 		7785FD78213D3448009EA6F2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				77E523F9215DD371009DB645 /* QCAlertController.h */,
+				77E523F8215DD371009DB645 /* QCAlertController.m */,
 				773C1FB52140D188007E20B3 /* RootScrollView */,
 				77FA737B213D355C00B7DADB /* QCUtilHeader.h */,
 				77264D7D213E1C2100B57B15 /* UserManager */,
@@ -1317,6 +1322,7 @@
 				09A48F412154CCA900131A6B /* QCSubmitButton.m in Sources */,
 				77D1EF2C212D64E8003D892D /* UIScrollView+EmptyDataSet.m in Sources */,
 				777084D62153395F005CEF76 /* QCShoppingPriceCell.m in Sources */,
+				77E523FA215DD372009DB645 /* QCAlertController.m in Sources */,
 				09A48F0C2153848700131A6B /* QCCustomerFlowView.m in Sources */,
 				09A48ED921535A0B00131A6B /* QCInvitaitionListModel.m in Sources */,
 			);
