@@ -224,12 +224,21 @@ static NSString * const QCPersonSelectNodeListCellId = @"QCPersonSelectNodeListC
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    QCRegisteredSetVC *VC = [[QCRegisteredSetVC alloc] init];
-    VC.companyModel = [[QCCompanyModel alloc] init];
-    VC.source = QCRegisteredSourceCompany;
-    VC.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:VC
-                                         animated:YES];
+    QCGetBlockTypeChildList* listModel = self.listArr[indexPath.section].childList[indexPath.row];
+    if (self.type == 0) {
+
+    }
+    else {
+        QCRegisteredSetVC *VC = [[QCRegisteredSetVC alloc] init];
+        VC.companyModel = [[QCCompanyModel alloc] init];
+        VC.companyModel.nodeType = [NSString stringWithFormat:@"%zi", listModel.Id];
+        VC.companyModel.nodeName = listModel.name;
+        VC.source = QCRegisteredSourceCompany;
+        VC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:VC
+                                             animated:YES];
+    }
+   
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
