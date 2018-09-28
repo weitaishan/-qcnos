@@ -63,6 +63,8 @@ RLM_ARRAY_TYPE(QCUserInformationBankList)
 
 @property (nonatomic) NSString *id;
 
+@property (nonatomic) NSString *headPhoto; //头像
+
 @property (nonatomic) NSNumber<RLMInt> *createTime;
 
 @property (nonatomic) NSString *walletCode; //钱包code
@@ -72,6 +74,8 @@ RLM_ARRAY_TYPE(QCUserInformationBankList)
 @property (nonatomic) NSString *mobile; //手机号码
 
 @property (nonatomic) NSString *realName; //用户名称
+
+@property (nonatomic) NSString * nickName;
 
 @property (nonatomic) NSString *gender; //性别  @“MALE” 代表 男
 

@@ -231,6 +231,8 @@ static NSString * const QCPersonSelectNodeListCellId = @"QCPersonSelectNodeListC
         QCDeployApplicationNodeViewController* vc = [[QCDeployApplicationNodeViewController alloc] init];
         vc.hidesBottomBarWhenPushed = YES;
         vc.type = 0;
+        vc.parentName = self.listArr[indexPath.section].name;
+        vc.blockTypeModel = listModel;
         [self.navigationController pushViewController:vc
                                              animated:YES];
 

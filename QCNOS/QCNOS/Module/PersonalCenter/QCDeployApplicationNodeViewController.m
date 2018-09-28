@@ -11,7 +11,8 @@
 #import "QCPersonNodeListCell.h"
 #import "QCDeployApplicationBlockViewController.h"
 #import "QCApplicaNodeList.h"
-
+#import "QCPersonSelectNodeHeaderCell.h"
+#import "QCGetBlockType.h"
 @interface QCDeployApplicationNodeViewController ()
 
 @property (nonatomic, strong) NSMutableArray *listArray;
@@ -23,6 +24,9 @@ static NSString * const QCPersonNodeHeaderCellId = @"QCPersonNodeHeaderCellId";
 
 static NSString * const QCPersonNodeListCellId = @"QCPersonNodeListCellId";
 
+static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHeaderCellId";
+
+
 @implementation QCDeployApplicationNodeViewController
 
 - (void)viewDidLoad {
@@ -30,8 +34,31 @@ static NSString * const QCPersonNodeListCellId = @"QCPersonNodeListCellId";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBarHidden = NO;
-    [self companyGetTypeListRequest];
+    
     [self setBaseInfo];
+    
+    if (self.type == 3) {
+        
+        [self companyGetTypeListRequest];
+        
+    }else{
+        
+        QCApplicaNodeListData *model = [[QCApplicaNodeListData alloc] init];
+        
+        QCUserInformation* userInfo = [QCUserManager standardUserManager].user;
+        
+        
+        model.logoPhoto = userInfo.headPhoto;
+        model.name = userInfo.nickName ? : userInfo.realName;
+        model.nodeName = @"承载管理";
+        model.createTime = [userInfo.createTime longLongValue];
+        model.creditCode = userInfo.idNumber;
+        [self.listArray addObject:model];
+        [self.listArray addObject:self.nodeListModel];
+
+        [self.tableView reloadData];
+        
+    }
 }
 
 - (void)companyGetTypeListRequest {
@@ -60,12 +87,30 @@ static NSString * const QCPersonNodeListCellId = @"QCPersonNodeListCellId";
 
 - (void)setBaseInfo{
     
-    self.navigationItem.title = @"应用节点";
     
     [self addTableViewWithGroupFrame:CGRectMake(0,0, SCREEN_WIDTH,SCREEN_HEIGHT - StatusBarAndNavigationBarHeight)];
     
-    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([QCPersonNodeHeaderCell class]) bundle:nil] forCellReuseIdentifier:QCPersonNodeHeaderCellId];
-    
+    if (self.type == 1) {
+        
+        self.navigationItem.title = @"应用节点";
+
+        [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([QCPersonNodeHeaderCell class]) bundle:nil] forCellReuseIdentifier:QCPersonNodeHeaderCellId];
+        
+    }else{
+        
+        if (self.type == 0) {
+            
+            self.navigationItem.title = @"选择归属主体";
+
+        }else{
+            
+            self.navigationItem.title = @"确认信息";
+
+        }
+        
+        [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([QCPersonSelectNodeHeaderCell class]) bundle:nil] forCellReuseIdentifier:QCPersonSelectNodeHeaderCellId];
+
+    }
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([QCPersonNodeListCell class]) bundle:nil] forCellReuseIdentifier:QCPersonNodeListCellId];
 
@@ -88,10 +133,26 @@ static NSString * const QCPersonNodeListCellId = @"QCPersonNodeListCellId";
     
     if (indexPath.section == 0) {
         
-        QCPersonNodeHeaderCell * cell = [tableView dequeueReusableCellWithIdentifier:QCPersonNodeHeaderCellId forIndexPath:indexPath];
+        if (self.type == 1) {
+            
+            QCPersonNodeHeaderCell * cell = [tableView dequeueReusableCellWithIdentifier:QCPersonNodeHeaderCellId forIndexPath:indexPath];
+            
+            return cell;
 
+        }else{
+            
+            
+            QCPersonSelectNodeHeaderCell * cell = [tableView dequeueReusableCellWithIdentifier:QCPersonSelectNodeHeaderCellId forIndexPath:indexPath];
+            cell.lbName.text = self.blockTypeModel.name;
+            
+            cell.lbRight.text = [NSString stringWithFormat:@"应用区块-%@ ﹥ ",self.parentName];
+            cell.lbDesc.text = @"应用区块归属节点一经选择不可更改";
+            cell.rightBtn.titleLabel.text = [NSString stringWithFormat:@"可选节点%ld节",self.listArray.count];
+            
+            return cell;
+
+        }
         
-        return cell;
     }
     QCPersonNodeListCell * cell = [tableView dequeueReusableCellWithIdentifier:QCPersonNodeListCellId forIndexPath:indexPath];
     QCApplicaNodeListData *model = self.listArray[indexPath.section - 1];
@@ -100,6 +161,15 @@ static NSString * const QCPersonNodeListCellId = @"QCPersonNodeListCellId";
     cell.nodeLabel.text = model.nodeName;
     cell.time1Label.text = [[NSDate dateStrFromCstampTime:model.createTime withDateFormat:@"YYYY.MM.dd HH:mm:ss"] stringByAppendingString:@"-创建"];
     cell.code.text = model.creditCode;
+    if (self.type == 3 && indexPath.section == 1) {
+
+        cell.nameLabel.text = @"公民身份证号码";
+    }else{
+        
+        cell.nameLabel.text = @"统一社会信用代码";
+
+    }
+    
     return cell;
     
 }
@@ -142,16 +212,41 @@ static NSString * const QCPersonNodeListCellId = @"QCPersonNodeListCellId";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.section == 0) {
-     
+    if (self.type == 1) {
         
-        QCDeployApplicationBlockViewController* vc = [[QCDeployApplicationBlockViewController alloc] init];
+        if (indexPath.section == 0) {
+            
+            
+            QCDeployApplicationBlockViewController* vc = [[QCDeployApplicationBlockViewController alloc] init];
+            
+            vc.type = 1;
+            
+            vc.hidesBottomBarWhenPushed = YES;
+            
+            [self.navigationController pushViewController:vc animated:YES];
+        }
         
-        vc.type = 1;
-        vc.hidesBottomBarWhenPushed = YES;
+    }else{
         
-        [self.navigationController pushViewController:vc animated:YES];
+        if (indexPath.section > 0) {
+            
+            
+            QCDeployApplicationNodeViewController* vc = [[QCDeployApplicationNodeViewController alloc] init];
+            
+            vc.type = 3;
+            vc.parentName = self.parentName;
+            vc.blockTypeModel = self.blockTypeModel;
+            QCApplicaNodeListData *model = self.listArray[indexPath.section - 1];
+
+            vc.nodeListModel = model;
+            
+            vc.hidesBottomBarWhenPushed = YES;
+            
+            [self.navigationController pushViewController:vc animated:YES];
+        }
+        
     }
+    
 
 }
 

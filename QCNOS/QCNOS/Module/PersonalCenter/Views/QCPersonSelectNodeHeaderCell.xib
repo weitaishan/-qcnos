@@ -77,6 +77,12 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="aW0-zy-SZf"/>
+            <connections>
+                <outlet property="lbDesc" destination="xRh-R1-4rj" id="VGv-SN-bTl"/>
+                <outlet property="lbName" destination="2Yg-Xr-xkX" id="2Yf-lo-qgc"/>
+                <outlet property="lbRight" destination="gLW-Mr-u2p" id="aYT-L5-Cet"/>
+                <outlet property="rightBtn" destination="1WQ-L5-d26" id="BHC-Ju-5Gn"/>
+            </connections>
             <point key="canvasLocation" x="25" y="77"/>
         </tableViewCell>
     </objects>

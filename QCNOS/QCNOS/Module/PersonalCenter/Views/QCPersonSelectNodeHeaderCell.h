@@ -9,5 +9,9 @@
 #import "QCBaseTableViewCell.h"
 
 @interface QCPersonSelectNodeHeaderCell : QCBaseTableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lbName;
+@property (weak, nonatomic) IBOutlet UILabel *lbRight;
+@property (weak, nonatomic) IBOutlet UIButton *rightBtn;
+@property (weak, nonatomic) IBOutlet UILabel *lbDesc;
 
 @end
