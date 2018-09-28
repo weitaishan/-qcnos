@@ -12,6 +12,7 @@
 #import "QCGetBlockType.h"
 #import "QCRegisteredSetVC.h"
 #import "QCCompanyModel.h"
+#import "QCDeployApplicationNodeViewController.h"
 
 @interface QCDeployApplicationBlockViewController ()
 
@@ -226,6 +227,12 @@ static NSString * const QCPersonSelectNodeListCellId = @"QCPersonSelectNodeListC
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     QCGetBlockTypeChildList* listModel = self.listArr[indexPath.section].childList[indexPath.row];
     if (self.type == 0) {
+        
+        QCDeployApplicationNodeViewController* vc = [[QCDeployApplicationNodeViewController alloc] init];
+        vc.hidesBottomBarWhenPushed = YES;
+        vc.type = 0;
+        [self.navigationController pushViewController:vc
+                                             animated:YES];
 
     }
     else {
