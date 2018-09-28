@@ -257,6 +257,8 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
                 
                 QCDeployApplicationNodeViewController* vc = [[QCDeployApplicationNodeViewController alloc] init];
                 
+                vc.type = 1;
+                
                 vc.hidesBottomBarWhenPushed = YES;
                 
                 [self.navigationController pushViewController:vc animated:YES];
