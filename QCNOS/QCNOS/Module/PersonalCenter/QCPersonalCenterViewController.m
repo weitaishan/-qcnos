@@ -16,7 +16,7 @@
 #import "QCRegisteredSetVC.h"
 #import "QCCompanyModel.h"
 #import "QCDeployApplicationBlockViewController.h"
-
+#import "QCDeployApplicationNodeViewController.h"
 @interface QCPersonalCenterViewController ()
 
 @property (nonatomic, strong) NSMutableArray* listArray;
@@ -275,6 +275,11 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
             
             if (indexPath.row == 0) {
                 
+                QCDeployApplicationNodeViewController* vc = [[QCDeployApplicationNodeViewController alloc] init];
+                
+                vc.hidesBottomBarWhenPushed = YES;
+                
+                [self.navigationController pushViewController:vc animated:YES];
                 
             }else{
                 QCDeployApplicationBlockViewController* vc = [[QCDeployApplicationBlockViewController alloc] init];
