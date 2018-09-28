@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QCPersonSelectNodeView">
-            <rect key="frame" x="0.0" y="0.0" width="563" height="92"/>
+            <rect key="frame" x="0.0" y="0.0" width="528" height="123"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jf1-P6-nES">
@@ -30,20 +30,20 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可选类型12个" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vg8-du-FZu">
-                    <rect key="frame" x="474.5" y="14" width="68.5" height="13.5"/>
+                    <rect key="frame" x="439.5" y="14" width="68.5" height="13.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                     <color key="textColor" red="0.64313725489999995" green="0.64313725489999995" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UEW-TK-b3i">
-                    <rect key="frame" x="20" y="37" width="522.5" height="1"/>
+                    <rect key="frame" x="20" y="37" width="487.5" height="1"/>
                     <color key="backgroundColor" red="0.8862745098" green="0.8862745098" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="dPZ-xn-Gwb"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waa-Do-sgS">
-                    <rect key="frame" x="493" y="45" width="50" height="27"/>
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="waa-Do-sgS">
+                    <rect key="frame" x="458" y="45" width="50" height="27"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <state key="normal" title="选择类型">
                         <color key="titleColor" red="0.28627450980000002" green="0.49803921569999998" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -55,11 +55,20 @@
                     <color key="textColor" red="0.2901960784" green="0.2901960784" blue="0.2901960784" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fC-ll-6m8">
+                    <rect key="frame" x="0.0" y="118" width="528" height="5"/>
+                    <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="5" id="lDd-so-Ds8"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3fC-ll-6m8" secondAttribute="trailing" id="2qx-Yn-YD1"/>
                 <constraint firstItem="Jf1-P6-nES" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Ezj-1T-JrX"/>
                 <constraint firstItem="waa-Do-sgS" firstAttribute="trailing" secondItem="Vg8-du-FZu" secondAttribute="trailing" id="PlJ-eJ-5XN"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="3fC-ll-6m8" secondAttribute="bottom" id="Q9x-N7-30U"/>
                 <constraint firstItem="vaX-k6-Lt5" firstAttribute="leading" secondItem="Jf1-P6-nES" secondAttribute="trailing" constant="7" id="Uhi-km-0L7"/>
                 <constraint firstItem="vaX-k6-Lt5" firstAttribute="centerY" secondItem="Jf1-P6-nES" secondAttribute="centerY" id="VM7-9C-CLE"/>
                 <constraint firstItem="Br0-0M-aze" firstAttribute="top" secondItem="UEW-TK-b3i" secondAttribute="bottom" constant="12" id="ZWS-sc-1cJ"/>
@@ -70,11 +79,12 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Vg8-du-FZu" secondAttribute="trailing" constant="20" id="ndJ-QU-2A9"/>
                 <constraint firstItem="Vg8-du-FZu" firstAttribute="centerY" secondItem="vaX-k6-Lt5" secondAttribute="centerY" id="pU0-O6-OmO"/>
                 <constraint firstItem="Jf1-P6-nES" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="12" id="qfH-4m-6oQ"/>
+                <constraint firstItem="3fC-ll-6m8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="stn-Vw-Ihv"/>
                 <constraint firstItem="Br0-0M-aze" firstAttribute="leading" secondItem="Jf1-P6-nES" secondAttribute="leading" id="v0g-4j-xq1"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="114.5" y="-228"/>
+            <point key="canvasLocation" x="97" y="-212.5"/>
         </view>
     </objects>
 </document>

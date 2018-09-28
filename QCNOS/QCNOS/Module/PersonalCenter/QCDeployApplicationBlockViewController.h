@@ -10,4 +10,7 @@
 
 @interface QCDeployApplicationBlockViewController : WTSBaseViewController
 
+/** 0为应用区块，1为部署应用节点*/
+@property (nonatomic, assign) NSUInteger type;
+
 @end
