@@ -100,8 +100,22 @@ static NSString * const QCPersonNodeListCellId = @"QCPersonNodeListCellId";
     cell.nodeLabel.text = model.nodeName;
     cell.time1Label.text = [[NSDate dateStrFromCstampTime:model.createTime withDateFormat:@"YYYY.MM.dd HH:mm:ss"] stringByAppendingString:@"-创建"];
     cell.code.text = model.creditCode;
+    cell.nodeWidth.constant = [QCDeployApplicationNodeViewController getWidthWithText:model.nodeName font:10.f];
+    
     return cell;
     
+}
+
+//根据高度度求宽度  text 计算的内容 font字体大小
++ (CGFloat)getWidthWithText:(NSString *)text
+                       font:(CGFloat)font {
+    CGRect rect = [text boundingRectWithSize:CGSizeMake(MAXFLOAT, MAXFLOAT)
+                                     options:NSStringDrawingUsesLineFragmentOrigin
+                                  attributes:@{
+                                               NSFontAttributeName:
+                                                   [UIFont systemFontOfSize:font]}
+                                     context:nil];
+    return rect.size.width + 10;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

@@ -95,9 +95,9 @@
     textDic[NSFontAttributeName] = Font(18);
     textDic[NSForegroundColorAttributeName] = [UIColor whiteColor];
     [UINavigationBar appearance].titleTextAttributes = textDic;
-    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"navigation_back"]];
+    [[UINavigationBar appearance] setBackIndicatorImage:[UIImage imageNamed:@"navigation_back1"]];
 
-    UIImage *backImage = [UIImage imageNamed:@"navigation_back"];
+    UIImage *backImage = [UIImage imageNamed:@"navigation_back1"];
     [[UINavigationBar appearance] setBackIndicatorTransitionMaskImage:backImage];
     
     [[UITableView appearance] setSeparatorInset:UIEdgeInsetsMake(0, 20, 0, 20)];

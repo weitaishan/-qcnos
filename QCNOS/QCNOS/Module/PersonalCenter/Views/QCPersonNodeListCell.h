@@ -18,5 +18,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *time1Label;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *code;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *nodeWidth;
 
 @end
