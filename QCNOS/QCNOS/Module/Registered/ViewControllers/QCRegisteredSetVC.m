@@ -12,6 +12,7 @@
 #import "QCRegisteredModel.h"
 #import "QCRegisteredValidationVC.h"
 #import "QCCompanyModel.h"
+#import "QCRegisteredNameVC.h"
 
 @interface QCRegisteredSetVC () <UITableViewDelegate, UITableViewDataSource>
 
@@ -57,6 +58,9 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (self.source == QCRegisteredSourceCompany) {
+        return 3;
+    }
     return 4;
 }
 
@@ -73,12 +77,15 @@
         {
             if (self.source == QCRegisteredSourceNone) {
                 [cell.cellSwitch setOn:self.model.pushStatus];
+                cell.titleLabel.text = @"广告推送";
+                cell.contentLabel.text = @"开启后，你的个人节点将允许接受广告推送，有机会赚取广告令牌，也可发布个人广告业务";
             }
             else {
-                [cell.cellSwitch setOn:self.companyModel.pushStatus];
+                [cell.cellSwitch setOn:self.companyModel.bankStatus];
+                cell.titleLabel.text = @"银行账号";
+                cell.contentLabel.text = @"开启后，你的投资收益将自动汇入你的银行账号，你消费结算";
             }
-            cell.titleLabel.text = @"广告推送";
-            cell.contentLabel.text = @"开启后，你的个人节点将允许接受广告推送，有机会赚取广告令牌，也可发布个人广告业务";
+
             @weakify(self);
             [[[cell.cellSwitch rac_signalForControlEvents:UIControlEventValueChanged]
              takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id x) {
@@ -87,7 +94,7 @@
                     self.model.pushStatus = !self.model.pushStatus;
                 }
                 else {
-                    self.companyModel.pushStatus = !self.companyModel.pushStatus;
+                    self.companyModel.bankStatus = !self.companyModel.bankStatus;
                 }
                 [self.tableView reloadRowsAtIndexPaths:@[indexPath]
                                       withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -98,12 +105,15 @@
         {
             if (self.source == QCRegisteredSourceNone) {
                 [cell.cellSwitch setOn:self.model.gpsStatus];
+                cell.titleLabel.text = @"地理位置";
+                cell.contentLabel.text = @"开启后，系统将自动定位你的当前位置，为你推送共识订单";
             }
             else {
-                [cell.cellSwitch setOn:self.companyModel.gpsStatus];
+                [cell.cellSwitch setOn:self.companyModel.nodeStatus];
+                cell.titleLabel.text = @"节点共识";
+                cell.contentLabel.text = @"开启后，系统将自动定位你的当前位置，为你推送共识订单";
             }
-            cell.titleLabel.text = @"地理位置";
-            cell.contentLabel.text = @"开启后，系统将自动定位你的当前位置，为你推送共识订单";
+           
             @weakify(self);
             [[[cell.cellSwitch rac_signalForControlEvents:UIControlEventValueChanged]
               takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id x) {
@@ -112,7 +122,7 @@
                     self.model.gpsStatus = !self.model.gpsStatus;
                 }
                 else {
-                    self.companyModel.gpsStatus = !self.companyModel.gpsStatus;
+                    self.companyModel.nodeStatus = !self.companyModel.nodeStatus;
                 }
                 [self.tableView reloadRowsAtIndexPaths:@[indexPath]
                                       withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -123,12 +133,15 @@
         {
             if (self.source == QCRegisteredSourceNone) {
                 [cell.cellSwitch setOn:self.model.bankStatus];
+                cell.titleLabel.text = @"银行账号";
+                cell.contentLabel.text = @"开启后，你的投资收益将自动汇入你的银行账号，你的消费结算将由第三方自动扣付";
             }
             else {
-                [cell.cellSwitch setOn:self.companyModel.bankStatus];
+                [cell.cellSwitch setOn:self.companyModel.pushStatus];
+                cell.titleLabel.text = @"记账推送";
+                cell.contentLabel.text = @"开启后，系统将自动定位你的当前位置，为你推送共识订单";
             }
-            cell.titleLabel.text = @"银行账号";
-            cell.contentLabel.text = @"开启后，你的投资收益将自动汇入你的银行账号，你的消费结算将由第三方自动扣付";
+            
             @weakify(self);
             [[[cell.cellSwitch rac_signalForControlEvents:UIControlEventValueChanged]
               takeUntil:cell.rac_prepareForReuseSignal]
@@ -138,7 +151,7 @@
                      self.model.bankStatus = !self.model.bankStatus;
                  }
                  else {
-                     self.companyModel.bankStatus = !self.companyModel.bankStatus;
+                     self.companyModel.pushStatus = !self.companyModel.pushStatus;
                  }
                 [self.tableView reloadRowsAtIndexPaths:@[indexPath]
                                       withRowAnimation:UITableViewRowAnimationAutomatic];
@@ -239,16 +252,19 @@
             [self.navigationController pushViewController:VC animated:YES];
         }
         else {
-            [self sendCodeRequest];
+            QCRegisteredNameVC *VC = [[QCRegisteredNameVC alloc] init];
+            VC.type = QCRegisteredTypeInformation;
+            VC.companyModel = self.companyModel;
+            VC.source = self.source;
+            [self.navigationController pushViewController:VC animated:YES];
         }
-        
     }];
     
     UILabel *subLabel = [[UILabel alloc] init];
     subLabel.font = Font(10);
     subLabel.numberOfLines = 0;
     subLabel.textColor = RGBA(164, 164, 164, 1);
-    subLabel.text = @"我已同意协议文字所述内容我已同意协议文字所述内容我已同意协议文字所述内容，我已同意协议文字所述内容我已同意协议文字所述内容。";
+    subLabel.text = @"我已同意协议文字所述内容我已同意协议文字所述内容我已同意协议文字所述内容";
     subLabel.textAlignment = NSTextAlignmentCenter;
     
     [view addSubview:btn];
@@ -277,24 +293,6 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 160;
-}
-
-- (void)sendCodeRequest {
-    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"mobile"] = self.companyModel.mobile;
-    params[@"codeType"] = @"ADD_COMPANY"; //新增企业
-    params[@"mobileCode"] = self.companyModel.mobileCode;
-    NSURLRequest *request = [NSURLRequest messageSendCodeWithParameters:params];
-    [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
-        [YJProgressHUD showSuccess:@"短信发送成功"];
-        QCRegisteredValidationVC *validationVC = [[QCRegisteredValidationVC alloc] init];
-        validationVC.companyModel = self.companyModel;
-        validationVC.source = QCRegisteredSourceCompany;
-        validationVC.codeType = QCMessageCodeTypeAddCompany;
-        [self.navigationController pushViewController:validationVC animated:YES];
-    } failBlock:^(QCError *error) {
-        [YJProgressHUD showError:error.localizedDescription];
-    }];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -162,11 +162,6 @@
             self.model.code = code;
             VC.model = self.model;
         }
-        if (self.source == QCRegisteredSourceCompany) {
-            VC.type = QCRegisteredTypeInformation;
-            self.model.code = code;
-            VC.companyModel = self.companyModel;
-        }
         else {
             VC.type = QCRegisteredTypeInformation;
             self.resetModel.code = code;

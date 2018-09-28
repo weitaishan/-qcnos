@@ -280,14 +280,7 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
             break;
             
         case 3:{
-            
-            QCRegisteredSetVC *VC = [[QCRegisteredSetVC alloc] init];
-            VC.companyModel = [[QCCompanyModel alloc] init];
-            VC.source = QCRegisteredSourceCompany;
-            VC.companyModel.mobile = self.userInfo.mobile;
-            VC.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:VC
-                                                 animated:YES];
+        
         }
             
             break;

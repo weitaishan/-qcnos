@@ -10,6 +10,8 @@
 #import "QCPersonSelectNodeView.h"
 #import "QCPersonSelectNodeListCell.h"
 #import "QCGetBlockType.h"
+#import "QCRegisteredSetVC.h"
+#import "QCCompanyModel.h"
 
 @interface QCDeployApplicationBlockViewController ()
 
@@ -206,9 +208,13 @@ static NSString * const QCPersonSelectNodeListCellId = @"QCPersonSelectNodeListC
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    QCRegisteredSetVC *VC = [[QCRegisteredSetVC alloc] init];
+    VC.companyModel = [[QCCompanyModel alloc] init];
+    VC.source = QCRegisteredSourceCompany;
+    VC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:VC
+                                         animated:YES];
 }
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
