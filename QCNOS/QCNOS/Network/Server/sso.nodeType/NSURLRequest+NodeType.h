@@ -11,4 +11,8 @@
 @interface NSURLRequest (NodeType)
 /** 获取区块类型 */
 + (NSURLRequest *)getBlockTypeListWithParameters:(id)parameters;
+
+/** 获取节点类型 */
++ (NSURLRequest *)getNodeTypeListWithParameters:(id)parameters;
+
 @end

@@ -22,11 +22,27 @@
     return request;
 }
 
-
+/** 获取节点类型 */
++ (NSURLRequest *)getNodeTypeListWithParameters:(id)parameters {
+    
+    AFHTTPRequestSerializer *serializer = [AFHTTPRequestSerializer defaultSerializer];
+    NSString *urlString = QCStringFormat(@"%@/list", [self nodeServerUrlPathString]);
+    NSMutableURLRequest *request = [serializer requestWithMethod:@"POST"
+                                                       URLString:urlString
+                                                      parameters:parameters
+                                                           error:nil];
+    [request authorizedURLRequest];
+    return request;
+}
 
 //block模块的服务器路径
 + (NSString *)blockServerUrlPathString {
     return QCStringFormat(@"%@/sso/blockType", SERVER_SCHEME_AND_HOST_AND_PORT);
+}
+
+//node模块的服务器路径
++ (NSString *)nodeServerUrlPathString {
+    return QCStringFormat(@"%@/sso/nodeType", SERVER_SCHEME_AND_HOST_AND_PORT);
 }
 
 @end

@@ -30,11 +30,12 @@ static NSString * const QCPersonSelectNodeListCellId = @"QCPersonSelectNodeListC
     [self setBaseInfo];
     
     //根据type获取不同接口
-    if (self.type) {
-        
-        
+    if (self.type == 0) {
+        [self getBlockTypeListRequest];
     }
-    [self getBlockTypeListRequest];
+    else {
+        [self getNodeTypeListRequest];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,21 +47,38 @@ static NSString * const QCPersonSelectNodeListCellId = @"QCPersonSelectNodeListC
     
     NSURLRequest *request = [NSURLRequest getBlockTypeListWithParameters:nil];
     [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
-       
+        
         QCGetBlockType* model = [QCGetBlockType yy_modelWithJSON:responseObject];
         [self.listArr removeAllObjects];
         [self.listArr addObjectsFromArray:model.data];
         if (self.flagArray.count != self.listArr.count) {
-            
-            for (QCGetBlockTypeChildList* listModel in self.listArr) {
-                
+            [self.listArr enumerateObjectsUsingBlock:^(QCGetBlockTypeChildList * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 [self.flagArray addObject:@1];
-            }
+            }];
         }
-
-        [self.tableView reloadData];
-
         
+        [self.tableView reloadData];
+        
+        
+    } failBlock:^(QCError *error) {
+        [YJProgressHUD showError:error.localizedDescription];
+    }];
+}
+
+- (void)getNodeTypeListRequest {
+    
+    NSURLRequest *request = [NSURLRequest getNodeTypeListWithParameters:nil];
+    [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
+        QCGetBlockType* model = [QCGetBlockType yy_modelWithJSON:responseObject];
+        [self.listArr removeAllObjects];
+        [self.listArr addObjectsFromArray:model.data];
+        if (self.flagArray.count != self.listArr.count) {
+            [self.listArr enumerateObjectsUsingBlock:^(QCGetBlockTypeChildList * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                [self.flagArray addObject:@1];
+            }];
+        }
+        
+        [self.tableView reloadData];
     } failBlock:^(QCError *error) {
         [YJProgressHUD showError:error.localizedDescription];
     }];
