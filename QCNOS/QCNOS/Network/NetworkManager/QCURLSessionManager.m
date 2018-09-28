@@ -8,6 +8,7 @@
 
 #import "QCURLSessionManager.h"
 #import "AFURLSessionManager+SessionManager.h"
+#import "QCLoginViewController.h"
 
 @implementation QCURLSessionManager
 
@@ -33,13 +34,23 @@
         //服务端错误 errcode != 0
         if ([responseObject isKindOfClass:[NSDictionary class]]
             && [responseObject[@"code"] integerValue] != 200) {
-            NSString *errCode = [NSString stringWithFormat:@"%@", responseObject[@"code"]];
-            NSString *errMessage = nil;
-            QCError *serverError = [QCError standardError];
-            serverError.errcode = errCode;
-            errMessage = responseObject[@"message"];
-            serverError.localizedDescription = errMessage;
-            failBlock(serverError);
+            if ([responseObject[@"message"] isEqualToString:@"登录已失效, 请重新登录"]) {
+                [QCUserManager clearUserDatas];
+                QCLoginViewController *VC = [[QCLoginViewController alloc] init];
+                VC.hidesBottomBarWhenPushed = YES;
+                [[UIApplication sharedApplication].keyWindow.rootViewController.navigationController
+                 pushViewController:VC
+                 animated:YES];
+            }
+            else {
+                NSString *errCode = [NSString stringWithFormat:@"%@", responseObject[@"code"]];
+                NSString *errMessage = nil;
+                QCError *serverError = [QCError standardError];
+                serverError.errcode = errCode;
+                errMessage = responseObject[@"message"];
+                serverError.localizedDescription = errMessage;
+                failBlock(serverError);
+            }
             return;
         }
         successBlock(responseObject);
