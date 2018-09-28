@@ -10,6 +10,8 @@
 #import "QCPersonNodeHeaderCell.h"
 #import "QCPersonNodeListCell.h"
 #import "QCDeployApplicationBlockViewController.h"
+#import "QCApplicaNodeList.h"
+
 @interface QCDeployApplicationNodeViewController ()
 
 @property (nonatomic, strong) NSMutableArray *listArray;
@@ -28,16 +30,16 @@ static NSString * const QCPersonNodeListCellId = @"QCPersonNodeListCellId";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBarHidden = NO;
+    [self companyGetTypeListRequest];
     [self setBaseInfo];
 }
 
 - (void)companyGetTypeListRequest {
-    
     NSURLRequest *request = [NSURLRequest companyGetWithParameters:nil];
     [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
-//        QCGetBlockType* model = [QCGetBlockType yy_modelWithJSON:responseObject];
-//        [self.listArray removeAllObjects];
-//        [self.listArray addObjectsFromArray:model.data];
+        QCApplicaNodeList *model = [QCApplicaNodeList yy_modelWithJSON:responseObject];
+        [self.listArray removeAllObjects];
+        [self.listArray addObjectsFromArray:model.data];
         [self.tableView reloadData];
     } failBlock:^(QCError *error) {
         [YJProgressHUD showError:error.localizedDescription];
@@ -92,6 +94,12 @@ static NSString * const QCPersonNodeListCellId = @"QCPersonNodeListCellId";
         return cell;
     }
     QCPersonNodeListCell * cell = [tableView dequeueReusableCellWithIdentifier:QCPersonNodeListCellId forIndexPath:indexPath];
+    QCApplicaNodeListData *model = self.listArray[indexPath.section - 1];
+    [cell.headerImageView sd_setImageWithURL:[NSURL URLWithString:model.logoPhoto]];
+    cell.titleLabel.text = model.name;
+    cell.nodeLabel.text = model.nodeName;
+//    cell.time1Label.text =
+    cell.code.text = model.creditCode;
     return cell;
     
 }
