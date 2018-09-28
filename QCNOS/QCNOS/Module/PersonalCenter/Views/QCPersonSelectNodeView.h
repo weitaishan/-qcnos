@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface QCPersonSelectNodeView : UIView
+@property (weak, nonatomic) IBOutlet UILabel *lbNumber;
+@property (weak, nonatomic) IBOutlet UILabel *lbName;
 
 @end

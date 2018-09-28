@@ -7,7 +7,16 @@
 //
 
 #import "QCBaseTableViewCell.h"
+@class QCGetBlockTypeChildList;
 
 @interface QCPersonSelectNodeListCell : QCBaseTableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *iconImg;
+
+@property (weak, nonatomic) IBOutlet UILabel *lbName;
+@property (weak, nonatomic) IBOutlet UILabel *lbDesc;
+
+@property (weak, nonatomic) IBOutlet UIButton *applyBtn;
+
+@property (nonatomic, strong) QCGetBlockTypeChildList* model;
 @end
