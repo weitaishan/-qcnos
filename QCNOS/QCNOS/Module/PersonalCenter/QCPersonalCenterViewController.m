@@ -17,6 +17,7 @@
 #import "QCCompanyModel.h"
 #import "QCDeployApplicationBlockViewController.h"
 #import "QCDeployApplicationNodeViewController.h"
+
 @interface QCPersonalCenterViewController ()
 
 @property (nonatomic, strong) NSMutableArray* listArray;
@@ -116,54 +117,19 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
 }
 
 - (void)uploadHeaderImageViewRequestWithImage:(UIImage *)image {
-    //    [YJProgressHUD showLoading:@"上传中..."];
-    //    NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    //    NSData *imageData = UIImageJPEGRepresentation(image, 0.1); //image为要上传的图片(UIImage)
-    //    params[@"type"] = @"headPhoto";
-    //
-    //    NSURLRequest *request = [NSURLRequest uploadHeaderImageWithParameters:params
-    //                                                                 fileName:@"fileData"];
-    //    [QCURLSessionManager uploadFileWithFileData:imageData request:request successBlock:^(id responseObject) {
-    //        NSLog(@"%@", responseObject);
-    //        [YJProgressHUD showMessage:@"上传成功"];
-    //    } failBlock:^(QCError *error) {
-    //        [YJProgressHUD showError:error.localizedDescription];
-    //
-    //    }];
-    
-    //需要提交的数据
-    NSData  *data_s = UIImageJPEGRepresentation(image, 0.8);
-    NSDictionary  * dic = [NSMutableDictionary new];
-    [dic setValue:@"headPhoto" forKey:@"type"];
-    
-    //配置AF
-//    AFHTTPSessionManager *manage = [AFHTTPSessionManager manager];
-//    [manage.requestSerializer setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
-//    manage.requestSerializer = [AFHTTPRequestSerializer serializer];
-//    manage.responseSerializer = [AFHTTPResponseSerializer serializer];
-//
-//    [manage POST:@"http://43.254.45.72:8888/file/upload/uploadImg" parameters:dic constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-//        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//        formatter.dateFormat = @"yyyyMMddHHmmss";
-//        NSString *fileName = [NSString stringWithFormat:@"%@.png",
-//                              [formatter stringFromDate:[NSDate date]]];
-//        [formData appendPartWithFileData:data_s name:@"fileData" fileName:fileName mimeType:@"image/jpeg"];
-//    } progress:^(NSProgress * _Nonnull uploadProgress) {
-//
-//    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-//        NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
-//        NSLog(@"%@", responseDic);
-//    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//    }];
+    [QCURLSessionManager uploadImageWithImage:image
+                                    imageType:QCUploadImageServerTypeHeadPhoto
+                                     progress:nil
+                                      success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"%@", responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        
+    }];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-
-
 
 #pragma mark - UITableViewDelegate/dataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -280,7 +246,6 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
                 vc.hidesBottomBarWhenPushed = YES;
                 
                 [self.navigationController pushViewController:vc animated:YES];
-                
             }else{
                 QCDeployApplicationBlockViewController* vc = [[QCDeployApplicationBlockViewController alloc] init];
                 
