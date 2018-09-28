@@ -22,7 +22,17 @@
     return request;
 }
 
-
+/** 查询企业列表 */
++ (NSURLRequest *)companyGetWithParameters:(id)parameters {
+    AFHTTPRequestSerializer *serializer = [AFHTTPRequestSerializer defaultSerializer];
+    NSString *urlString = QCStringFormat(@"%@/getList", [self companyServerUrlPathString]);
+    NSMutableURLRequest *request = [serializer requestWithMethod:@"POST"
+                                                       URLString:urlString
+                                                      parameters:parameters
+                                                           error:nil];
+    [request authorizedURLRequest];
+    return request;
+}
 
 //company模块的服务器路径
 + (NSString *)companyServerUrlPathString {

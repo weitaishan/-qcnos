@@ -31,6 +31,19 @@ static NSString * const QCPersonNodeListCellId = @"QCPersonNodeListCellId";
     [self setBaseInfo];
 }
 
+- (void)companyGetTypeListRequest {
+    
+    NSURLRequest *request = [NSURLRequest companyGetWithParameters:nil];
+    [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
+//        QCGetBlockType* model = [QCGetBlockType yy_modelWithJSON:responseObject];
+//        [self.listArray removeAllObjects];
+//        [self.listArray addObjectsFromArray:model.data];
+        [self.tableView reloadData];
+    } failBlock:^(QCError *error) {
+        [YJProgressHUD showError:error.localizedDescription];
+    }];
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
@@ -140,9 +153,6 @@ static NSString * const QCPersonNodeListCellId = @"QCPersonNodeListCellId";
     if (!_listArray) {
 
         _listArray = @[].mutableCopy;
-        [_listArray addObject:@0];
-        [_listArray addObject:@1];
-        [_listArray addObject:@2];
 
     }
 

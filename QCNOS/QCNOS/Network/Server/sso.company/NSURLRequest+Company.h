@@ -13,4 +13,7 @@
 /** 添加企业 */
 + (NSURLRequest *)companyAddWithParameters:(id)parameters;
 
+/** 查询企业列表 */
++ (NSURLRequest *)companyGetWithParameters:(id)parameters;
+
 @end
