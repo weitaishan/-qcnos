@@ -7,7 +7,7 @@
 //
 
 #import "QCPersonSelectNodeListCell.h"
-
+#import "QCGetBlockType.h"
 @implementation QCPersonSelectNodeListCell
 
 - (void)awakeFromNib {
@@ -21,4 +21,16 @@
     // Configure the view for the selected state
 }
 
+
+-(void)setModel:(QCGetBlockTypeChildList *)model{
+    
+    _model = model;
+    
+    self.lbName.text = model.name;
+    
+    self.lbDesc.text = model.desc ? model.desc : @"关于区块的文字介绍";
+    
+    
+    
+}
 @end

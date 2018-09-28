@@ -77,7 +77,6 @@ static NSString * const QCPersonSelectNodeListCellId = @"QCPersonSelectNodeListC
                 [self.flagArray addObject:@1];
             }];
         }
-        
         [self.tableView reloadData];
     } failBlock:^(QCError *error) {
         [YJProgressHUD showError:error.localizedDescription];
@@ -131,6 +130,19 @@ static NSString * const QCPersonSelectNodeListCellId = @"QCPersonSelectNodeListC
     
     QCPersonSelectNodeListCell * cell = [tableView dequeueReusableCellWithIdentifier:QCPersonSelectNodeListCellId forIndexPath:indexPath];
     
+    QCGetBlockTypeChildList* listModel = self.listArr[indexPath.section].childList[indexPath.row];
+    
+    cell.model = listModel;
+    
+    if (self.type) {
+        
+        cell.applyBtn.titleLabel.text = @"申请配置";
+    }else{
+        
+        cell.applyBtn.titleLabel.text = @"申请部署";
+
+    }
+    
     
     return cell;
     
@@ -177,10 +189,13 @@ static NSString * const QCPersonSelectNodeListCellId = @"QCPersonSelectNodeListC
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
+    QCGetBlockTypeChildList* listModel = self.listArr[section];
      UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0,SCREEN_WIDTH , 60)];
     
-    QCPersonSelectNodeView* nodeView = [[NSBundle mainBundle] loadNibNamed:@"QCPersonSelectNodeView" owner:self options:nil].firstObject;
-    
+    QCPersonSelectNodeView* nodeView = [[NSBundle mainBundle] loadNibNamed:@"QCPersonSelectNodeView" owner:self options:nil].firstObject
+    ;
+    nodeView.lbNumber.text = [NSString stringWithFormat:@"可选类型%ld个",listModel.childList.count];
+    nodeView.lbName.text = listModel.name;
     [view addSubview:nodeView];
     [nodeView mas_makeConstraints:^(MASConstraintMaker *make) {
        

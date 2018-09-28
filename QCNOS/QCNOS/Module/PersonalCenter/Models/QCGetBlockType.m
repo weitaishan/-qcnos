@@ -14,7 +14,9 @@
 
 @implementation QCGetBlockTypeChildList
 
-
++ (NSDictionary<NSString *,id> *)modelContainerPropertyGenericClass{
+    return @{@"childList" : [QCGetBlockTypeChildList class]};
+}
 @end
 
 

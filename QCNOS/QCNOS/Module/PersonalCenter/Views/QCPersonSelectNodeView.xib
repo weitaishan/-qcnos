@@ -84,6 +84,10 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="lbName" destination="vaX-k6-Lt5" id="MNu-Yz-byV"/>
+                <outlet property="lbNumber" destination="Vg8-du-FZu" id="YkT-lX-z70"/>
+            </connections>
             <point key="canvasLocation" x="97" y="-212.5"/>
         </view>
     </objects>
