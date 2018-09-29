@@ -10,6 +10,7 @@
 #import "QCUploadImageViewController.h"
 #import "QCUploadImgView.h"
 #import "QCPersonSelectNodeHeaderCell.h"
+#import "QCShopNameCell.h"
 
 #define HEADER_HEIGHT ((SCREEN_WIDTH - 60) / 3.f)
 
@@ -24,6 +25,8 @@
 @end
 
 static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHeaderCellId";
+
+static NSString * const QCShopNameCellId = @"QCShopNameCellId";
 
 @implementation QCUploadImageViewController
 
@@ -54,6 +57,10 @@ static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHea
     [self addTableViewWithGroupFrame:CGRectMake(0,0, SCREEN_WIDTH,SCREEN_HEIGHT - StatusBarAndNavigationBarHeight - TabbarHeight)];
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([QCPersonSelectNodeHeaderCell class]) bundle:nil] forCellReuseIdentifier:QCPersonSelectNodeHeaderCellId];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([QCShopNameCell class]) bundle:nil] forCellReuseIdentifier:QCShopNameCellId];
+
+    
     
     [self.view addSubview:self.submitBtn];
     MJWeakSelf;
@@ -90,8 +97,15 @@ static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHea
 
 - (void)uploadImgs{
     
-    [QCURLSessionManager uploadImageWithImages:self.imgArr imageType:QCUploadImageServerTypeShopPhoto progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+    [YJProgressHUD showLoading:@"上传中..."];
+    [QCURLSessionManager uploadImageWithImages:self.imgArr imageType:QCUploadImageServerTypeShopPhoto progress:^(NSProgress * progress) {
         
+        
+        
+    }success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+
+        [self addShop];
         
                                            
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -100,10 +114,15 @@ static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHea
     }];
     
 }
+
+- (void)addShop{
+    
+    
+}
 #pragma mark - UITableViewDelegate/dataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
-    return 1;
+    return 2;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
@@ -113,7 +132,14 @@ static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHea
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    QCPersonSelectNodeHeaderCell * cell = [tableView dequeueReusableCellWithIdentifier:QCPersonSelectNodeHeaderCellId forIndexPath:indexPath];
+    if (indexPath.section == 0) {
+        
+        QCPersonSelectNodeHeaderCell * cell = [tableView dequeueReusableCellWithIdentifier:QCPersonSelectNodeHeaderCellId forIndexPath:indexPath];
+
+        return cell;
+    }
+    
+    QCShopNameCell * cell = [tableView dequeueReusableCellWithIdentifier:QCShopNameCellId forIndexPath:indexPath];
     //    QCInvitaitionListModel* model = self.listArray[indexPath.row];
     //    cell.model = model;
     return cell;
@@ -122,12 +148,20 @@ static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHea
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 73;
+    if (indexPath.section == 0) {
+
+        return 73;
+    }
+    return 142;
     
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     
+    if (section == 0) {
+        
+        return 10;
+    }
     CGFloat row =  (self.imgArr.count ) / 3 + 1;
     
     return HEADER_HEIGHT * row + row*10 + 10;
@@ -147,25 +181,30 @@ static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHea
     
     UIView* view = [[UIView alloc] init];
     
-    view.backgroundColor = [UIColor whiteColor];
+    view.backgroundColor = [UIColor colorFromHexString:@"#f5f5f5"];
     
-    QCUploadImgView* uploadImg = [[QCUploadImgView alloc] initWithImgArr:self.imgArr assets:self.assets isVideo:NO];
+    if (section == 1) {
+
+        QCUploadImgView* uploadImg = [[QCUploadImgView alloc] initWithImgArr:self.imgArr assets:self.assets isVideo:NO];
+        
+        [view addSubview:uploadImg];
+        
+        uploadImg.reloadBlock = ^(NSMutableArray *imgArr, NSArray *assets) {
+            
+            self.imgArr = imgArr;
+            self.assets = assets;
+            
+            [self.tableView reloadData];
+            
+        };
+        [uploadImg mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.top.left.bottom.right.equalTo(view);
+            
+        }];
+        
+    }
     
-    [view addSubview:uploadImg];
-    
-    uploadImg.reloadBlock = ^(NSMutableArray *imgArr, NSArray *assets) {
-        
-        self.imgArr = imgArr;
-        self.assets = assets;
-        
-        [self.tableView reloadData];
-        
-    };
-    [uploadImg mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.top.left.bottom.right.equalTo(view);
-        
-    }];
     
     return view;
 }
