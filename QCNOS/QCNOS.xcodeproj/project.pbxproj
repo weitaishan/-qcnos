@@ -26,6 +26,7 @@
 		09751C04215F5ABA002630AA /* MOFSToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BFC215F5ABA002630AA /* MOFSToolbar.m */; };
 		09751C05215F5ABA002630AA /* province_data.xml in Resources */ = {isa = PBXBuildFile; fileRef = 09751BFD215F5ABA002630AA /* province_data.xml */; };
 		09751C0A215F5B71002630AA /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09751C09215F5B71002630AA /* libxml2.tbd */; };
+		09751C0E215F6147002630AA /* NSURLRequest+Shop.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751C0D215F6147002630AA /* NSURLRequest+Shop.m */; };
 		09A48EC6215345AF00131A6B /* QCInvitaitionFiltrateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48EC4215345AF00131A6B /* QCInvitaitionFiltrateCell.m */; };
 		09A48EC7215345AF00131A6B /* QCInvitaitionFiltrateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48EC5215345AF00131A6B /* QCInvitaitionFiltrateCell.xib */; };
 		09A48ECB2153498B00131A6B /* QCInvitaitionBaseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48EC92153498B00131A6B /* QCInvitaitionBaseListCell.m */; };
@@ -197,6 +198,8 @@
 		09751BFD215F5ABA002630AA /* province_data.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = province_data.xml; sourceTree = "<group>"; };
 		09751C06215F5B15002630AA /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
 		09751C09215F5B71002630AA /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		09751C0C215F6147002630AA /* NSURLRequest+Shop.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURLRequest+Shop.h"; sourceTree = "<group>"; };
+		09751C0D215F6147002630AA /* NSURLRequest+Shop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+Shop.m"; sourceTree = "<group>"; };
 		09A48EC3215345AF00131A6B /* QCInvitaitionFiltrateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCInvitaitionFiltrateCell.h; sourceTree = "<group>"; };
 		09A48EC4215345AF00131A6B /* QCInvitaitionFiltrateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCInvitaitionFiltrateCell.m; sourceTree = "<group>"; };
 		09A48EC5215345AF00131A6B /* QCInvitaitionFiltrateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCInvitaitionFiltrateCell.xib; sourceTree = "<group>"; };
@@ -488,6 +491,15 @@
 				09751BF2215F5ABA002630AA /* GDataXMLNode.m */,
 			);
 			path = GDataXMLNode;
+			sourceTree = "<group>";
+		};
+		09751C0B215F6129002630AA /* sso.shop */ = {
+			isa = PBXGroup;
+			children = (
+				09751C0C215F6147002630AA /* NSURLRequest+Shop.h */,
+				09751C0D215F6147002630AA /* NSURLRequest+Shop.m */,
+			);
+			path = sso.shop;
 			sourceTree = "<group>";
 		};
 		09A48EC1215341D900131A6B /* Models */ = {
@@ -936,6 +948,7 @@
 		7785FD5C213CD744009EA6F2 /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				09751C0B215F6129002630AA /* sso.shop */,
 				09751BD6215DCB4D002630AA /* sso.nodeType */,
 				77174108215C873B00F2F059 /* sso.company */,
 				773C1FB92141038F007E20B3 /* file.upload */,
@@ -1322,6 +1335,7 @@
 				777271A3215395B400269058 /* QCSelectBlockViewController.m in Sources */,
 				77EFAAED213E6CBF00D2C565 /* QCNationTableViewCell.m in Sources */,
 				777FDB0E212E8B59007D80B8 /* QCRegisteredNameVC.m in Sources */,
+				09751C0E215F6147002630AA /* NSURLRequest+Shop.m in Sources */,
 				774213482136A113003E44F6 /* UITextField+Util.m in Sources */,
 				7772719221538C5A00269058 /* QCCommentCell.m in Sources */,
 				7785FD63213CD8A1009EA6F2 /* QCServerSwitch.m in Sources */,

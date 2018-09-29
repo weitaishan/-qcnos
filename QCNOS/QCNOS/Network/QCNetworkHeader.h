@@ -21,4 +21,5 @@
 #import "NSURLRequest+Upload.h"   //上传图片
 #import "NSURLRequest+Company.h"
 #import "NSURLRequest+NodeType.h"
+#import "NSURLRequest+Shop.h"
 #endif /* QCNetworkHeader_h */

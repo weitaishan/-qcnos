@@ -11,6 +11,7 @@
 #import "QCUploadImgView.h"
 #import "QCPersonSelectNodeHeaderCell.h"
 #import "QCShopNameCell.h"
+#import "MOFSPickerManager.h"
 
 #define HEADER_HEIGHT ((SCREEN_WIDTH - 60) / 3.f)
 
@@ -21,6 +22,8 @@
 @property (nonatomic, strong) NSArray *assets;
 
 @property (nonatomic, strong) QCSubmitButton* submitBtn;
+
+@property (nonatomic, strong) NSMutableDictionary* jsonDic;
 
 @end
 
@@ -94,7 +97,6 @@ static NSString * const QCShopNameCellId = @"QCShopNameCellId";
     
 }
 
-
 - (void)uploadImgs{
     
     [YJProgressHUD showLoading:@"上传中..."];
@@ -116,6 +118,57 @@ static NSString * const QCShopNameCellId = @"QCShopNameCellId";
 }
 
 - (void)addShopWithImages:(NSString *)images{
+    
+    if ([self.jsonDic[@"name"] length] == 0) {
+        
+        [YJProgressHUD showMessage:@"请填写店铺名字"];
+        return;
+        
+    }
+    
+    if ([self.jsonDic[@"address"] length] == 0) {
+        
+        [YJProgressHUD showMessage:@"请填写店铺详细地址"];
+
+        return;
+        
+    }
+    
+    if ([self.jsonDic[@"regionName"] length] == 0) {
+        
+        [YJProgressHUD showMessage:@"请选择省市区"];
+        
+        return;
+        
+    }
+    
+    if ([self.jsonDic[@"companyId"] length] == 0) {
+        
+        [YJProgressHUD showMessage:@"没有公司Id"];
+        
+        return;
+        
+    }
+    
+    
+    
+    NSArray *imageArr = [images componentsSeparatedByString:@","];
+    [self.jsonDic setObject:imageArr.firstObject forKey:@"logoPhoto"];
+    [self.jsonDic setObject:imageArr.firstObject forKey:@"displayPhoto"];
+
+    
+    
+    NSURLRequest *request = [NSURLRequest addShopWithParameters:self.jsonDic];
+    [QCURLSessionManager dataTaskWithRequest:request successBlock:^(id responseObject) {
+    
+        
+        
+    } failBlock:^(QCError *error) {
+        [YJProgressHUD showError:error.localizedDescription];
+    }];
+    
+    
+
     
     
 }
@@ -140,6 +193,20 @@ static NSString * const QCShopNameCellId = @"QCShopNameCellId";
     }
     
     QCShopNameCell * cell = [tableView dequeueReusableCellWithIdentifier:QCShopNameCellId forIndexPath:indexPath];
+    
+    [[[cell.lbName rac_textSignal] takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id x) {
+       
+        [self.jsonDic setObject:x ? : @"" forKey:@"name"];
+
+        
+    }];
+    
+    [[[cell.lbAddress rac_textSignal] takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id x) {
+        
+        [self.jsonDic setObject:x ? : @"" forKey:@"address"];
+
+    }];
+    
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
     [cell.lbCity addGestureRecognizer:tap];
     
@@ -147,6 +214,39 @@ static NSString * const QCShopNameCellId = @"QCShopNameCellId";
     [[[tap rac_gestureSignal] takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id x) {
         @strongify(self);
         
+        [[MOFSPickerManager shareManger] showMOFSAddressPickerWithDefaultAddress:@"四川省-成都市-武侯区" numberOfComponents:3 title:@"请选择城市" cancelTitle:@"取消" commitTitle:@"确定" commitBlock:^(NSString *address, NSString *zipcode) {
+            
+            
+            cell.lbCity.text = [address stringByReplacingOccurrencesOfString:@"-"withString:@" "];
+            
+            NSArray *addressCodeArr = [zipcode componentsSeparatedByString:@"-"];
+            NSString* province = zipcode.length ? addressCodeArr[0] : @"";
+            NSString* city = zipcode.length ? addressCodeArr[1] : @"";
+            NSString* county = zipcode.length ? addressCodeArr[2] : @"";
+            
+            [self.jsonDic setObject:province forKey:@"provinceCode"];
+            [self.jsonDic setObject:city forKey:@"provinceCode"];
+            [self.jsonDic setObject:county forKey:@"regionCode"];
+            [self.jsonDic setObject:@"CHN" forKey:@"nationCode"];
+
+            
+            
+            NSArray *addressArr = [address componentsSeparatedByString:@"-"];
+            NSString* provinceName = address.length ? addressArr[0] : @"";
+            NSString* cityName = address.length ? addressArr[1] : @"";
+            NSString* regionName = address.length ? addressArr[2] : @"";
+            
+            [self.jsonDic setObject:provinceName forKey:@"provinceName"];
+            [self.jsonDic setObject:cityName forKey:@"cityName"];
+            [self.jsonDic setObject:regionName forKey:@"regionName"];
+            [self.jsonDic setObject:@"中国" forKey:@"nationName"];
+
+            NSLog(@"jsonDic = %@",self.jsonDic);
+            
+        } cancelBlock:^{
+            
+            
+        }];
     }];
     //    QCInvitaitionListModel* model = self.listArray[indexPath.row];
     //    cell.model = model;
@@ -232,6 +332,21 @@ static NSString * const QCShopNameCellId = @"QCShopNameCellId";
 //    return _listArray;
 //
 //}
+
+-(NSMutableDictionary *)jsonDic{
+    
+    if (!_jsonDic) {
+        
+        _jsonDic = @{}.mutableCopy;
+        
+        [_jsonDic setObject:@"2" forKey:@"type"];
+        [_jsonDic setObject:[NSString stringWithFormat:@"%ld",self.companyId] forKey:@"companyId"];
+
+    }
+    
+    return _jsonDic;
+}
+
 
 -(QCSubmitButton *)submitBtn{
     
