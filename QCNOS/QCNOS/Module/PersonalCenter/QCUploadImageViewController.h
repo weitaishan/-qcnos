@@ -10,4 +10,6 @@
 
 @interface QCUploadImageViewController : WTSBaseViewController
 
+@property (nonatomic, assign) NSInteger companyId;
+
 @end
