@@ -9,7 +9,6 @@
 #ifndef QCPrefixHeader_pch
 #define QCPrefixHeader_pch
 
-#import "STPickerArea.h"
 #import "ToolMacro.h"
 #import "Colors.h"
 #import "QCDefine.h"

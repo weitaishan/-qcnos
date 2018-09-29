@@ -125,12 +125,6 @@
 		7785FD71213D2BD9009EA6F2 /* AFHTTPRequestSerializer+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785FD70213D2BD9009EA6F2 /* AFHTTPRequestSerializer+Extension.m */; };
 		7785FD74213D2F19009EA6F2 /* NSMutableURLRequest+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785FD73213D2F19009EA6F2 /* NSMutableURLRequest+Extension.m */; };
 		7785FD77213D2F61009EA6F2 /* AFURLSessionManager+SessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7785FD76213D2F61009EA6F2 /* AFURLSessionManager+SessionManager.m */; };
-		7799F3BD215F5753002D80F0 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7799F3B8215F5753002D80F0 /* area.plist */; };
-		7799F3BE215F5753002D80F0 /* STPickerArea.m in Sources */ = {isa = PBXBuildFile; fileRef = 7799F3BA215F5753002D80F0 /* STPickerArea.m */; };
-		7799F3BF215F5753002D80F0 /* STToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7799F3BC215F5753002D80F0 /* STToolbar.m */; };
-		7799F3C8215F5792002D80F0 /* STConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 7799F3C3215F5792002D80F0 /* STConst.m */; };
-		7799F3C9215F5792002D80F0 /* STUI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7799F3C5215F5792002D80F0 /* STUI.m */; };
-		7799F3CA215F5792002D80F0 /* UIView+ST.m in Sources */ = {isa = PBXBuildFile; fileRef = 7799F3C7215F5792002D80F0 /* UIView+ST.m */; };
 		77D1EF04212D602C003D892D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D1EF03212D602C003D892D /* AppDelegate.m */; };
 		77D1EF0C212D602D003D892D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77D1EF0B212D602D003D892D /* Assets.xcassets */; };
 		77D1EF12212D602E003D892D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 77D1EF11212D602E003D892D /* main.m */; };
@@ -362,18 +356,6 @@
 		7785FD73213D2F19009EA6F2 /* NSMutableURLRequest+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSMutableURLRequest+Extension.m"; sourceTree = "<group>"; };
 		7785FD75213D2F61009EA6F2 /* AFURLSessionManager+SessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AFURLSessionManager+SessionManager.h"; sourceTree = "<group>"; };
 		7785FD76213D2F61009EA6F2 /* AFURLSessionManager+SessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AFURLSessionManager+SessionManager.m"; sourceTree = "<group>"; };
-		7799F3B8215F5753002D80F0 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
-		7799F3B9215F5753002D80F0 /* STPickerArea.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPickerArea.h; sourceTree = "<group>"; };
-		7799F3BA215F5753002D80F0 /* STPickerArea.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPickerArea.m; sourceTree = "<group>"; };
-		7799F3BB215F5753002D80F0 /* STToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STToolbar.h; sourceTree = "<group>"; };
-		7799F3BC215F5753002D80F0 /* STToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STToolbar.m; sourceTree = "<group>"; };
-		7799F3C1215F5792002D80F0 /* STConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConfig.h; sourceTree = "<group>"; };
-		7799F3C2215F5792002D80F0 /* STConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STConst.h; sourceTree = "<group>"; };
-		7799F3C3215F5792002D80F0 /* STConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STConst.m; sourceTree = "<group>"; };
-		7799F3C4215F5792002D80F0 /* STUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STUI.h; sourceTree = "<group>"; };
-		7799F3C5215F5792002D80F0 /* STUI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STUI.m; sourceTree = "<group>"; };
-		7799F3C6215F5792002D80F0 /* UIView+ST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ST.h"; sourceTree = "<group>"; };
-		7799F3C7215F5792002D80F0 /* UIView+ST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ST.m"; sourceTree = "<group>"; };
 		77D1EEFF212D602C003D892D /* QCNOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QCNOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77D1EF02212D602C003D892D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		77D1EF03212D602C003D892D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -847,7 +829,6 @@
 		777FDB18212E9C8A007D80B8 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				7799F3B7215F5753002D80F0 /* Area */,
 				773C1FBD2141051D007E20B3 /* QCImagePicker */,
 				77264D82213E245200B57B15 /* YJProgressHUD */,
 				777FDB19212E9C9B007D80B8 /* ValidationCode */,
@@ -954,33 +935,6 @@
 				77264D7D213E1C2100B57B15 /* UserManager */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		7799F3B7215F5753002D80F0 /* Area */ = {
-			isa = PBXGroup;
-			children = (
-				7799F3C0215F5792002D80F0 /* STConfig */,
-				7799F3B8215F5753002D80F0 /* area.plist */,
-				7799F3B9215F5753002D80F0 /* STPickerArea.h */,
-				7799F3BA215F5753002D80F0 /* STPickerArea.m */,
-			);
-			path = Area;
-			sourceTree = "<group>";
-		};
-		7799F3C0215F5792002D80F0 /* STConfig */ = {
-			isa = PBXGroup;
-			children = (
-				7799F3BB215F5753002D80F0 /* STToolbar.h */,
-				7799F3BC215F5753002D80F0 /* STToolbar.m */,
-				7799F3C1215F5792002D80F0 /* STConfig.h */,
-				7799F3C2215F5792002D80F0 /* STConst.h */,
-				7799F3C3215F5792002D80F0 /* STConst.m */,
-				7799F3C4215F5792002D80F0 /* STUI.h */,
-				7799F3C5215F5792002D80F0 /* STUI.m */,
-				7799F3C6215F5792002D80F0 /* UIView+ST.h */,
-				7799F3C7215F5792002D80F0 /* UIView+ST.m */,
-			);
-			path = STConfig;
 			sourceTree = "<group>";
 		};
 		77D1EEF6212D602C003D892D = {
@@ -1199,7 +1153,6 @@
 				777271A02153959600269058 /* QCSelectBlockCell.xib in Resources */,
 				09A48ECC2153498B00131A6B /* QCInvitaitionBaseListCell.xib in Resources */,
 				09A48F1A21538CD200131A6B /* QCPersonCenterListCell.xib in Resources */,
-				7799F3BD215F5753002D80F0 /* area.plist in Resources */,
 				09A48EC7215345AF00131A6B /* QCInvitaitionFiltrateCell.xib in Resources */,
 				7751DEB5215496BD003EF205 /* QCBlockTitleCell.xib in Resources */,
 				09A48F2421539D0200131A6B /* QCPersonNodeHeaderCell.xib in Resources */,
@@ -1314,8 +1267,6 @@
 				77D1EF40212D69F7003D892D /* AppDelegateMain.m in Sources */,
 				09A48F3E2154CAB700131A6B /* QCUploadImageViewController.m in Sources */,
 				09A48F1E21538D9300131A6B /* QCPersonCenterExitCell.m in Sources */,
-				7799F3C8215F5792002D80F0 /* STConst.m in Sources */,
-				7799F3C9215F5792002D80F0 /* STUI.m in Sources */,
 				77D1EF61212D7343003D892D /* QCURLSessionManager.m in Sources */,
 				77421344213679C6003E44F6 /* QCRegisteredVC.m in Sources */,
 				774213402136746C003E44F6 /* QCPersonalCenterViewController.m in Sources */,
@@ -1336,12 +1287,10 @@
 				773C1FB82140D1D6007E20B3 /* QCHomeScrollView.m in Sources */,
 				7751DEB92154CEBA003EF205 /* QCShopReleaseCell.m in Sources */,
 				77EFAAE9213E6C9D00D2C565 /* QCNationVC.m in Sources */,
-				7799F3BE215F5753002D80F0 /* STPickerArea.m in Sources */,
 				09751BCA215CBD14002630AA /* QCDeployApplicationBlockViewController.m in Sources */,
 				77D1EF36212D65B6003D892D /* NSDate+Extension.m in Sources */,
 				09A48F2821539D1600131A6B /* QCPersonNodeListCell.m in Sources */,
 				77EFAAF1213E6FAC00D2C565 /* QCNationModel.m in Sources */,
-				7799F3BF215F5753002D80F0 /* STToolbar.m in Sources */,
 				77D1EF2A212D64E8003D892D /* NSNull+WTSNatural.m in Sources */,
 				09751BCD215CC461002630AA /* QCPersonSelectNodeView.m in Sources */,
 				7751DEB4215496BD003EF205 /* QCBlockTitleCell.m in Sources */,
@@ -1372,7 +1321,6 @@
 				777084BF215334AC005CEF76 /* QCShoppingDetailVC.m in Sources */,
 				09A48EE5215376BE00131A6B /* QCInvitationDetailsViewController.m in Sources */,
 				777FDB2A212EBB24007D80B8 /* QCRegisteredSetCell.m in Sources */,
-				7799F3CA215F5792002D80F0 /* UIView+ST.m in Sources */,
 				09751BE7215E067A002630AA /* QCApplicaNodeList.m in Sources */,
 				773C1FC02141051D007E20B3 /* QCImagePicker.m in Sources */,
 				77EFAAF4213E84B900D2C565 /* QCResetModel.m in Sources */,

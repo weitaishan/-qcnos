@@ -140,6 +140,14 @@ static NSString * const QCShopNameCellId = @"QCShopNameCellId";
     }
     
     QCShopNameCell * cell = [tableView dequeueReusableCellWithIdentifier:QCShopNameCellId forIndexPath:indexPath];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] init];
+    [cell.lbCity addGestureRecognizer:tap];
+    
+    @weakify(self);
+    [[[tap rac_gestureSignal] takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id x) {
+        @strongify(self);
+        
+    }];
     //    QCInvitaitionListModel* model = self.listArray[indexPath.row];
     //    cell.model = model;
     return cell;
