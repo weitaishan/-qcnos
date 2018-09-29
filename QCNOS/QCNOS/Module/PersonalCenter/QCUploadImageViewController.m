@@ -150,14 +150,18 @@ static NSString * const QCShopNameCellId = @"QCShopNameCellId";
     
     if (indexPath.section == 0) {
 
-        return 142;
+        return 73;
     }
-    return 73;
+    return 142;
     
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     
+    if (section == 0) {
+        
+        return 10;
+    }
     CGFloat row =  (self.imgArr.count ) / 3 + 1;
     
     return HEADER_HEIGHT * row + row*10 + 10;
@@ -177,25 +181,30 @@ static NSString * const QCShopNameCellId = @"QCShopNameCellId";
     
     UIView* view = [[UIView alloc] init];
     
-    view.backgroundColor = [UIColor whiteColor];
+    view.backgroundColor = [UIColor colorFromHexString:@"#f5f5f5"];
     
-    QCUploadImgView* uploadImg = [[QCUploadImgView alloc] initWithImgArr:self.imgArr assets:self.assets isVideo:NO];
+    if (section == 1) {
+
+        QCUploadImgView* uploadImg = [[QCUploadImgView alloc] initWithImgArr:self.imgArr assets:self.assets isVideo:NO];
+        
+        [view addSubview:uploadImg];
+        
+        uploadImg.reloadBlock = ^(NSMutableArray *imgArr, NSArray *assets) {
+            
+            self.imgArr = imgArr;
+            self.assets = assets;
+            
+            [self.tableView reloadData];
+            
+        };
+        [uploadImg mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.top.left.bottom.right.equalTo(view);
+            
+        }];
+        
+    }
     
-    [view addSubview:uploadImg];
-    
-    uploadImg.reloadBlock = ^(NSMutableArray *imgArr, NSArray *assets) {
-        
-        self.imgArr = imgArr;
-        self.assets = assets;
-        
-        [self.tableView reloadData];
-        
-    };
-    [uploadImg mas_makeConstraints:^(MASConstraintMaker *make) {
-        
-        make.top.left.bottom.right.equalTo(view);
-        
-    }];
     
     return view;
 }
