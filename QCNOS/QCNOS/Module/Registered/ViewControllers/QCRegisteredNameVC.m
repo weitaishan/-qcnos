@@ -480,7 +480,7 @@
     else {
         type = QCUploadImageServerTypeHeadPhoto;
     }
-    [QCURLSessionManager uploadImageWithImage:image
+    [QCURLSessionManager uploadImageWithImages:@[image]
                                     imageType:type
                                      progress:nil
                                       success:^(NSURLSessionDataTask *task, id responseObject) {

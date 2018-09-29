@@ -230,11 +230,7 @@ static NSString * const QCRegisteredSetCellId = @"QCRegisteredSetCell";
     switch (indexPath.section) {
         case 0:{
             
-            QCUploadImageViewController* vc = [[QCUploadImageViewController alloc] init];
             
-            vc.hidesBottomBarWhenPushed = YES;
-            
-            [self.navigationController pushViewController:vc animated:YES];
         }
             
             break;

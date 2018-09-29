@@ -1,3 +1,4 @@
+
 //
 //  QCUploadImageViewController.m
 //  QCNOS
@@ -54,11 +55,51 @@ static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHea
     
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([QCPersonSelectNodeHeaderCell class]) bundle:nil] forCellReuseIdentifier:QCPersonSelectNodeHeaderCellId];
     
+    [self.view addSubview:self.submitBtn];
+    MJWeakSelf;
+    [self.submitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        
+        make.left.bottom.right.equalTo(weakSelf.view);
+        make.height.mas_equalTo(44);
+    }];
     
+    [[self.submitBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        
+        [self uploadImgs];
+        
+    }];
+    
+    self.imgArr = @[].mutableCopy;
+    
+    RAC(_submitBtn, userInteractionEnabled) = [[RACObserve(self, self.imgArr) merge:self.imgArr.rac_sequence.signal] map:^id(id value) {
+        
+        if (self.imgArr.count > 0) {
+            
+            _submitBtn.backgroundColor = [UIColor colorFromHexString:@"#497fef"];
+        }else{
+            
+            _submitBtn.backgroundColor = [UIColor colorFromHexString:@"#cdcbcb"];
+
+        }
+        
+        return @(self.imgArr.count > 0);
+    }];
     
 }
 
 
+- (void)uploadImgs{
+    
+    [QCURLSessionManager uploadImageWithImages:self.imgArr imageType:QCUploadImageServerTypeShopPhoto progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+        
+        
+                                           
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+            
+        [YJProgressHUD showError:error.localizedDescription];
+    }];
+    
+}
 #pragma mark - UITableViewDelegate/dataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -150,8 +191,8 @@ static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHea
     if (!_submitBtn) {
         
         _submitBtn = [[QCSubmitButton alloc] init];
-        [_submitBtn setTitle:@"确认配置" forState:UIControlStateNormal];
-//        _submitBtn.backgroundColor = [UIColor colorFromHexString:@"#f3f3f3"];
+        [_submitBtn setTitle:@"确认上传" forState:UIControlStateNormal];
+        _submitBtn.backgroundColor = [UIColor colorFromHexString:@"#cdcbcb"];
         _submitBtn.userInteractionEnabled = NO;
         
     }

@@ -13,9 +13,14 @@
 #import "QCApplicaNodeList.h"
 #import "QCPersonSelectNodeHeaderCell.h"
 #import "QCGetBlockType.h"
+#import "QCUploadImageViewController.h"
 @interface QCDeployApplicationNodeViewController ()
 
 @property (nonatomic, strong) NSMutableArray *listArray;
+
+@property (nonatomic, strong) QCSubmitButton* submitBtn;
+
+
 
 @end
 
@@ -37,11 +42,7 @@ static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHea
     
     [self setBaseInfo];
     
-    if (self.type == 3) {
-        
-        [self companyGetTypeListRequest];
-        
-    }else{
+    if (self.type == 2) {
         
         QCApplicaNodeListData *model = [[QCApplicaNodeListData alloc] init];
         
@@ -55,8 +56,32 @@ static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHea
         model.creditCode = userInfo.idNumber;
         [self.listArray addObject:model];
         [self.listArray addObject:self.nodeListModel];
-
+        
         [self.tableView reloadData];
+        
+        [self.view addSubview:self.submitBtn];
+        MJWeakSelf;
+        [self.submitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+           
+            make.left.bottom.right.equalTo(weakSelf.view);
+            make.height.mas_equalTo(44);
+        }];
+        
+        [[self.submitBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+           
+            QCUploadImageViewController* vc = [[QCUploadImageViewController alloc] init];
+            
+            vc.hidesBottomBarWhenPushed = YES;
+            
+            [weakSelf.navigationController pushViewController:vc animated:YES];
+            
+        }];
+        
+    }else{
+        
+        [self companyGetTypeListRequest];
+
+        
         
     }
 }
@@ -228,12 +253,12 @@ static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHea
         
     }else{
         
-        if (indexPath.section > 0) {
+        if (indexPath.section > 0 && self.type != 2) {
             
             
             QCDeployApplicationNodeViewController* vc = [[QCDeployApplicationNodeViewController alloc] init];
             
-            vc.type = 3;
+            vc.type = 2;
             vc.parentName = self.parentName;
             vc.blockTypeModel = self.blockTypeModel;
             QCApplicaNodeListData *model = self.listArray[indexPath.section - 1];
@@ -261,6 +286,19 @@ static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHea
 
     return _listArray;
 
+}
+
+
+-(QCSubmitButton *)submitBtn{
+    
+    if (!_submitBtn) {
+        
+        _submitBtn = [[QCSubmitButton alloc] init];
+        [_submitBtn setTitle:@"确认配置" forState:UIControlStateNormal];
+        //        _submitBtn.backgroundColor = [UIColor colorFromHexString:@"#f3f3f3"];
+        
+    }
+    return _submitBtn;
 }
 
 @end

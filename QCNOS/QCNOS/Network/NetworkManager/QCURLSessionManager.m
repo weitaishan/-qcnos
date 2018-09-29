@@ -60,12 +60,11 @@
     return dataTask;
 }
 
-+ (void)uploadImageWithImage:(UIImage *)image
++ (void)uploadImageWithImages:(NSArray<UIImage *>*)images
                    imageType:(QCUploadImageServerType)imageType
                     progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
                      success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
                      failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
-    NSData *data = UIImageJPEGRepresentation(image, 0.8);
     NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
     switch (imageType) {
         case QCUploadImageServerTypeIdPhoto:
@@ -91,18 +90,30 @@
       parameters:parameters
 constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData)
     {
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    formatter.dateFormat = @"yyyyMMddHHmmss";
-    NSString *fileName = [NSString stringWithFormat:@"%@.png",
-                          [formatter stringFromDate:[NSDate date]]];
-    [formData appendPartWithFileData:data
-                                name:@"fileData"
-                            fileName:fileName
-                            mimeType:@"image/jpeg"];
+        NSInteger i = 0;
+        for (UIImage* image in images) {
+            
+            NSData *data = UIImageJPEGRepresentation(image, 0.2);
+            
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            formatter.dateFormat = @"yyyyMMddHHmmss";
+            NSString *fileName = [NSString stringWithFormat:@"%@%ld.png",
+                                  [formatter stringFromDate:[NSDate date]],i];
+            [formData appendPartWithFileData:data
+                                        name:@"fileData"
+                                    fileName:fileName
+                                    mimeType:@"image/jpeg"];
+            i ++;
+            
+        }
+        
     }
         progress:uploadProgress
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
      {
+         
+         NSLog(@"image upload responseObject = %@",responseObject);
+
              NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:responseObject
                                                                          options:NSJSONReadingAllowFragments
                                                                            error:nil];

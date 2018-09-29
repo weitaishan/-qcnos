@@ -31,11 +31,11 @@ typedef void (^DataTaskFailBlock)(QCError *error);
                                        successBlock:(DataTaskSuccessBlock)successBlock
                                           failBlock:(DataTaskFailBlock)failBlock;
 //上传文件
-+ (void)uploadImageWithImage:(UIImage *)image
-                   imageType:(QCUploadImageServerType)imageType
-                    progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
-                     success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
-                     failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
++ (void)uploadImageWithImages:(NSArray<UIImage *>*)images
+                    imageType:(QCUploadImageServerType)imageType
+                     progress:(nullable void (^)(NSProgress * _Nonnull))uploadProgress
+                      success:(void (^)(NSURLSessionDataTask *task, id responseObject))success
+                      failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 
 @end
