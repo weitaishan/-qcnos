@@ -105,7 +105,7 @@ static NSString * const QCShopNameCellId = @"QCShopNameCellId";
     }success:^(NSURLSessionDataTask *task, id responseObject) {
         
 
-        [self addShop];
+        [self addShopWithImages:responseObject[@"data"]];
         
                                            
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
@@ -115,7 +115,7 @@ static NSString * const QCShopNameCellId = @"QCShopNameCellId";
     
 }
 
-- (void)addShop{
+- (void)addShopWithImages:(NSString *)images{
     
     
 }

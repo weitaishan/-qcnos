@@ -17,6 +17,15 @@
 		09751BE7215E067A002630AA /* QCApplicaNodeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BE5215E067A002630AA /* QCApplicaNodeList.m */; };
 		09751BEB215F520B002630AA /* QCShopNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BE9215F520A002630AA /* QCShopNameCell.m */; };
 		09751BEC215F520B002630AA /* QCShopNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09751BEA215F520A002630AA /* QCShopNameCell.xib */; };
+		09751BFE215F5ABA002630AA /* AddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BEF215F5ABA002630AA /* AddressModel.m */; };
+		09751BFF215F5ABA002630AA /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BF2215F5ABA002630AA /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		09751C00215F5ABA002630AA /* MOFSAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BF4215F5ABA002630AA /* MOFSAddressPickerView.m */; };
+		09751C01215F5ABA002630AA /* MOFSDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BF6215F5ABA002630AA /* MOFSDatePicker.m */; };
+		09751C02215F5ABA002630AA /* MOFSPickerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BF8215F5ABA002630AA /* MOFSPickerManager.m */; };
+		09751C03215F5ABA002630AA /* MOFSPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BFA215F5ABA002630AA /* MOFSPickerView.m */; };
+		09751C04215F5ABA002630AA /* MOFSToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BFC215F5ABA002630AA /* MOFSToolbar.m */; };
+		09751C05215F5ABA002630AA /* province_data.xml in Resources */ = {isa = PBXBuildFile; fileRef = 09751BFD215F5ABA002630AA /* province_data.xml */; };
+		09751C0A215F5B71002630AA /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 09751C09215F5B71002630AA /* libxml2.tbd */; };
 		09A48EC6215345AF00131A6B /* QCInvitaitionFiltrateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48EC4215345AF00131A6B /* QCInvitaitionFiltrateCell.m */; };
 		09A48EC7215345AF00131A6B /* QCInvitaitionFiltrateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48EC5215345AF00131A6B /* QCInvitaitionFiltrateCell.xib */; };
 		09A48ECB2153498B00131A6B /* QCInvitaitionBaseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48EC92153498B00131A6B /* QCInvitaitionBaseListCell.m */; };
@@ -171,6 +180,23 @@
 		09751BE8215F520A002630AA /* QCShopNameCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCShopNameCell.h; sourceTree = "<group>"; };
 		09751BE9215F520A002630AA /* QCShopNameCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCShopNameCell.m; sourceTree = "<group>"; };
 		09751BEA215F520A002630AA /* QCShopNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCShopNameCell.xib; sourceTree = "<group>"; };
+		09751BEE215F5ABA002630AA /* AddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddressModel.h; sourceTree = "<group>"; };
+		09751BEF215F5ABA002630AA /* AddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddressModel.m; sourceTree = "<group>"; };
+		09751BF1215F5ABA002630AA /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		09751BF2215F5ABA002630AA /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		09751BF3215F5ABA002630AA /* MOFSAddressPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOFSAddressPickerView.h; sourceTree = "<group>"; };
+		09751BF4215F5ABA002630AA /* MOFSAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOFSAddressPickerView.m; sourceTree = "<group>"; };
+		09751BF5215F5ABA002630AA /* MOFSDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOFSDatePicker.h; sourceTree = "<group>"; };
+		09751BF6215F5ABA002630AA /* MOFSDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOFSDatePicker.m; sourceTree = "<group>"; };
+		09751BF7215F5ABA002630AA /* MOFSPickerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOFSPickerManager.h; sourceTree = "<group>"; };
+		09751BF8215F5ABA002630AA /* MOFSPickerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOFSPickerManager.m; sourceTree = "<group>"; };
+		09751BF9215F5ABA002630AA /* MOFSPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOFSPickerView.h; sourceTree = "<group>"; };
+		09751BFA215F5ABA002630AA /* MOFSPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOFSPickerView.m; sourceTree = "<group>"; };
+		09751BFB215F5ABA002630AA /* MOFSToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MOFSToolbar.h; sourceTree = "<group>"; };
+		09751BFC215F5ABA002630AA /* MOFSToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MOFSToolbar.m; sourceTree = "<group>"; };
+		09751BFD215F5ABA002630AA /* province_data.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = province_data.xml; sourceTree = "<group>"; };
+		09751C06215F5B15002630AA /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		09751C09215F5B71002630AA /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		09A48EC3215345AF00131A6B /* QCInvitaitionFiltrateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCInvitaitionFiltrateCell.h; sourceTree = "<group>"; };
 		09A48EC4215345AF00131A6B /* QCInvitaitionFiltrateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCInvitaitionFiltrateCell.m; sourceTree = "<group>"; };
 		09A48EC5215345AF00131A6B /* QCInvitaitionFiltrateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCInvitaitionFiltrateCell.xib; sourceTree = "<group>"; };
@@ -418,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CB64F69F3BBD0A028342DC07 /* Pods_QCNOS.framework in Frameworks */,
+				09751C0A215F5B71002630AA /* libxml2.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +458,36 @@
 				09751BDB215DCBAA002630AA /* NSURLRequest+NodeType.m */,
 			);
 			path = sso.nodeType;
+			sourceTree = "<group>";
+		};
+		09751BED215F5ABA002630AA /* MOFSPickerManager */ = {
+			isa = PBXGroup;
+			children = (
+				09751BEE215F5ABA002630AA /* AddressModel.h */,
+				09751BEF215F5ABA002630AA /* AddressModel.m */,
+				09751BF0215F5ABA002630AA /* GDataXMLNode */,
+				09751BF3215F5ABA002630AA /* MOFSAddressPickerView.h */,
+				09751BF4215F5ABA002630AA /* MOFSAddressPickerView.m */,
+				09751BF5215F5ABA002630AA /* MOFSDatePicker.h */,
+				09751BF6215F5ABA002630AA /* MOFSDatePicker.m */,
+				09751BF7215F5ABA002630AA /* MOFSPickerManager.h */,
+				09751BF8215F5ABA002630AA /* MOFSPickerManager.m */,
+				09751BF9215F5ABA002630AA /* MOFSPickerView.h */,
+				09751BFA215F5ABA002630AA /* MOFSPickerView.m */,
+				09751BFB215F5ABA002630AA /* MOFSToolbar.h */,
+				09751BFC215F5ABA002630AA /* MOFSToolbar.m */,
+				09751BFD215F5ABA002630AA /* province_data.xml */,
+			);
+			path = MOFSPickerManager;
+			sourceTree = "<group>";
+		};
+		09751BF0215F5ABA002630AA /* GDataXMLNode */ = {
+			isa = PBXGroup;
+			children = (
+				09751BF1215F5ABA002630AA /* GDataXMLNode.h */,
+				09751BF2215F5ABA002630AA /* GDataXMLNode.m */,
+			);
+			path = GDataXMLNode;
 			sourceTree = "<group>";
 		};
 		09A48EC1215341D900131A6B /* Models */ = {
@@ -565,6 +622,8 @@
 		542F55EB44A459014F3A71ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				09751C09215F5B71002630AA /* libxml2.tbd */,
+				09751C06215F5B15002630AA /* libxml2.2.tbd */,
 				DE3EE17CC6ACA7090A626323 /* Pods_QCNOS.framework */,
 			);
 			name = Frameworks;
@@ -829,6 +888,7 @@
 		777FDB18212E9C8A007D80B8 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
+				09751BED215F5ABA002630AA /* MOFSPickerManager */,
 				773C1FBD2141051D007E20B3 /* QCImagePicker */,
 				77264D82213E245200B57B15 /* YJProgressHUD */,
 				777FDB19212E9C9B007D80B8 /* ValidationCode */,
@@ -1187,6 +1247,7 @@
 				777FDB14212E9508007D80B8 /* QCRegisteredValidationVC.xib in Resources */,
 				777084CD2153390A005CEF76 /* QCShoppingContentCell.xib in Resources */,
 				09A48F102153848700131A6B /* QCScoreCell.xib in Resources */,
+				09751C05215F5ABA002630AA /* province_data.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1272,6 +1333,7 @@
 				774213402136746C003E44F6 /* QCPersonalCenterViewController.m in Sources */,
 				772BC3E3214217AD00CC4BDE /* QCRegisteredNameViewModel.m in Sources */,
 				09A48F1921538CD200131A6B /* QCPersonCenterListCell.m in Sources */,
+				09751C04215F5ABA002630AA /* MOFSToolbar.m in Sources */,
 				09751BD5215CDA64002630AA /* QCBaseModel.m in Sources */,
 				777FDB09212E8B4A007D80B8 /* QCRegisteredPhoneVC.m in Sources */,
 				77264D87213E245200B57B15 /* YJProgressHUD.m in Sources */,
@@ -1288,10 +1350,13 @@
 				7751DEB92154CEBA003EF205 /* QCShopReleaseCell.m in Sources */,
 				77EFAAE9213E6C9D00D2C565 /* QCNationVC.m in Sources */,
 				09751BCA215CBD14002630AA /* QCDeployApplicationBlockViewController.m in Sources */,
+				09751C02215F5ABA002630AA /* MOFSPickerManager.m in Sources */,
 				77D1EF36212D65B6003D892D /* NSDate+Extension.m in Sources */,
 				09A48F2821539D1600131A6B /* QCPersonNodeListCell.m in Sources */,
+				09751C00215F5ABA002630AA /* MOFSAddressPickerView.m in Sources */,
 				77EFAAF1213E6FAC00D2C565 /* QCNationModel.m in Sources */,
 				77D1EF2A212D64E8003D892D /* NSNull+WTSNatural.m in Sources */,
+				09751C03215F5ABA002630AA /* MOFSPickerView.m in Sources */,
 				09751BCD215CC461002630AA /* QCPersonSelectNodeView.m in Sources */,
 				7751DEB4215496BD003EF205 /* QCBlockTitleCell.m in Sources */,
 				09751BEB215F520B002630AA /* QCShopNameCell.m in Sources */,
@@ -1308,6 +1373,7 @@
 				7772718D2153879B00269058 /* QCShoppingDetailCell.m in Sources */,
 				777FDB13212E9508007D80B8 /* QCRegisteredValidationVC.m in Sources */,
 				777FDB21212EB388007D80B8 /* QCRegisteredSetVC.m in Sources */,
+				09751BFE215F5ABA002630AA /* AddressModel.m in Sources */,
 				7785FD6B213D0B68009EA6F2 /* QCLoginViewModel.m in Sources */,
 				77D1EF2B212D64E8003D892D /* NullSafe.m in Sources */,
 				09A48EE1215371B800131A6B /* QCInvitaitionDetailsCell.m in Sources */,
@@ -1324,6 +1390,7 @@
 				09751BE7215E067A002630AA /* QCApplicaNodeList.m in Sources */,
 				773C1FC02141051D007E20B3 /* QCImagePicker.m in Sources */,
 				77EFAAF4213E84B900D2C565 /* QCResetModel.m in Sources */,
+				09751C01215F5ABA002630AA /* MOFSDatePicker.m in Sources */,
 				7785FD71213D2BD9009EA6F2 /* AFHTTPRequestSerializer+Extension.m in Sources */,
 				777084C7215338F8005CEF76 /* QCShoppingTitleCell.m in Sources */,
 				09A48F2D21539D3A00131A6B /* QCPersonSelectNodeHeaderCell.m in Sources */,
@@ -1343,6 +1410,7 @@
 				777FDB25212EB3A7007D80B8 /* QCRegisteredSuccessVC.m in Sources */,
 				773B69EC212FA7490049E9B1 /* QCGenderView.m in Sources */,
 				09A48F0E2153848700131A6B /* QCRecommendView.m in Sources */,
+				09751BFF215F5ABA002630AA /* GDataXMLNode.m in Sources */,
 				7785FD60213CD791009EA6F2 /* NSURLRequest+Message.m in Sources */,
 				09A48EDD21535AB800131A6B /* WTSBaseViewController.m in Sources */,
 				77264D80213E228200B57B15 /* NSDictionary+Log.m in Sources */,
@@ -1481,6 +1549,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = QCNOS/Support/QCPrefixHeader.pch;
+				HEADER_SEARCH_PATHS = " /usr/include/libxml2";
 				INFOPLIST_FILE = "$(SRCROOT)/QCNOS/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1500,6 +1569,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				GCC_PREFIX_HEADER = QCNOS/Support/QCPrefixHeader.pch;
+				HEADER_SEARCH_PATHS = " /usr/include/libxml2";
 				INFOPLIST_FILE = "$(SRCROOT)/QCNOS/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
