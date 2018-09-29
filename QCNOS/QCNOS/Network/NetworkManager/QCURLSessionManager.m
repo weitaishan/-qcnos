@@ -112,11 +112,13 @@ constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData)
          success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject)
      {
          
-         NSLog(@"image upload responseObject = %@",responseObject);
 
              NSDictionary *responseDic = [NSJSONSerialization JSONObjectWithData:responseObject
                                                                          options:NSJSONReadingAllowFragments
                                                                            error:nil];
+         
+         NSLog(@"image upload responseObject = %@",responseDic);
+
              success(task, responseDic);
      }
          failure:failure];

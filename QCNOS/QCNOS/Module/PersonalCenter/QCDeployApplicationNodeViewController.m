@@ -20,8 +20,6 @@
 
 @property (nonatomic, strong) QCSubmitButton* submitBtn;
 
-
-
 @end
 
 

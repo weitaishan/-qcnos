@@ -15,6 +15,8 @@
 		09751BD5215CDA64002630AA /* QCBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BD4215CDA64002630AA /* QCBaseModel.m */; };
 		09751BDC215DCBAA002630AA /* NSURLRequest+NodeType.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BDB215DCBAA002630AA /* NSURLRequest+NodeType.m */; };
 		09751BE7215E067A002630AA /* QCApplicaNodeList.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BE5215E067A002630AA /* QCApplicaNodeList.m */; };
+		09751BEB215F520B002630AA /* QCShopNameCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09751BE9215F520A002630AA /* QCShopNameCell.m */; };
+		09751BEC215F520B002630AA /* QCShopNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09751BEA215F520A002630AA /* QCShopNameCell.xib */; };
 		09A48EC6215345AF00131A6B /* QCInvitaitionFiltrateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48EC4215345AF00131A6B /* QCInvitaitionFiltrateCell.m */; };
 		09A48EC7215345AF00131A6B /* QCInvitaitionFiltrateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09A48EC5215345AF00131A6B /* QCInvitaitionFiltrateCell.xib */; };
 		09A48ECB2153498B00131A6B /* QCInvitaitionBaseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A48EC92153498B00131A6B /* QCInvitaitionBaseListCell.m */; };
@@ -166,6 +168,9 @@
 		09751BDB215DCBAA002630AA /* NSURLRequest+NodeType.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURLRequest+NodeType.m"; sourceTree = "<group>"; };
 		09751BE5215E067A002630AA /* QCApplicaNodeList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCApplicaNodeList.m; sourceTree = "<group>"; };
 		09751BE6215E067A002630AA /* QCApplicaNodeList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCApplicaNodeList.h; sourceTree = "<group>"; };
+		09751BE8215F520A002630AA /* QCShopNameCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCShopNameCell.h; sourceTree = "<group>"; };
+		09751BE9215F520A002630AA /* QCShopNameCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCShopNameCell.m; sourceTree = "<group>"; };
+		09751BEA215F520A002630AA /* QCShopNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCShopNameCell.xib; sourceTree = "<group>"; };
 		09A48EC3215345AF00131A6B /* QCInvitaitionFiltrateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QCInvitaitionFiltrateCell.h; sourceTree = "<group>"; };
 		09A48EC4215345AF00131A6B /* QCInvitaitionFiltrateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QCInvitaitionFiltrateCell.m; sourceTree = "<group>"; };
 		09A48EC5215345AF00131A6B /* QCInvitaitionFiltrateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QCInvitaitionFiltrateCell.xib; sourceTree = "<group>"; };
@@ -550,6 +555,9 @@
 				09751BCB215CC461002630AA /* QCPersonSelectNodeView.h */,
 				09751BCC215CC461002630AA /* QCPersonSelectNodeView.m */,
 				09751BCE215CC46F002630AA /* QCPersonSelectNodeView.xib */,
+				09751BE8215F520A002630AA /* QCShopNameCell.h */,
+				09751BE9215F520A002630AA /* QCShopNameCell.m */,
+				09751BEA215F520A002630AA /* QCShopNameCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1160,6 +1168,7 @@
 				777084D22153392E005CEF76 /* QCShoppingAddrssCell.xib in Resources */,
 				7751DEBA2154CEBA003EF205 /* QCShopReleaseCell.xib in Resources */,
 				77D1EF0C212D602D003D892D /* Assets.xcassets in Resources */,
+				09751BEC215F520B002630AA /* QCShopNameCell.xib in Resources */,
 				7772719B21538C9900269058 /* QCCommentContentCell.xib in Resources */,
 				777084C8215338F8005CEF76 /* QCShoppingTitleCell.xib in Resources */,
 				777084D72153395F005CEF76 /* QCShoppingPriceCell.xib in Resources */,
@@ -1285,6 +1294,7 @@
 				77D1EF2A212D64E8003D892D /* NSNull+WTSNatural.m in Sources */,
 				09751BCD215CC461002630AA /* QCPersonSelectNodeView.m in Sources */,
 				7751DEB4215496BD003EF205 /* QCBlockTitleCell.m in Sources */,
+				09751BEB215F520B002630AA /* QCShopNameCell.m in Sources */,
 				773C1FBC21410422007E20B3 /* NSURLRequest+Upload.m in Sources */,
 				09751BC7215CBCD9002630AA /* QCDeployApplicationNodeViewController.m in Sources */,
 				77D1EF43212D6CDF003D892D /* Colours.m in Sources */,
