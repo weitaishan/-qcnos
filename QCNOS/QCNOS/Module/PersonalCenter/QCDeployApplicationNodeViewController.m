@@ -70,7 +70,7 @@ static NSString * const QCPersonSelectNodeHeaderCellId = @"QCPersonSelectNodeHea
             QCUploadImageViewController* vc = [[QCUploadImageViewController alloc] init];
             
             vc.hidesBottomBarWhenPushed = YES;
-            
+            vc.companyId = self.nodeListModel.Id;
             [weakSelf.navigationController pushViewController:vc animated:YES];
             
         }];
